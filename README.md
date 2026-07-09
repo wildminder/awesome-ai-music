@@ -370,6 +370,8 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | [Mellow](#mellow) | AQA + captioning | audio + text | short | from-scratch 167M | ![MIT][license-mit] |
 | [Audio Flamingo 2](#audio-flamingo-2) | reasoning | audio + text | 5 min | Qwen-2.5 | ![NVIDIA NC][license-nvidia-noncommercial] |
 | [Qwen2-Audio-7B-Instruct](#qwen2-audio) | voice chat + analysis | audio + text | short-medium | Qwen2-Audio | ![Apache 2.0][license-apache-2.0] |
+| [MusiLingo](#musilingo) | captioning + AQA | audio + text | short to long | Vicuna 7B + MERT | ![Unknown][license-unknown] |
+| [MU-LLaMA](#mu-llama) | music QA + captioning | audio + text | short | LLaMA-2 + MERT | ![MIT][license-mit] |
 
 <!-- MODEL:tinymu.md -->
 <details id="tinymu">
@@ -586,6 +588,79 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:qwen2-audio.md -->
+<!-- MODEL:musilingo.md -->
+<details id="musilingo">
+<summary>MusiLingo</summary>
+
+### MusiLingo
+
+**Description:** MusiLingo (NAACL 2024): "Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response". Two-stage model — pretrained on a long-form music captioning dataset (LP-MusicCaps-MSD) and instruction-tuned on MusicInstruct for short/long music QA and on MusicQA. Built on MERT-v1-330M (music encoder) + Vicuna 7B v0 (text backbone).
+
+**Release Date:** September 15, 2023
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 7B (Vicuna 7B v0) + 330M MERT-v1 (music encoder) |
+| **Use Case** | music captioning, music QA (short + long + MusicQA) |
+| **Input** | audio + text |
+| **Audio Length** | short to long (variable; model trained to handle both) |
+| **Base Model** | MERT-v1-330M + Vicuna 7B v0 |
+| **Music Generation** | no |
+| **Audio Generation** | no |
+| **Music Understanding** | ✅ |
+| **Captioning** | yes |
+| **Question Answering** | yes (short + long) |
+| **Architecture** | encoder (MERT) + instruction-tuned LLM (Vicuna) |
+| **Training Data** | LP-MusicCaps-MSD (pretrain), MusicCaps, MusicInstruct, MusicQA (instruction-finetune) |
+| **Publication** | NAACL 2024 |
+| **License** | ![Unknown][license-unknown] |
+
+**Features:** Two-stage music-language training recipe that pairs MERT-v1 with Vicuna 7B — first pretrains on a long-caption corpus (LP-MusicCaps-MSD), then instruction-tunes on MusicInstruct for short/long music QA, releasing the data and weights as a standard MERT-based music-understanding baseline at NAACL 2024.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/collections/m-a-p/musilingo)
+[![GitHub][link-github]](https://github.com/zihaod/MusiLingo)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2309.08730)
+
+</details>
+<!-- /MODEL:musilingo.md -->
+<!-- MODEL:mu-llama.md -->
+<details id="mu-llama">
+<summary>MU-LLaMA</summary>
+
+### MU-LLaMA
+
+**Description:** MU-LLaMA (Music Understanding Large Language Model) — an audio-language model that answers questions about music and captions music files. Built on a MERT music encoder + LLaMA-2 (7B) text backbone with an adapter that incorporates music context. Used in the paper to generate MusicQA from MusicCaps and MagnaTagATune, providing training data for downstream text-to-music generation models.
+
+**Release Date:** August 22, 2023
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 7B (LLaMA-2 base) + ~95M MERT (music encoder) |
+| **Use Case** | music QA, music captioning, music understanding |
+| **Input** | audio + text |
+| **Audio Length** | short clips (MusicCaps-style) |
+| **Base Model** | MERT (music encoder) + LLaMA-2 7B (text backbone) via adapter |
+| **Music Generation** | no |
+| **Audio Generation** | no |
+| **Music Understanding** | ✅ |
+| **Captioning** | yes |
+| **Question Answering** | yes |
+| **Architecture** | cross-modal audio-language model (encoder + LLM + adapter) |
+| **Training Data** | MusicCaps, MagnaTagATune (used to build MusicQA) |
+| **Evaluation** | MTG-Jamendo |
+| **License** | ![MIT][license-mit] |
+
+**Features:** One of the earliest MERT + LLaMA-2 music-language models for music QA/captioning — its **MusicQA** dataset (built from MusicCaps and MagnaTagATune) became a standard component of music-AQA pipelines, and the MERT backbone became the de-facto music encoder for downstream music-language work that followed (e.g. MusiLingo, LP-MusicCaps-MSD).
+
+**Links:**
+[![GitHub][link-github]](https://github.com/shansongliu/MU-LLaMA)
+[![HuggingFace][link-huggingface]](https://huggingface.co/mu-llama/MU-LLaMA)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2308.11276)
+[![Demo][link-demo]](https://crypto-code.github.io/MU-LLaMA-Demo/)
+
+</details>
+<!-- /MODEL:mu-llama.md -->
 
 ---
 
