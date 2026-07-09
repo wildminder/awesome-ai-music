@@ -17,6 +17,9 @@ A curated list of open-source music generation models for audio and song synthes
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [Magenta RealTime 2](#magenta-realtime-2) | ✅ | text | ✅ | English | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
+| [Live Music Diffusion Models (LMDM)](#lmdm) | ✅ | text | ✅ | - | ![MIT][license-mit] |
+| [TinyMozart v2 85M](#tiny-mozart-v2-85m) | ✅ | unconditional | ❌ | - | ![Unknown][license-unknown] |
 | [ACE-Step 1.5](#ace-step-15) | ✅ | text | ❌ | 50+ | ![MIT][license-mit] |
 | [Uni-MoE (Audio)](#uni-moe-audio) | ✅ | text | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [Magenta Realtime](#magenta-realtime) | ✅ | text | ✅ | - | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
@@ -25,6 +28,109 @@ A curated list of open-source music generation models for audio and song synthes
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:magenta-realtime-2.md -->
+<details id="magenta-realtime-2">
+<summary>Magenta RealTime 2</summary>
+
+### Magenta RealTime 2
+
+**Description:** Open music generation model from Google DeepMind built for on-device streaming generation with low-latency control. Follow-up to Magenta RealTime, offering richer control and lower latency across text prompts, audio examples, and MIDI.
+
+**Release Date:** May 28, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 2.4B (base), 230M (small) |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text, audio, MIDI |
+| **Streaming** | ✅ |
+| **Languages** | English (text prompts) |
+| **License** | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
+| **Real Time** | ✅ |
+| **Text To Music** | ✅ |
+| **Audio To Music** | ✅ |
+| **Midi Conditioning** | yes |
+| **Continuous Generation** | ✅ |
+| **Codec** | SpectroStream (stereo 48 kHz discrete tokens) |
+| **Embedding** | MusicCoCa (contrastive audio-text) |
+| **Architecture** | Decoder-only Transformer LLM with frame-wise autoregression (vs. chunk-wise in RealTime v1) |
+| **Vram** | on-device (small config) |
+
+**Features:** Decoder-only Transformer LLM that does frame-wise (not chunk-wise) autoregression over SpectroStream audio tokens, conditioned on MusicCoCa embeddings + MIDI tokens — bringing Gram-style frame-level latency to live music generation with both a `base` (2.4B) and `small` (230M) configuration sized for on-device deployment.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/google/magenta-realtime-2)
+[![GitHub][link-github]](https://github.com/magenta/magenta-realtime)
+[![Blog][link-blog]](https://magenta.withgoogle.com/magenta-realtime-2)
+[![Demo][link-demo]](https://magenta.withgoogle.com/mrt2)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2508.04651)
+
+</details>
+<!-- /MODEL:magenta-realtime-2.md -->
+<!-- MODEL:lmdm.md -->
+<details id="lmdm">
+<summary>Live Music Diffusion Models (LMDM)</summary>
+
+### Live Music Diffusion Models (LMDM)
+
+**Description:** A framework for efficient fine-tuning and post-training of interactive diffusion music generators. LMDM enables text-to-music generation, live generative-delay interaction (a guitarist/saxophonist/cellist can play into the model and trigger accompaniment in real time), time-varying prompt transitions, and stem-conditioned accompaniment generation across lookahead windows (+2 s / 0 s / −2 s).
+
+**Release Date:** May 21, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Input Modalities** | text, audio prompt, audio stem, MIDI / sketch conditions |
+| **Streaming** | ✅ |
+| **License** | ![Unknown][license-unknown] |
+| **Text To Music** | ✅ |
+| **Audio To Music** | ✅ |
+| **Real Time** | ✅ |
+| **Time Varying Prompts** | yes |
+| **Accompaniment Lookahead** | +2 s / 0 s / −2 s |
+| **Architecture** | Diffusion-based generator + efficient fine-tuning / post-training |
+| **Authors** | Novack, Brade, Kim, Flores García, Shikarpur, Talegaonkar, Kim, Chen, McAuley, Berg-Kirkpatrick, Huang |
+| **Training Data** | Jamendo + humpback-whale-call (per the supplementary demos) |
+
+**Features:** A training and post-training recipe that turns a base music-diffusion model into an interactive live instrument: efficient fine-tuning plus a generative-delay deployment with controllable accommodation across positive, zero, and negative stem lookahead — shown in production-quality demos with instrumentalists performing alongside the model in real time.
+
+**Links:**
+[![Website][link-website]](https://stephenbrade.github.io/lmdm-public/)
+[![GitHub][link-github]](https://github.com/ZacharyNovack/live-music-diffusion-models)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2605.22717)
+
+</details>
+<!-- /MODEL:lmdm.md -->
+<!-- MODEL:tiny-mozart-v2-85m.md -->
+<details id="tiny-mozart-v2-85m">
+<summary>TinyMozart v2 85M</summary>
+
+### TinyMozart v2 85M
+
+**Description:** Unconditional MIDI classic piano music generator trained on the Google MAESTRO V3 MIDI dataset. Tiny (85M) and CPU-friendly, designed to make local unconditional piano generation accessible.
+
+**Release Date:** May 3, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 85M |
+| **Music Gen** | ✅ |
+| **Input Modalities** | unconditional (no prompt) |
+| **Streaming** | ❌ |
+| **License** | ![Unknown][license-unknown] |
+| **Text To Music** | ❌ |
+| **Midi Output** | yes |
+| **Architecture** | not specified (small autoregressive model) |
+| **Training Data** | Google MAESTRO V3 MIDI dataset |
+| **Vram** | CPU-runnable (designed for low-resource local use) |
+
+**Features:** 85M-parameter conditional-free MIDI piano generator trained on MAESTRO V3 — designed to be the smallest viable entry point for unconditional symbolic music generation on commodity hardware, paired with a `use.py` inference script that runs on CPU.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/LH-Tech-AI/TinyMozart_v2_85M)
+
+</details>
+<!-- /MODEL:tiny-mozart-v2-85m.md -->
 <!-- MODEL:ace-step-15.md -->
 <details id="ace-step-15">
 <summary>ACE-Step 1.5</summary>
@@ -264,10 +370,13 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: July 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
+[license-cc-by-4.0]: https://img.shields.io/badge/CC_BY_4.0-green?style=flat-square&logo=creativecommons "CC BY 4.0"
+[license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
+[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 
+[link-blog]: https://img.shields.io/badge/Blog-post-blue?style=flat-square "Blog post"
 [link-demo]: https://img.shields.io/badge/Demo-live-blue?style=flat-square "Demo live"
 [link-github]: https://img.shields.io/badge/GitHub-code-black?style=flat-square&logo=github "GitHub code"
 [link-huggingface]: https://img.shields.io/badge/HuggingFace-models-yellow?style=flat-square&logo=huggingface "HuggingFace models"
