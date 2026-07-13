@@ -364,6 +364,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 | Model | Use Case | Input | Audio Length | Base Model | License |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| [MuScriptor](#muscriptor) | multi-instrument music transcription | full-mix audio | long | custom Mirelo + Kyutai + IRCAM | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [TinyMU](#tinymu) | music caption + QA | audio + text | short | from-scratch 229M | ![Unknown][license-unknown] |
 | [Audio Flamingo 3](#audio-flamingo-3) | chat + reasoning | audio + text | long | Audio Flamingo 2 | ![NVIDIA NC][license-nvidia-noncommercial] |
 | [MiDashengLM-7B-0804](#midashenglm) | caption + AQA | audio + text | short-medium | Qwen2.5-Omni-7B | ![Apache 2.0][license-apache-2.0] |
@@ -373,6 +374,48 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | [MusiLingo](#musilingo) | captioning + AQA | audio + text | short to long | Vicuna 7B + MERT | ![Unknown][license-unknown] |
 | [MU-LLaMA](#mu-llama) | music QA + captioning | audio + text | short | LLaMA-2 + MERT | ![MIT][license-mit] |
 
+<!-- MODEL:muscriptor.md -->
+<details id="muscriptor">
+<summary>MuScriptor</summary>
+
+### MuScriptor
+
+**Description:** MuScriptor is the first open-source multi-instrument music transcription model trained at scale — co-developed by Mirelo AI, Kyutai, and IRCAM. Trained on 170k songs spanning classical to heavy metal.
+
+**Release Date:** July 9, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | small / medium / large (multi-size release) |
+| **Use Case** | multi-instrument music transcription to MIDI |
+| **Input** | full-mix audio (wav + mp3 streamed via CLI / web UI) |
+| **Output Format** | multi-track MIDI |
+| **Audio Length** | long (full songs, classical to heavy metal) |
+| **Training Scale** | 170k songs |
+| **Upstream Application** | Mirelo Studio Audio-to-MIDI tool (chord / key / tempo detection on top) |
+| **Library** | torch + transformers (served via uvx) |
+| **Model Size Variants** | muscriptor-small, muscriptor-medium, muscriptor-large |
+| **Weights License** | cc-by-nc-4.0 (gated, requires HF ack) |
+| **Code License** | MIT (GitHub repo) |
+| **Audio Language Task** | yes |
+| **Music Understanding** | ✅ |
+| **Music Generation** | no |
+| **Continuous Monitoring** | no |
+| **Streaming Input** | yes (uvx transcribe) |
+| **Benchmark** | Mirelo internal + Mirelo Studio tool |
+
+**Features:** First open-source music transcription model trained at scale — 170k songs including classical to heavy metal. Co-built by Mirelo AI, Kyutai, and IRCAM. The Mirelo Studio Audio-to-MIDI tool layers chord / key / tempo detection on top, giving users the full harmonic picture from raw audio input.
+
+**Links:**
+[![Blog][link-blog]](https://www.mirelo.ai/blog/turning-audio-to-midi)
+[![HuggingFace][link-huggingface]](https://huggingface.co/MuScriptor)
+[![HuggingFace model][link-huggingface model]](https://huggingface.co/MuScriptor/muscriptor-medium)
+[![GitHub][link-github]](https://github.com/muscriptor/muscriptor)
+[![Online demo][link-online demo]](https://muscriptor.kyutai.org)
+[![Paper][link-paper]](https://arxiv.org/abs/2607.08168)
+
+</details>
+<!-- /MODEL:muscriptor.md -->
 <!-- MODEL:tinymu.md -->
 <details id="tinymu">
 <summary>TinyMU</summary>
