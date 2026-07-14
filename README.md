@@ -409,9 +409,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 **Links:**
 [![Blog][link-blog]](https://www.mirelo.ai/blog/turning-audio-to-midi)
 [![HuggingFace][link-huggingface]](https://huggingface.co/MuScriptor)
-[![HuggingFace model][link-huggingface model]](https://huggingface.co/MuScriptor/muscriptor-medium)
+[![HFModelPage][link-hfmodelpage]](https://huggingface.co/MuScriptor/muscriptor-medium)
 [![GitHub][link-github]](https://github.com/muscriptor/muscriptor)
-[![Online demo][link-online demo]](https://muscriptor.kyutai.org)
+[![Demo][link-demo]](https://muscriptor.kyutai.org)
 [![Paper][link-paper]](https://arxiv.org/abs/2607.08168)
 
 </details>
@@ -732,6 +732,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 [link-blog]: https://img.shields.io/badge/Blog-post-blue?style=flat-square "Blog post"
 [link-demo]: https://img.shields.io/badge/Demo-live-blue?style=flat-square "Demo live"
 [link-github]: https://img.shields.io/badge/GitHub-code-black?style=flat-square&logo=github "GitHub code"
+[link-hfmodelpage]: https://img.shields.io/badge/HFModelPage-models-yellow?style=flat-square&logo=huggingface "HFModelPage models"
 [link-huggingface]: https://img.shields.io/badge/HuggingFace-models-yellow?style=flat-square&logo=huggingface "HuggingFace models"
 [link-paper]: https://img.shields.io/badge/Paper-paper-red?style=flat-square "Paper paper"
 [link-website]: https://img.shields.io/badge/Website-site-blue?style=flat-square "Website site"

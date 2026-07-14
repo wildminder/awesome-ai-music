@@ -14,9 +14,9 @@ MuScriptor is the first open-source multi-instrument music transcription model t
 
 - Blog: https://www.mirelo.ai/blog/turning-audio-to-midi
 - HuggingFace: https://huggingface.co/MuScriptor
-- HuggingFace model: https://huggingface.co/MuScriptor/muscriptor-medium
+- HFModelPage: https://huggingface.co/MuScriptor/muscriptor-medium
 - GitHub: https://github.com/muscriptor/muscriptor
-- Online demo: https://muscriptor.kyutai.org
+- Demo: https://muscriptor.kyutai.org
 - Paper: https://arxiv.org/abs/2607.08168
 
 ## Features
