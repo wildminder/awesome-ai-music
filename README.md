@@ -713,6 +713,12 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 - [Artificial Analysis — Music Leaderboard](https://artificialanalysis.ai/music/leaderboard) — Elo-based arena for music generation systems, ranking models on prompt fidelity, audio quality, and genre coverage.
 
+### Extended Model Guides
+
+Hand-curated deep-dives for specific models — variation tables (GGUF, LoRA, finetunes, auxiliary components) that don't fit the one-row-per-model comparison cards above.
+
+- [ACE-Step — Open-Source Music Generation Family](./decks/ace-step.md)
+
 ---
 
 ## Contributing
