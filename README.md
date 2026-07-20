@@ -167,6 +167,382 @@ A curated list of open-source music generation models for audio and song synthes
 [![Website][link-website]](https://ace-step.github.io/ace-step-v1.5.github.io/)
 [![arXiv][link-arxiv]](https://arxiv.org/abs/2602.00744)
 
+---
+
+# ACE-Step — Open-Source Music Generation Family
+
+<details>
+<summary><b>Table of Contents</b></summary>
+
+* [Models](#models)
+* [Language & Auxiliary Models](#auxiliary)
+* [GGUF / Quants & Merges](#finetunes)
+* [Tools & Apps](#tools)
+* [Finetunes & LoRA](#lora-section)
+  * [Merges](#merges)
+  * [LoRA (Community)](#lora)
+
+</details>
+
+<a id="models"></a>
+
+## ▓ Models
+
+| Ver | Regime | Variant | DiT | Download |
+| :--- | :--- | :--- | :---: | :--- |
+| **v1** | ![Base][badge-base] | — | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/ACE-Step-v1-3.5B) |
+| | | | | |
+| **1.5** | ![Base][badge-base] | — | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-base) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_base.safetensors) |
+| **1.5** | ![SFT][badge-sft] | — | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-sft) |
+| **1.5** | ![Canonical][badge-canonical] | — | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/Ace-Step1.5) |
+| **1.5** | ![Turbo][badge-turbo] | ![Continuous][badge-turbo-continuous] | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-turbo-continuous) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_turbo.safetensors) |
+| **1.5** | ![Turbo][badge-turbo] | ![Shift-1][badge-turbo-shift1] | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-turbo-shift1) |
+| **1.5** | ![Turbo][badge-turbo] | ![Shift-3][badge-turbo-shift3] | ![3.5B][badge-3.5B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-turbo-shift3) |
+| **1.5** | ![Merged][badge-merged] | turbo AIO | ![3.5B][badge-3.5B] | [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/checkpoints/ace_step_1.5_turbo_aio.safetensors) |
+| | | | | |
+| **1.5 XL** | ![Base][badge-base] | — | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-xl-base) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_base_bf16.safetensors) |
+| **1.5 XL** | ![SFT][badge-sft] | — | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-xl-sft) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_sft_bf16.safetensors) |
+| **1.5 XL** | ![Turbo][badge-turbo] | ![Shift-1][badge-turbo-shift1] | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors) |
+
+
+<a id="auxiliary"></a>
+
+## ▓ Language & Auxiliary Models
+
+| Ver | Model | Purpose | DiT | Download |
+| :--- | :--- | :--- | :---: | :--- |
+| **1.5** | `acestep-5Hz-lm-0.6B` | Language model (5 Hz) | ![0.6B][badge-0.6B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_0.6b_ace15.safetensors) |
+| **1.5** | `acestep-5Hz-lm-1.7B` | Language model (5 Hz) | — | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-5Hz-lm-1.7B) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_1.7b_ace15.safetensors) |
+| **1.5** | `acestep-5Hz-lm-4B` | Language model (5 Hz) | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-5Hz-lm-4B) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/text_encoders/qwen_4b_ace15.safetensors) |
+| **1.5** | `acestep-captioner` | Music captioner (training data labeling) | — | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-captioner) |
+| **1.5** | `ace-step-v1.5-1d-vae-stable-audio-format` | 1D VAE (latent ↔ StableAudio tokens) | — | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/ace-step-v1.5-1d-vae-stable-audio-format) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors) |
+| **1.5** | `Ace-Step-1.5-ScragVAE` | Custom VAE (audio-to-audio, alt decoder) | — | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-ScragVAE) |
+| **1.5** | `ACEStep-XL-Regrind-V1` | XL regrind / refit variant | ![4B][badge-4B] | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1) |
+| **1.5** | `ace-step-v1.5-1d-vae-stable-audio-format` (rAVEUK) | 1D VAE (community mirror) | — | [![][gh-rAVEUK]](https://huggingface.co/rAVEUK/ace-step-v1.5-1d-vae-stable-audio-format) |
+
+<a id="finetunes"></a>
+
+## ▓ GGUF / Quants & Merges
+
+### ▣ GGUF Quantized Models
+
+Optimized for lower memory; load as transformer-only in ComfyUI.
+
+<details>
+  <summary>Serveurperso — ACE-Step 1.5 GGUF (full set)</summary>
+
+#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 (3.5B DiT)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| acestep-v15-base | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-base-BF16.gguf) |
+| acestep-v15-base | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-base-Q4_K_M.gguf) |
+| acestep-v15-base | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-base-Q5_K_M.gguf) |
+| acestep-v15-base | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-base-Q6_K.gguf) |
+| acestep-v15-base | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-base-Q8_0.gguf) |
+| acestep-v15-sft | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sft-BF16.gguf) |
+| acestep-v15-sft | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sft-Q4_K_M.gguf) |
+| acestep-v15-sft | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sft-Q5_K_M.gguf) |
+| acestep-v15-sft | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sft-Q6_K.gguf) |
+| acestep-v15-sft | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sft-Q8_0.gguf) |
+| acestep-v15-turbo | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-BF16.gguf) |
+| acestep-v15-turbo | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q4_K_M.gguf) |
+| acestep-v15-turbo | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q5_K_M.gguf) |
+| acestep-v15-turbo | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q6_K.gguf) |
+| acestep-v15-turbo | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-Q8_0.gguf) |
+| acestep-v15-turbo-continuous | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-continuous-BF16.gguf) |
+| acestep-v15-turbo-continuous | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-continuous-Q4_K_M.gguf) |
+| acestep-v15-turbo-continuous | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-continuous-Q5_K_M.gguf) |
+| acestep-v15-turbo-continuous | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-continuous-Q6_K.gguf) |
+| acestep-v15-turbo-continuous | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-continuous-Q8_0.gguf) |
+| acestep-v15-turbo-shift1 | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift1-BF16.gguf) |
+| acestep-v15-turbo-shift1 | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift1-Q4_K_M.gguf) |
+| acestep-v15-turbo-shift1 | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift1-Q5_K_M.gguf) |
+| acestep-v15-turbo-shift1 | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift1-Q6_K.gguf) |
+| acestep-v15-turbo-shift1 | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift1-Q8_0.gguf) |
+| acestep-v15-turbo-shift3 | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift3-BF16.gguf) |
+| acestep-v15-turbo-shift3 | ![Q4_K_M][badge-Q4_K_M] | 1.45 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift3-Q4_K_M.gguf) |
+| acestep-v15-turbo-shift3 | ![Q5_K_M][badge-Q5_K_M] | 1.70 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift3-Q5_K_M.gguf) |
+| acestep-v15-turbo-shift3 | ![Q6_K][badge-Q6_K] | 1.97 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift3-Q6_K.gguf) |
+| acestep-v15-turbo-shift3 | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-turbo-shift3-Q8_0.gguf) |
+| acestep-v15-sftturbo50 | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sftturbo50-BF16.gguf) |
+| acestep-v15-sftturbo50 | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sftturbo50-Q8_0.gguf) |
+
+#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 XL (4B DiT)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| acestep-v15-xl-base | ![BF16][badge-BF16] | 9.98 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-base-BF16.gguf) |
+| acestep-v15-xl-base | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-base-Q4_K_M.gguf) |
+| acestep-v15-xl-base | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-base-Q5_K_M.gguf) |
+| acestep-v15-xl-base | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-base-Q6_K.gguf) |
+| acestep-v15-xl-base | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-base-Q8_0.gguf) |
+| acestep-v15-xl-sft | ![BF16][badge-BF16] | 9.98 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sft-BF16.gguf) |
+| acestep-v15-xl-sft | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sft-Q4_K_M.gguf) |
+| acestep-v15-xl-sft | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sft-Q5_K_M.gguf) |
+| acestep-v15-xl-sft | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sft-Q6_K.gguf) |
+| acestep-v15-xl-sft | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sft-Q8_0.gguf) |
+| acestep-v15-xl-turbo | ![BF16][badge-BF16] | 9.98 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-turbo-BF16.gguf) |
+| acestep-v15-xl-turbo | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-turbo-Q4_K_M.gguf) |
+| acestep-v15-xl-turbo | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-turbo-Q5_K_M.gguf) |
+| acestep-v15-xl-turbo | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-turbo-Q6_K.gguf) |
+| acestep-v15-xl-turbo | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-turbo-Q8_0.gguf) |
+| acestep-v15-xl-sftturbo50 | ![BF16][badge-BF16] | 9.98 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-BF16.gguf) |
+| acestep-v15-xl-sftturbo50 | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q4_K_M.gguf) |
+| acestep-v15-xl-sftturbo50 | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q5_K_M.gguf) |
+| acestep-v15-xl-sftturbo50 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q6_K.gguf) |
+| acestep-v15-xl-sftturbo50 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q8_0.gguf) |
+
+#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — Language models / VAE
+
+| Component | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| Qwen3-Embedding-0.6B | ![BF16][badge-BF16] | 1.20 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/Qwen3-Embedding-0.6B-BF16.gguf) |
+| Qwen3-Embedding-0.6B | ![Q8_0][badge-Q8_0] | 0.78 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/Qwen3-Embedding-0.6B-Q8_0.gguf) |
+| acestep-5Hz-lm-0.6B | ![BF16][badge-BF16] | 1.33 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-0.6B-BF16.gguf) |
+| acestep-5Hz-lm-0.6B | ![Q8_0][badge-Q8_0] | 0.71 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-0.6B-Q8_0.gguf) |
+| acestep-5Hz-lm-1.7B | ![BF16][badge-BF16] | 3.71 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-1.7B-BF16.gguf) |
+| acestep-5Hz-lm-1.7B | ![Q8_0][badge-Q8_0] | 1.98 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-1.7B-Q8_0.gguf) |
+| acestep-5Hz-lm-4B | ![BF16][badge-BF16] | 8.38 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-4B-BF16.gguf) |
+| acestep-5Hz-lm-4B | ![Q5_K_M][badge-Q5_K_M] | 3.03 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-4B-Q5_K_M.gguf) |
+| acestep-5Hz-lm-4B | ![Q6_K][badge-Q6_K] | 3.44 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-4B-Q6_K.gguf) |
+| acestep-5Hz-lm-4B | ![Q8_0][badge-Q8_0] | 4.46 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-5Hz-lm-4B-Q8_0.gguf) |
+| vae | ![BF16][badge-BF16] | 0.34 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/vae-BF16.gguf) |
+
+</details>
+
+<details>
+  <summary>scragnog — ACE-Step 1.5 MXFP4 Quants</summary>
+
+#### [scragnog Ace-Step-1.5-MXFP4-Quants](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| acestep-v15-base | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-base-MXFP4.gguf) |
+| acestep-v15-sft | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-sft-MXFP4.gguf) |
+| acestep-v15-sftturbo50 | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-sftturbo50-MXFP4.gguf) |
+| acestep-v15-turbo | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-turbo-MXFP4.gguf) |
+| acestep-v15-turbo-continuous | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-turbo-continuous-MXFP4.gguf) |
+| acestep-v15-turbo-shift1 | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-turbo-shift1-MXFP4.gguf) |
+| acestep-v15-turbo-shift3 | ![MXFP4][badge-nvfp4] | 1.28 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-turbo-shift3-MXFP4.gguf) |
+| acestep-v15-xl-base | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-xl-base-MXFP4.gguf) |
+| acestep-v15-xl-sft | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-xl-sft-MXFP4.gguf) |
+| acestep-v15-xl-sftturbo50 | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-xl-sftturbo50-MXFP4.gguf) |
+| acestep-v15-xl-turbo | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-xl-turbo-MXFP4.gguf) |
+| acestep-v15-merge-base-turbo-xl-ta-0.5 | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-MXFP4.gguf) |
+| acestep-v15-merge-sft-turbo-xl-ta-0.3 | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-MXFP4.gguf) |
+| acestep-v15-merge-sft-turbo-xl-ta-0.7 | ![MXFP4][badge-nvfp4] | 2.66 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-MXFP4.gguf) |
+
+</details>
+
+<details>
+  <summary>hrktxz — ACE-Step 1.5 int8 convrot (ComfyUI)</summary>
+
+#### [hrktxz ACE_Step_1.5_ComfyUI_int8_convrot](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| acestep_v1.5_base | ![int8][badge-int8mixedtensorwise] | 2.40 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_base_int8_convrot.safetensors) |
+| acestep_v1.5_turbo | ![int8][badge-int8mixedtensorwise] | 2.40 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_turbo_int8_convrot.safetensors) |
+| acestep_v1.5_xl_base | ![int8][badge-int8mixedtensorwise] | 4.99 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_xl_base_int8_convrot.safetensors) |
+| acestep_v1.5_xl_sft | ![int8][badge-int8mixedtensorwise] | 4.99 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_xl_sft_int8_convrot.safetensors) |
+| acestep_v1.5_xl_sft_turbo | ![int8][badge-int8mixedtensorwise] | 4.99 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_xl_sft_turbo_int8_convrot.safetensors) |
+| acestep_v1.5_xl_turbo | ![int8][badge-int8mixedtensorwise] | 4.99 GB | [![][gh-hrktxz]](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot/resolve/main/acestep_v1.5_xl_turbo_int8_convrot.safetensors) |
+
+</details>
+
+<details>
+  <summary>mingyi456 — ACE-Step 1.5 XL DF11 (ComfyUI)</summary>
+
+#### [mingyi456 Ace-Step1.5-XL-DF11-ComfyUI](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| acestep_v1.5_xl_base | ![BF16][badge-BF16] | 6.80 GB | [![][gh-mingyi456]](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI/resolve/main/acestep_v1.5_xl_base_bf16-DF11.safetensors) |
+| acestep_v1.5_xl_sft | ![BF16][badge-BF16] | 6.80 GB | [![][gh-mingyi456]](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI/resolve/main/acestep_v1.5_xl_sft_bf16-DF11.safetensors) |
+| acestep_v1.5_xl_turbo | ![BF16][badge-BF16] | 6.80 GB | [![][gh-mingyi456]](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI/resolve/main/acestep_v1.5_xl_turbo_bf16-DF11.safetensors) |
+
+</details>
+
+<a id="tools"></a>
+
+## ▓ Tools & Apps
+
+* [acestep.vst3](https://github.com/ace-step/acestep.vst3) — ACE-Step VST3 plugin for DAWs.
+* [acestep.cpp](https://github.com/ServeurpersoCom/acestep.cpp) — C++ inference engine for ACE-Step.
+* [ACE-Step Transcriber](https://huggingface.co/ACE-Step/acestep-transcriber) — audio transcription model (audio-text-to-text).
+
+<a id="lora-section"></a>
+
+## ▓ Finetunes & LoRA
+
+<a id="merges"></a>
+
+### ▣ Merges
+
+#### [jeankassio acestep_v1.5_merge_sft_turbo_xl](https://huggingface.co/jeankassio/acestep_v1.5_merge_sft_turbo_xl)
+
+| Model | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| merge sft+turbo+xl ta-0.5 | ![BF16][badge-BF16] | 19.95 GB | [![][gh-jeankassio]](https://huggingface.co/jeankassio/acestep_v1.5_merge_sft_turbo_xl/resolve/main/acestep_v1.5_merge_sft_turbo_xl_ta_0.5.safetensors) |
+
+#### [scragnog ace-step-1.5-gguf-merge-models](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models)
+
+| Merge | Variant | Quant | Size | Download |
+| :--- | :--- | :---: | :---: | :---: |
+| Base SFT | XL ta 0.5 | ![BF16][badge-BF16] | 9.98 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-sft-xl-ta-0.5-BF16.gguf) |
+| Base SFT | XL ta 0.5 | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-sft-xl-ta-0.5-Q4_K_M.gguf) |
+| Base SFT | XL ta 0.5 | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-sft-xl-ta-0.5-Q5_K_M.gguf) |
+| Base SFT | XL ta 0.5 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-sft-xl-ta-0.5-Q6_K.gguf) |
+| Base SFT | XL ta 0.5 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-sft-xl-ta-0.5-Q8_0.gguf) |
+| Base Turbo | XL ta 0.5 | ![BF16][badge-BF16] | 9.98 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-BF16.gguf) |
+| Base Turbo | XL ta 0.5 | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-Q4_K_M.gguf) |
+| Base Turbo | XL ta 0.5 | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-Q5_K_M.gguf) |
+| Base Turbo | XL ta 0.5 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-Q6_K.gguf) |
+| Base Turbo | XL ta 0.5 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-base-turbo-xl-ta-0.5-Q8_0.gguf) |
+| SFT Turbo | XL ta 0.3 | ![BF16][badge-BF16] | 9.98 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-BF16.gguf) |
+| SFT Turbo | XL ta 0.3 | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-Q4_K_M.gguf) |
+| SFT Turbo | XL ta 0.3 | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-Q5_K_M.gguf) |
+| SFT Turbo | XL ta 0.3 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-Q6_K.gguf) |
+| SFT Turbo | XL ta 0.3 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.3-Q8_0.gguf) |
+| SFT Turbo | XL ta 0.7 | ![BF16][badge-BF16] | 9.98 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-BF16.gguf) |
+| SFT Turbo | XL ta 0.7 | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q4_K_M.gguf) |
+| SFT Turbo | XL ta 0.7 | ![Q5_K_M][badge-Q5_K_M] | 3.53 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q5_K_M.gguf) |
+| SFT Turbo | XL ta 0.7 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q6_K.gguf) |
+| SFT Turbo | XL ta 0.7 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q8_0.gguf) |
+
+<a id="lora"></a>
+
+### ▣ LoRA (Community)
+
+#### ❖ HuggingFace
+
+| Name | Desc | Link |
+| :--- | :--- | :--- |
+| `aworldofhate_adarkerworld` | Darker / aggressive aesthetic style (ACE-Step 1.5) | [![][gh-DeadSoulInside]](https://huggingface.co/DeadSoulInside/aworldofhate_adarkerworld) |
+| `ACE-Step-v1-chinese-rap-LoRA` | Chinese rap style (ACE-Step v1) | [![][gh-Tuananh20015]](https://huggingface.co/Tuananh20015/ACE-Step-v1-chinese-rap-LoRA) |
+| `ACE-Step Audio Steering Suite` | Audio steering / control suite (collection) | [![][gh-lukasz]](https://huggingface.co/collections/lukasz-staniszewski/ace-step-audio-steering-suite) |
+| `Ace-Step-1.5-XL-Concept-Sliders` | Concept sliders for XL (style/strength control) | [![][gh-Xanthius]](https://huggingface.co/Xanthius/Ace-Step-1.5-XL-Concept-Sliders) |
+| `ACE-Step-xl-base-pop-electro-lora` | Pop / electro (XL Base) | [![][gh-Nekochu]](https://huggingface.co/Nekochu/ACE-Step-xl-base-pop-electro-lora) |
+| `russian-pop-lora` | Russian pop | [![][gh-kemendev]](https://huggingface.co/kemendev/russian-pop-lora) |
+| `ACE-Step-v1.5-Kawaii_Future_Bass-LoRA` | Kawaii future bass | [![][gh-NoyzeAI]](https://huggingface.co/NoyzeAI/ACE-Step-v1.5-Kawaii_Future_Bass-LoRA) |
+| `ACE-Step-v1.5-raspy-vocal-and-instrumental-5-LoRAs` | Raspy vocal + instrumental set (5 LoRAs) | [![][gh-DisturbingTheField]](https://huggingface.co/DisturbingTheField/ACE-Step-v1.5-raspy-vocal-and-instrumental-5-LoRAs) |
+| `ACE-Step-v1.5-ambient_dream1-LoRA` | Ambient dream | [![][gh-DisturbingTheField]](https://huggingface.co/DisturbingTheField/ACE-Step-v1.5-ambient_dream1-LoRA) |
+| `davesnow1/Loras` | Mixed LoRA collection (folder) | [![][gh-davesnow1]](https://huggingface.co/davesnow1/Loras/tree/main) |
+| `ACE-Step-1.5-Naija-Legacy-Rhythms-LoRA-v1` | Nigerian legacy rhythms | [![][gh-David-A-Amoo]](https://huggingface.co/David-A-Amoo/ACE-Step-1.5-Naija-Legacy-Rhythms-LoRA-v1) |
+| `ACE-Step-v1.5-acoustic-guitar-and-a-merge-LoRA` | Acoustic guitar + merge | [![][gh-DisturbingTheField]](https://huggingface.co/DisturbingTheField/ACE-Step-v1.5-acoustic-guitar-and-a-merge-LoRA) |
+| `Acestep1.5-qinglong-lokr` | Qinglong LoKR (Chinese dragon style) | [![][gh-bdsqlsz]](https://huggingface.co/bdsqlsz/Acestep1.5-qinglong-lokr) |
+| `ACE-STEP-1.5v-rain-techno-lora` | Rain techno | [![][gh-tarn59]](https://huggingface.co/tarn59/ACE-STEP-1.5v-rain-techno-lora) |
+| `Afrobeat_Urban_v1_ACESTEP_V1.5SFT` | Afrobeat / urban (v1.5 SFT) | [![][gh-walkis]](https://huggingface.co/walkis/Afrobeat_Urban_v1_ACESTEP_V1.5SFT) |
+| `acestep-lora-cryda` | Cryda style | [![][gh-duckdbot]](https://huggingface.co/duckdbot/acestep-lora-cryda) |
+| `RagaLoRA-indian-music-ace-step` | Indian raga music | [![][gh-veeceey]](https://huggingface.co/veeceey/RagaLoRA-indian-music-ace-step) |
+| `russianrap-v3-lora` | Russian rap (v3) | [![][gh-ruslanmusinrusmus]](https://huggingface.co/ruslanmusinrusmus/russianrap-v3-lora) |
+| `ACE-Step1.5-Zulu-Finteuned` | Zulu music finetune | [![][gh-Gyimah3]](https://huggingface.co/Gyimah3/ACE-Step1.5-Zulu-Finteuned) |
+| `AceStep_Refine_Redmond` | Refine / polish | [![][gh-artificialguybr]](https://huggingface.co/artificialguybr/AceStep_Refine_Redmond) |
+| `macan-lora-v6-acestep-v15` | Macan style (v6) | [![][gh-ruslanmusinrusmus]](https://huggingface.co/ruslanmusinrusmus/macan-lora-v6-acestep-v15) |
+| `acestep-cinematic-soundtrack` | Cinematic soundtrack | [![][gh-Notid]](https://huggingface.co/Notid/acestep-cinematic-soundtrack) |
+| `acestep-lofi-lora` | Lo-fi | [![][gh-pedroapfilho]](https://huggingface.co/pedroapfilho/acestep-lofi-lora) |
+| `smoki-lofi-acestep1.5` | Lo-fi | [![][gh-smoki9999]](https://huggingface.co/smoki9999/smoki-lofi-acestep1.5) |
+| `super_eurobeats_ACE_STEP-1.5-lora` | Eurobeat (Initial D style) | [![][gh-tarn59]](https://huggingface.co/tarn59/super_eurobeats_ACE_STEP-1.5-lora) |
+| `Totally-Generic-LoFi-Hip-Hop-LoKr` | Lo-fi hip-hop; analog sound, trigger: Portishead | [![][gh-Urabewe]](https://huggingface.co/Urabewe/Totally-Generic-LoFi-Hip-Hop-LoKr) |
+
+#### ❖ Civitai
+
+Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — genre DoRA set for ACE-Step 1.5 Base (prompt-driven, no trigger token).
+
+| Name | Desc | Link |
+| :--- | :--- | :--- |
+| `DEATHSTEP` | Experimental deathstep (ComfyUI-FL-AceStep training) | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2716799) |
+| `FUNK_A2B` | Funk | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2981735) |
+| `AMBIENT_A` | Ambient | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2981749) |
+| `DEEPHOUSE_A` | Deep house | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2981752) |
+| `PHONK_A` | Phonk | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2982033) |
+| `DEATHCORE_C` | Deathcore | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2998842) |
+| `ALTPOP_A` | Alt-pop | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2999417) |
+| `BLUES_A` | Blues | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=2999441) |
+| `ALTERNATIVEMETAL_A` | Alternative metal | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002467) |
+| `ALTERNATIVEROCK_B` | Alternative rock | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002472) |
+| `AMBIENT_B` | Ambient | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002473) |
+| `AMERICANA_A` | Americana | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002475) |
+| `ARTPOP_A` | Art pop | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002476) |
+| `BREAKBEAT_A` | Breakbeat | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002479) |
+| `BREAKCORE_A` | Breakcore | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002480) |
+| `CHILLWAVE_A` | Chillwave | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002482) |
+| `CHILL_A` | Chill | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002484) |
+| `CHIPTUNE_A` | Chiptune | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002485) |
+| `CINEMATICPOP_A` | Cinematic pop | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002487) |
+| `CLASSICAL_A` | Classical | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002490) |
+| `COMEDY_A` | Comedy | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002491) |
+| `COUNTRY_A` | Country | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3002493) |
+| `FUNK_A` | Funk | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3004478) |
+| `ACOUSTIC_A` | Acoustic | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3024410) |
+| `ALTERNATIVEROCK_A` | Alternative rock | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3024450) |
+| `ALTERNATIVE_A` | Alternative | [![][civitai]](https://civitai.com/models/2416425/acestep-loras?modelVersionId=3024451) |
+| `Deep House Vocal` | Deep house vocal (ACE-Step 1.5 XL Base V2) | [![][civitai]](https://civitai.com/models/2648802/deep-house-vocal-acestep-v15-xl-base-v2?modelVersionId=2974219) |
+| `Minimal Techno Overdrive` | Minimal techno (ACE-Step 1.5 XL Base) | [![][civitai]](https://civitai.com/models/2642635/minimal-techno-overdrive-lora-ace-step-v15-xl-base?modelVersionId=2967308) |
+| `AceStep TranceDance` | Trance dance | [![][civitai]](https://civitai.com/models/2637950/acesteptrancedancev1?modelVersionId=2961844) |
+| `Dark Techno Sub-Bass Rumble` | Dark techno sub-bass (ACE-Step 1.5 XL) | [![][civitai]](https://civitai.com/models/2631092/dark-techno-sub-bass-rumble-ace-step-15-xl?modelVersionId=2954080) |
+| `ACE-Step 1.5 Psytrance` | Psytrance (v2.0) | [![][civitai]](https://civitai.com/models/2624128/ace-step-15-psytrance-lora-ver-20?modelVersionId=2946188) |
+| `AceStep 8-bit` | 8-bit chiptune | [![][civitai]](https://civitai.com/models/2611058/acestep8bitv1?modelVersionId=2931802) |
+| `1951-1964` | Vintage 1951-1964 (ACE-Step 1.5 Base) | [![][civitai]](https://civitai.com/models/2585761/1951-1964-ace-step-15-base-lora?modelVersionId=2931399) |
+| `ACE-STEP 80's Citypop` | 80s citypop | [![][civitai]](https://civitai.com/models/1646967/ace-step-80s-citypop-lora?modelVersionId=1864132) |
+| `Super Eurobeats (ACEStep 1.5 XL)` | 90s Eurobeat, Initial D style (XL Base) | [![][civitai]](https://civitai.com/models/2702491/super-eurobeats-acestep-15-xl?modelVersionId=3034855) |
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[gh-ACE-Step]: https://img.shields.io/badge/ACE--Step-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-scragnog]: https://img.shields.io/badge/scragnog-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-mdmachine]: https://img.shields.io/badge/mdmachine-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-rAVEUK]: https://img.shields.io/badge/rAVEUK-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-hrktxz]: https://img.shields.io/badge/hrktxz-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Serveurperso]: https://img.shields.io/badge/Serveurperso-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-mingyi456]: https://img.shields.io/badge/mingyi456-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-jeankassio]: https://img.shields.io/badge/jeankassio-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Comfy-Org]: https://img.shields.io/badge/Comfy--Org-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+
+[badge-0.6B]: https://img.shields.io/badge/0.6B-0077cc?style=flat-square
+[badge-3.5B]: https://img.shields.io/badge/3.5B-0077cc?style=flat-square
+[badge-4B]: https://img.shields.io/badge/4B-e05d44?style=flat-square
+
+[badge-base]: https://img.shields.io/badge/Base-0077cc?style=flat-square
+[badge-sft]: https://img.shields.io/badge/SFT-28a745?style=flat-square
+[badge-canonical]: https://img.shields.io/badge/Canonical-dfb317?style=flat-square
+[badge-turbo]: https://img.shields.io/badge/Turbo-e05d44?style=flat-square
+[badge-turbo-continuous]: https://img.shields.io/badge/Continuous-e05d44?style=flat-square
+[badge-turbo-shift1]: https://img.shields.io/badge/Shift--1-17a2b8?style=flat-square
+[badge-turbo-shift3]: https://img.shields.io/badge/Shift--3-97c00f?style=flat-square
+[badge-merged]: https://img.shields.io/badge/Merged-6f42c1?style=flat-square
+
+[badge-BF16]: https://img.shields.io/badge/BF16-0077cc?style=flat-square
+[badge-Q4_K_M]: https://img.shields.io/badge/Q4__K__M-dfb317?style=flat-square
+[badge-Q5_K_M]: https://img.shields.io/badge/Q5__K__M-97c00f?style=flat-square
+[badge-Q6_K]: https://img.shields.io/badge/Q6__K-0077cc?style=flat-square
+[badge-Q8_0]: https://img.shields.io/badge/Q8__0-28a745?style=flat-square
+[badge-nvfp4]: https://img.shields.io/badge/MXFP4-6f42c1?style=flat-square
+[badge-int8mixedtensorwise]: https://img.shields.io/badge/int8-17a2b8?style=flat-square
+
+[gh-DeadSoulInside]: https://img.shields.io/badge/DeadSoulInside-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Tuananh20015]: https://img.shields.io/badge/Tuananh20015-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-lukasz]: https://img.shields.io/badge/lukasz--staniszewski-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Xanthius]: https://img.shields.io/badge/Xanthius-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Nekochu]: https://img.shields.io/badge/Nekochu-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-kemendev]: https://img.shields.io/badge/kemendev-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-NoyzeAI]: https://img.shields.io/badge/NoyzeAI-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-DisturbingTheField]: https://img.shields.io/badge/DisturbingTheField-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-davesnow1]: https://img.shields.io/badge/davesnow1-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-David-A-Amoo]: https://img.shields.io/badge/David--A--Amoo-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-bdsqlsz]: https://img.shields.io/badge/bdsqlsz-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-tarn59]: https://img.shields.io/badge/tarn59-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-walkis]: https://img.shields.io/badge/walkis-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-duckdbot]: https://img.shields.io/badge/duckdbot-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-veeceey]: https://img.shields.io/badge/veeceey-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-ruslanmusinrusmus]: https://img.shields.io/badge/ruslanmusinrusmus-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Gyimah3]: https://img.shields.io/badge/Gyimah3-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-artificialguybr]: https://img.shields.io/badge/artificialguybr-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Notid]: https://img.shields.io/badge/Notid-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-pedroapfilho]: https://img.shields.io/badge/pedroapfilho-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-smoki9999]: https://img.shields.io/badge/smoki9999-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Urabewe]: https://img.shields.io/badge/Urabewe-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[civitai]: https://img.shields.io/badge/Civitai-ea2d6f?style=flat-square
 </details>
 <!-- /MODEL:ace-step-15.md -->
 <!-- MODEL:uni-moe-audio.md -->
@@ -712,12 +1088,6 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 Community-maintained leaderboards for tracking and comparing music generation models.
 
 - [Artificial Analysis — Music Leaderboard](https://artificialanalysis.ai/music/leaderboard) — Elo-based arena for music generation systems, ranking models on prompt fidelity, audio quality, and genre coverage.
-
-### Extended Model Guides
-
-Hand-curated deep-dives for specific models — variation tables (GGUF, LoRA, finetunes, auxiliary components) that don't fit the one-row-per-model comparison cards above.
-
-- [ACE-Step — Open-Source Music Generation Family](./decks/ace-step.md)
 
 ---
 
