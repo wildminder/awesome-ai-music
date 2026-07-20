@@ -2,7 +2,7 @@
 
 A curated list of open-source music generation models for audio and song synthesis. Models are sorted by release date (newest first).
 
----
+<p align="center">· · · · ❖ · · · ·</p>
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ A curated list of open-source music generation models for audio and song synthes
 - [Audio-Language Models (Audio Understanding)](#audio-language-models-audio-understanding)
 - [Additional Resources](#additional-resources)
 
----
+<p align="center">· · · · ❖ · · · ·</p>
 
 ## Music Generation Models
 
@@ -68,6 +68,9 @@ A curated list of open-source music generation models for audio and song synthes
 
 </details>
 <!-- /MODEL:magenta-realtime-2.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:lmdm.md -->
 <details id="lmdm">
 <summary>Live Music Diffusion Models (LMDM)</summary>
@@ -102,6 +105,9 @@ A curated list of open-source music generation models for audio and song synthes
 
 </details>
 <!-- /MODEL:lmdm.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:tiny-mozart-v2-85m.md -->
 <details id="tiny-mozart-v2-85m">
 <summary>TinyMozart v2 85M</summary>
@@ -132,6 +138,9 @@ A curated list of open-source music generation models for audio and song synthes
 
 </details>
 <!-- /MODEL:tiny-mozart-v2-85m.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:ace-step-15.md -->
 <details id="ace-step-15">
 <summary>ACE-Step 1.5</summary>
@@ -184,6 +193,8 @@ A curated list of open-source music generation models for audio and song synthes
 
 </details>
 
+<p align="center">· · · · · · · ·</p>
+
 <a id="models"></a>
 
 ## ▓ Models
@@ -205,6 +216,8 @@ A curated list of open-source music generation models for audio and song synthes
 | **1.5 XL** | ![Turbo][badge-turbo] | ![Shift-1][badge-turbo-shift1] | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors) |
 
 
+<p align="center">· · · · · · · ·</p>
+
 <a id="auxiliary"></a>
 
 ## ▓ Language & Auxiliary Models
@@ -219,6 +232,8 @@ A curated list of open-source music generation models for audio and song synthes
 | **1.5** | `Ace-Step-1.5-ScragVAE` | Custom VAE (audio-to-audio, alt decoder) | — | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-ScragVAE) |
 | **1.5** | `ACEStep-XL-Regrind-V1` | XL regrind / refit variant | ![4B][badge-4B] | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1) |
 | **1.5** | `ace-step-v1.5-1d-vae-stable-audio-format` (rAVEUK) | 1D VAE (community mirror) | — | [![][gh-rAVEUK]](https://huggingface.co/rAVEUK/ace-step-v1.5-1d-vae-stable-audio-format) |
+
+<p align="center">· · · · · · · ·</p>
 
 <a id="finetunes"></a>
 
@@ -364,6 +379,8 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 
 </details>
 
+<p align="center">· · · · · · · ·</p>
+
 <a id="tools"></a>
 
 ## ▓ Tools & Apps
@@ -371,6 +388,8 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 * [acestep.vst3](https://github.com/ace-step/acestep.vst3) — ACE-Step VST3 plugin for DAWs.
 * [acestep.cpp](https://github.com/ServeurpersoCom/acestep.cpp) — C++ inference engine for ACE-Step.
 * [ACE-Step Transcriber](https://huggingface.co/ACE-Step/acestep-transcriber) — audio transcription model (audio-text-to-text).
+
+<p align="center">· · · · · · · ·</p>
 
 <a id="lora-section"></a>
 
@@ -411,6 +430,8 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | SFT Turbo | XL ta 0.7 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q6_K.gguf) |
 | SFT Turbo | XL ta 0.7 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q8_0.gguf) |
 
+<p align="center">· · · · ·</p>
+
 <a id="lora"></a>
 
 ### ▣ LoRA (Community)
@@ -445,6 +466,8 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | `smoki-lofi-acestep1.5` | Lo-fi | [![][gh-smoki9999]](https://huggingface.co/smoki9999/smoki-lofi-acestep1.5) |
 | `super_eurobeats_ACE_STEP-1.5-lora` | Eurobeat (Initial D style) | [![][gh-tarn59]](https://huggingface.co/tarn59/super_eurobeats_ACE_STEP-1.5-lora) |
 | `Totally-Generic-LoFi-Hip-Hop-LoKr` | Lo-fi hip-hop; analog sound, trigger: Portishead | [![][gh-Urabewe]](https://huggingface.co/Urabewe/Totally-Generic-LoFi-Hip-Hop-LoKr) |
+
+<p align="center">· · ·</p>
 
 #### ❖ Civitai
 
@@ -545,6 +568,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 [civitai]: https://img.shields.io/badge/Civitai-ea2d6f?style=flat-square
 </details>
 <!-- /MODEL:ace-step-15.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:uni-moe-audio.md -->
 <details id="uni-moe-audio">
 <summary>Uni-MoE (Audio)</summary>
@@ -575,6 +601,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 
 </details>
 <!-- /MODEL:uni-moe-audio.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:magenta-realtime.md -->
 <details id="magenta-realtime">
 <summary>Magenta Realtime</summary>
@@ -608,6 +637,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 
 </details>
 <!-- /MODEL:magenta-realtime.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:foundation-1.md -->
 <details id="foundation-1">
 <summary>Foundation-1</summary>
@@ -640,6 +672,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 
 </details>
 <!-- /MODEL:foundation-1.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:levo-2.md -->
 <details id="levo-2">
 <summary>LeVo 2 (SongGeneration 2)</summary>
@@ -673,6 +708,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 
 </details>
 <!-- /MODEL:levo-2.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:music-flamingo.md -->
 <details id="music-flamingo">
 <summary>Music Flamingo</summary>
@@ -703,6 +741,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 
 </details>
 <!-- /MODEL:music-flamingo.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:soulx-singer-music.md -->
 <details id="soulx-singer-music">
 <summary>SoulX-Singer</summary>
@@ -730,7 +771,7 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 </details>
 <!-- /MODEL:soulx-singer-music.md -->
 
----
+<p align="center">· · · · ❖ · · · ·</p>
 
 ## Audio-Language Models (Audio Understanding)
 
@@ -792,6 +833,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:muscriptor.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:tinymu.md -->
 <details id="tinymu">
 <summary>TinyMU</summary>
@@ -828,6 +872,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:tinymu.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:audio-flamingo-3.md -->
 <details id="audio-flamingo-3">
 <summary>Audio Flamingo 3</summary>
@@ -865,6 +912,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:audio-flamingo-3.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:midashenglm.md -->
 <details id="midashenglm">
 <summary>MiDashengLM-7B-0804</summary>
@@ -900,6 +950,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:midashenglm.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:mellow.md -->
 <details id="mellow">
 <summary>Mellow</summary>
@@ -936,6 +989,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:mellow.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:audio-flamingo-2.md -->
 <details id="audio-flamingo-2">
 <summary>Audio Flamingo 2</summary>
@@ -971,6 +1027,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:audio-flamingo-2.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:qwen2-audio.md -->
 <details id="qwen2-audio">
 <summary>Qwen2-Audio-7B-Instruct</summary>
@@ -1007,6 +1066,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:qwen2-audio.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:musilingo.md -->
 <details id="musilingo">
 <summary>MusiLingo</summary>
@@ -1043,6 +1105,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 
 </details>
 <!-- /MODEL:musilingo.md -->
+
+<p align="center">· · · · · · · · · ·</p>
+
 <!-- MODEL:mu-llama.md -->
 <details id="mu-llama">
 <summary>MU-LLaMA</summary>
@@ -1081,7 +1146,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 </details>
 <!-- /MODEL:mu-llama.md -->
 
----
+<p align="center">· · · · ❖ · · · ·</p>
 
 ## Additional Resources
 
@@ -1089,7 +1154,7 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 - [Artificial Analysis — Music Leaderboard](https://artificialanalysis.ai/music/leaderboard) — Elo-based arena for music generation systems, ranking models on prompt fidelity, audio quality, and genre coverage.
 
----
+<p align="center">· · · · ❖ · · · ·</p>
 
 ## Contributing
 
