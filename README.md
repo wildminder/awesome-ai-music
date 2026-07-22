@@ -22,8 +22,11 @@ A curated list of open-source music generation models for audio and song synthes
 | :--- | :---: | :---: | :---: | :--- | :--- |
 | [Magenta RealTime 2](#magenta-realtime-2) | ✅ | text | ✅ | English | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
 | [Live Music Diffusion Models (LMDM)](#lmdm) | ✅ | text | ✅ | - | ![MIT][license-mit] |
+| [Stable Audio 3](#stable-audio-3) | ✅ | text, audio | ❌ | English | ![Stability AI][license-stability-ai] |
 | [TinyMozart v2 85M](#tiny-mozart-v2-85m) | ✅ | unconditional | ❌ | - | ![Unknown][license-unknown] |
 | [ACE-Step 1.5](#ace-step-15) | ✅ | text | ❌ | 50+ | ![MIT][license-mit] |
+| [HeartMuLa](#heartmula) | ✅ | text | ❌ | zh/en/ja/ko/es | ![Apache 2.0][license-apache-2.0] |
+| [Zen Musician](#zen-musician) | ✅ | text | ❌ | English | ![Apache 2.0][license-apache-2.0] |
 | [Uni-MoE (Audio)](#uni-moe-audio) | ✅ | text | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [Magenta Realtime](#magenta-realtime) | ✅ | text | ✅ | - | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
 | [Foundation-1](#foundation-1) | ✅ | text | ❌ | - | ![Stability AI][license-stability-ai] |
@@ -108,6 +111,47 @@ A curated list of open-source music generation models for audio and song synthes
 <p align="center">· · · · · · · · · · · · · ·</p>
 </details>
 <!-- /MODEL:lmdm.md -->
+<!-- MODEL:stable-audio-3.md -->
+<details id="stable-audio-3">
+<summary>Stable Audio 3</summary>
+
+### Stable Audio 3
+
+**Description:** A state-of-the-art open platform for fast, high-quality audio and music generation built around a diffusion transformer and the SAME (Semantic-Acoustic Music Encoder) autoencoder. Ships in four variants — Small-Music, Small-SFX, Medium, and Large (API only) — covering lightweight CPU inference up to the highest-quality 2.7B parameter model. Supports variable-length generation up to 380 seconds and built-in LoRA fine-tuning.
+
+**Release Date:** May 20, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 433M (Small) / 1.4B (Medium) / 2.7B (Large, API only) |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text, audio (audio-to-audio editing + inpainting/continuation) |
+| **Streaming** | ❌ |
+| **Languages** | English |
+| **License** | ![Stability AI][license-stability-ai] |
+| **Duration** | up to 380s (Medium / Large), 120s (Small) |
+| **Sample Rate** | 44.1 kHz stereo, 256-dim latents |
+| **Platforms** | CPU (Small), CUDA / TensorRT (Medium), CoreML / MLX (Apple Silicon) |
+| **Text To Audio** | yes |
+| **Audio To Audio** | yes (editing + inpainting/continuation) |
+| **Lora Training** | yes (built-in `uv sync --extra lora`; MLX LoRA training on Apple Silicon) |
+| **Api Only Variant** | large (2.7B) |
+
+**Features:** Open-weight diffusion transformer paired with the SAME (Semantic-Acoustic Music Encoder) autoencoder — a stereo 44.1 kHz model with 256-dimensional latents optimized for both generative tractability and high-quality reconstruction. Variable-length generation avoids wasting inference time on unused latents, and built-in stackable LoRA personalization runs at small, medium, and large scales (plus a pure-MLX LoRA path on Apple Silicon).
+
+**Links:**
+[![GitHub][link-github]](https://github.com/Stability-AI/stable-audio-3)
+[![HuggingFace][link-huggingface]](https://huggingface.co/collections/stabilityai/stable-audio-3)
+[![HuggingFace][link-huggingface]](https://huggingface.co/collections/stabilityai/stable-audio-3-extra)
+[![Demo][link-demo]](https://huggingface.co/spaces/stabilityai/stable-audio-3)
+[![Blog][link-blog]](https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2605.17991)
+[![LoRA Training][link-lora training]](https://github.com/dada-bots/underfit)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:stable-audio-3.md -->
 <!-- MODEL:tiny-mozart-v2-85m.md -->
 <details id="tiny-mozart-v2-85m">
 <summary>TinyMozart v2 85M</summary>
@@ -468,6 +512,17 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | `smoki-lofi-acestep1.5` | Lo-fi | [![][gh-smoki9999]](https://huggingface.co/smoki9999/smoki-lofi-acestep1.5) |
 | `super_eurobeats_ACE_STEP-1.5-lora` | Eurobeat (Initial D style) | [![][gh-tarn59]](https://huggingface.co/tarn59/super_eurobeats_ACE_STEP-1.5-lora) |
 | `Totally-Generic-LoFi-Hip-Hop-LoKr` | Lo-fi hip-hop; analog sound, trigger: Portishead | [![][gh-Urabewe]](https://huggingface.co/Urabewe/Totally-Generic-LoFi-Hip-Hop-LoKr) |
+| `daft-punk-adapter` | Daft Punk style (multi-epoch checkpoints available) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/daft-punk/daft-punk-adapter.safetensors) |
+| `french-rap-iam` | French rap (IAM group) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/french-rap-iam/french-rap-iam.safetensors) |
+| `hip-hop-anti-bleed-turbo` | Hip-hop anti-bleed (Turbo) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/hip-hop-anti-bleed-turbo/hip-hop-anti-bleed-turbo.safetensors) |
+| `m3l0dysh33p-epoch500` | MelodySheep style (WIP, epoch 500) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/m3l0dysh33p/m3l0dysh33p-epoch500.safetensors) |
+| `monstercat-edm-adapter` | Monstercat-style EDM; trigger: `mstrct` | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/monstercat-edm/monstercat-edm-adapter.safetensors) |
+| `nevermind` | Nirvana Nevermind album; trigger: `nevermind` | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/nevermind/nevermind.safetensors) |
+| `prodigy` | The Prodigy style | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/prodigy/prodigy.safetensors) |
+| `progressive-techno-ag-xl-turbo-best` | Progressive techno; trigger: `JVS` | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/progressive-techno/progressive-techno-ag-xl-turbo-best.safetensors) |
+| `riddim-dnb-underground` | Riddim / DnB / Underground | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/riddim-dnb-underground/riddim-dnb-underground.safetensors) |
+| `snail-house` | Snail's House style (chiptune / 8-bit / electronic) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/snail-house/snail-house.safetensors) |
+| `synth-funk-new-jack-swing` | Synth-funk pop / New Jack Swing (Turbo) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/synth-funk-new-jack-swing/synth-funk-new-jack-swing.pt) |
 
 <p align="center">· · · · · · · · · · · · · ·</p>
 
@@ -567,9 +622,93 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 [gh-pedroapfilho]: https://img.shields.io/badge/pedroapfilho-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-smoki9999]: https://img.shields.io/badge/smoki9999-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-Urabewe]: https://img.shields.io/badge/Urabewe-lightgrey?style=flat-square&logo=huggingface&logoColor=white
+[gh-Wildminder]: https://img.shields.io/badge/Wildminder-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [civitai]: https://img.shields.io/badge/Civitai-ea2d6f?style=flat-square
 </details>
 <!-- /MODEL:ace-step-15.md -->
+<!-- MODEL:heartmula.md -->
+<details id="heartmula">
+<summary>HeartMuLa</summary>
+
+### HeartMuLa
+
+**Description:** A family of open-source music foundation models from HeartMuLa, comprising HeartMuLa (a 3B-param lyrics+tags music language model with multilingual support covering Chinese, English, Japanese, Korean, and Spanish), HeartCodec (a 12.5 Hz music codec for high-fidelity reconstruction), HeartTranscriptor (a Whisper-tuned ASR model for lyrics transcription), and HeartCLAP (audio-text alignment for music description and cross-modal retrieval). The current recommended pre-trained checkpoint is `HeartMuLa-oss-3B-happy-new-year` (Feb 13, 2026), tuned for lyrics controllability; an RL-refined variant `HeartMuLa-RL-oss-3B-20260123` is also published for tighter style/tag control. Reference-audio conditioning, fine-grained control, and a 7B variant are listed as TODO.
+
+**Release Date:** February 13, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 3B (HeartMuLa LM) + HeartCodec decoder |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text (lyrics + comma-separated style tags) |
+| **Streaming** | ❌ |
+| **Languages** | Chinese, English, Japanese, Korean, Spanish |
+| **License** | ![Apache 2.0][license-apache-2.0] |
+| **Duration** | up to 4 min (default `max_audio_length_ms=240000`) |
+| **Architectures** | language model (LM) + codec decoder |
+| **Text To Music** | ✅ |
+| **Lyrics Support** | ✅ |
+| **Family Components** | HeartMuLa (LM), HeartCodec (12.5 Hz), HeartTranscriptor (ASR), HeartCLAP (audio-text) |
+| **Recommended Checkpoint** | HeartMuLa-oss-3B-happy-new-year |
+| **Rl Variant** | HeartMuLa-RL-oss-3B-20260123 (tighter style/tag control) |
+
+**Features:** A single open-source stack for end-to-end music generation: a 3B multilingual lyrics+tags LM that autoregressively emits HeartCodec's 12.5 Hz tokens, paired with a high-fidelity codec decoder — released alongside the rest of the pipeline (HeartTranscriptor for lyrics ASR, HeartCLAP for audio-text alignment) and a benchmark (HeartBeats). Apache 2.0 across repo and all model weights.
+
+**Links:**
+[![GitHub][link-github]](https://github.com/HeartMuLa/heartlib)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/HeartMuLa-RL-oss-3B-20260123)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123)
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/HeartTranscriptor-oss)
+[![Demo][link-demo]](https://huggingface.co/spaces/HeartMuLa/heartmula)
+[![Website][link-website]](https://heartmula.github.io/)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2601.10547)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:heartmula.md -->
+<!-- MODEL:zen-musician.md -->
+<details id="zen-musician">
+<summary>Zen Musician</summary>
+
+### Zen Musician
+
+**Description:** A 7B-param LLaMA-based lyrics-to-song model repackaged by Zen (Hanzo AI / Zoo Labs Foundation) from M-A-P's YuE stage-1 model. It generates the lyric+prompt-conditioned token stream that the YuE pipeline feeds into a stage-2 audio decoder. Designed for in-process use via HuggingFace Transformers (`transformers.AutoModelForCausalLM`) rather than a diffusion/Gradio UI, so it drops cleanly into scripts and notebooks. Full song generation also requires the YuE stage-2 model ([m-a-p/YuE-s2-1B-general](https://huggingface.co/m-a-p/YuE-s2-1B-general)).
+
+**Release Date:** November 13, 2025
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | 6.2B BF16 (7B-class LLaMA) |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text (lyrics + style prompt) |
+| **Streaming** | ❌ |
+| **Languages** | English |
+| **License** | ![Apache 2.0][license-apache-2.0] |
+| **Architecture** | LlamaForCausalLM |
+| **Base Model** | m-a-p/YuE-s1-7B-anneal-en-cot |
+| **Library** | transformers (AutoModelForCausalLM + AutoTokenizer) |
+| **Pipeline Tag** | text-to-audio |
+| **Stage** | 1 of 2 (lyrics → latent tokens; full song requires YuE stage-2 decoder) |
+| **Text To Music** | ✅ |
+| **Lyrics Support** | ✅ |
+
+**Features:** A consumer-friendly, Transformers-native repackage of the open YuE lyrics-to-song pipeline: the stage-1 model that translates lyrics and a style prompt into the token stream consumed by YuE's stage-2 audio decoder. Released under Apache 2.0 with full attribution to the original M-A-P YuE authors, designed to drop into any `transformers.AutoModelForCausalLM` workflow.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/zenlm/zen-musician)
+[![HuggingFace][link-huggingface]](https://huggingface.co/m-a-p/YuE-s1-7B-anneal-en-cot)
+[![HuggingFace][link-huggingface]](https://huggingface.co/m-a-p/YuE-s2-1B-general)
+[![GitHub][link-github]](https://github.com/multimodal-art-projection/YuE)
+[![Website][link-website]](https://hanzo.ai)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:zen-musician.md -->
 <!-- MODEL:uni-moe-audio.md -->
 <details id="uni-moe-audio">
 <summary>Uni-MoE (Audio)</summary>
@@ -1156,8 +1295,8 @@ This list is continuously evolving. If you have any models to add or updates to 
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-cc-by-4.0]: https://img.shields.io/badge/CC_BY_4.0-green?style=flat-square&logo=creativecommons "CC BY 4.0"
 [license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
-[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
+[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-nvidia-noncommercial]: https://img.shields.io/badge/NVIDIA_NC-yellow?style=flat-square&logo=nvidia "NVIDIA NC"
 
 [link-blog]: https://img.shields.io/badge/Blog-post-blue?style=flat-square "Blog post"
