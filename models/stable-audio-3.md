@@ -18,7 +18,6 @@ A state-of-the-art open platform for fast, high-quality audio and music generati
 - Demo: https://huggingface.co/spaces/stabilityai/stable-audio-3
 - Blog: https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models
 - arXiv: https://arxiv.org/abs/2605.17991
-- LoRA Training: https://github.com/dada-bots/underfit
 
 ## Features
 

@@ -1,10 +1,11 @@
 <h1 align="center">
 『 Awesome Music Generation Models 』
 </h1>
+<div align="center">
+<p> A curated list of open-source music generation models for audio and song synthesis. Models are sorted by release date (newest first).</p>
 
-A curated list of open-source music generation models for audio and song synthesis. Models are sorted by release date (newest first).
-
-<p align="center">· · · · ❖ · · · ·</p>
+<img alt="image" src="https://github.com/user-attachments/assets/5bf3f3d4-f3a7-4826-8a0b-632cb6c696de" />
+</div>
 
 ## ░ Table of Contents
 
@@ -12,7 +13,7 @@ A curated list of open-source music generation models for audio and song synthes
 - [Audio-Language Models (Audio Understanding)](#audio-language-models-audio-understanding)
 - [Additional Resources](#additional-resources)
 
-<p align="center">· · · · ❖ · · · ·</p>
+<p align="center">≋≋≋≋≋≋≋≋≋≋≋≋≋≋</p>
 
 ## ░ Music Generation Models
 
@@ -20,6 +21,8 @@ A curated list of open-source music generation models for audio and song synthes
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [Allegretto Mini](#allegretto-mini) | ✅ | text | ❌ | English | ![Stability AI][license-stability-ai] |
+| [UniMuMo](#unimumo) | ✅ | text, audio, motion | ❌ | English | ![Unknown][license-unknown] |
 | [Magenta RealTime 2](#magenta-realtime-2) | ✅ | text | ✅ | English | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
 | [Live Music Diffusion Models (LMDM)](#lmdm) | ✅ | text | ✅ | - | ![MIT][license-mit] |
 | [Stable Audio 3](#stable-audio-3) | ✅ | text, audio | ❌ | English | ![Stability AI][license-stability-ai] |
@@ -34,6 +37,94 @@ A curated list of open-source music generation models for audio and song synthes
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:allegretto-mini.md -->
+<details id="allegretto-mini">
+<summary>Allegretto Mini</summary>
+
+### Allegretto Mini
+
+**Description:** A lightweight, local-first AI music generation model by OSAMA INC (India). Synthesizes stereo audio at 44.1 kHz directly from text prompts using ONNX Runtime — no cloud API, no server-side GPU, no PyTorch dependency required. Built on a three-stage pipeline (T5Gemma text encoder → 20-layer DiT with 8-step rectified-flow sampling → SAME-S decoder) derived from the Stable Audio 3 Small architecture, independently int4-quantized and packaged for efficient local deployment. Total download size ~640 MB.
+
+**Release Date:** July 27, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | ~640 MB (int4 quantized ONNX) |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text |
+| **Streaming** | ❌ |
+| **Languages** | English |
+| **License** | ![Stability AI][license-stability-ai] |
+| **Duration** | up to 10s (default), 8 diffusion steps |
+| **Sample Rate** | 44.1 kHz stereo |
+| **Platforms** | CPU (ONNX Runtime), GPU (ONNX Runtime EP) |
+| **Library** | onnxruntime (no PyTorch needed) |
+| **Architecture** | T5Gemma encoder (768-dim, 256 tokens) + 20-layer DiT + SAME-S decoder |
+| **Quantization** | int4 MatMulNBits (block_size=16), GatherBlockQuantized for embeddings |
+| **Text To Music** | ✅ |
+| **Local First** | yes |
+
+**Features:** A production-grade text-to-music model compressed to ~640 MB of int4 ONNX weights that runs entirely on-device via ONNX Runtime — no Python or PyTorch required. The three-stage pipeline (T5Gemma → DiT → SAME-S) is derived from the Stable Audio 3 Small architecture but independently quantized and repackaged for CPU-first local inference, making it one of the smallest and most portable open-weight music generation models available.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/Dev4285/Allegretto-Mini)
+[![GitHub][link-github]](https://github.com/aryanisproinroblox-source/Allegretto-Mini)
+[![Demo][link-demo]](https://huggingface.co/spaces/Dev4285/Allegretto-Mini-Demo)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:allegretto-mini.md -->
+<!-- MODEL:unimumo.md -->
+<details id="unimumo">
+<summary>UniMuMo</summary>
+
+### UniMuMo
+
+**Description:** A self-contained safe-artifact release of UniMuMo by Motius, repackaging the authors' published weights into a single verifiable checkpoint loaded via `motius.pipelines.unimumo.UniMuMoPipeline`. The model is a 24-layer, 1,024-dimensional dual-stream autoregressive Transformer operating over parallel music and motion token streams at a shared 50 Hz rate (Encodec 32 kHz audio with four 2,048-entry RVQ codebooks; HumanML3D-263 motion at 60 fps; T5-base text encoder and captioner). Supported routes include text-to-motion, text-to-music, joint text-to-music-motion, music-to-dance (AIST++), dance-to-music (D2M-GAN 86-clip protocol), plus captioning on both music and motion inputs. Maximum generation length per call is 10 seconds. The upstream paper is *UniMuMo: Unified Text, Music and Motion Generation* (Yang et al., arXiv 2410.04534).
+
+**Release Date:** July 22, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Input Modalities** | text, audio, motion |
+| **Streaming** | ❌ |
+| **Languages** | English |
+| **License** | ![Unknown][license-unknown] |
+| **Release Type** | derivative repackage (Motius re-release) |
+| **Upstreams Repo** | hanyangclarence/UniMuMo@a75ddac7 |
+| **Pipeline** | motius.pipelines.unimumo.UniMuMoPipeline |
+| **Duration** | up to 10 s per call |
+| **Sample Rate** | 32 kHz (Encodec audio) |
+| **Motion Representation** | HumanML3D-263 at 60 fps |
+| **Music Representation** | Encodec 32 kHz, four 2,048-entry RVQ codebooks |
+| **Shared Code Rate** | 50 Hz |
+| **Architecture** | 24-layer, 1,024-D dual-stream autoregressive Transformer |
+| **Text Encoder** | T5-base (encoder + captioner) |
+| **Text To Music** | ✅ |
+| **Text To Motion** | yes |
+| **Joint Text Music Motion** | yes |
+| **Music To Dance** | yes |
+| **Dance To Music** | yes |
+| **Music Captioning** | yes |
+| **Motion Captioning** | yes |
+| **Benchmarks** | HumanML3D (T2M, M2T), AIST++ (M2D, D2M-GAN 86-clip) |
+| **Self Contained** | yes (no upstream import needed) |
+
+**Features:** UniMuMo's novelty is a **single dual-stream autoregressive Transformer** that jointly generates synchronized music and motion tokens from text, plus the reverse routes — all from one set of weights, no external captioners or codecs required at runtime. Motius' release packages every component (Encodec, T5 encoder + captioner, SentencePiece tokenizer, HumanML3D normalization stats, configuration, provenance) into one safe artifact with explicit tensor-layout mapping and a pass-or-fail loader, so `UniMuMoPipeline.from_pretrained` exposes text-to-music-motion, music-to-dance, dance-to-music, and bidirectional captioning behind one entry point. Reproduction audit reports exact code/waveform parity with the upstream runtime (`RMSE=0`, `max abs err=0`) on all anchor routes.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/ZeyuLing/Motius-UniMuMo)
+[![HuggingFace][link-huggingface]](https://huggingface.co/ClarenceY/unimumo)
+[![GitHub][link-github]](https://github.com/hanyangclarence/UniMuMo)
+[![Website][link-website]](https://hanyangclarence.github.io/unimumo_demo/)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2410.04534)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:unimumo.md -->
 <!-- MODEL:magenta-realtime-2.md -->
 <details id="magenta-realtime-2">
 <summary>Magenta RealTime 2</summary>
@@ -146,7 +237,6 @@ A curated list of open-source music generation models for audio and song synthes
 [![Demo][link-demo]](https://huggingface.co/spaces/stabilityai/stable-audio-3)
 [![Blog][link-blog]](https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models)
 [![arXiv][link-arxiv]](https://arxiv.org/abs/2605.17991)
-[![LoRA Training][link-lora training]](https://github.com/dada-bots/underfit)
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -224,8 +314,6 @@ A curated list of open-source music generation models for audio and song synthes
 
 ---
 
-# ACE-Step — Open-Source Music Generation Family
-
 <details>
 <summary><b>Table of Contents</b></summary>
 
@@ -239,11 +327,9 @@ A curated list of open-source music generation models for audio and song synthes
 
 </details>
 
-<p align="center">· · · · · · · · · · · · · ·</p>
-
 <a id="models"></a>
 
-## ▓ Models
+## ⣿ Models
 
 | Ver | Regime | Variant | DiT | Download |
 | :--- | :--- | :--- | :---: | :--- |
@@ -262,11 +348,11 @@ A curated list of open-source music generation models for audio and song synthes
 | **1.5 XL** | ![Turbo][badge-turbo] | ![Shift-1][badge-turbo-shift1] | ![4B][badge-4B] | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-v15-xl-turbo) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors) |
 
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 <a id="auxiliary"></a>
 
-## ▓ Language & Auxiliary Models
+## ⣿ Language & Auxiliary Models
 
 | Ver | Model | Purpose | DiT | Download |
 | :--- | :--- | :--- | :---: | :--- |
@@ -276,14 +362,51 @@ A curated list of open-source music generation models for audio and song synthes
 | **1.5** | `acestep-captioner` | Music captioner (training data labeling) | — | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/acestep-captioner) |
 | **1.5** | `ace-step-v1.5-1d-vae-stable-audio-format` | 1D VAE (latent ↔ StableAudio tokens) | — | [![][gh-ACE-Step]](https://huggingface.co/ACE-Step/ace-step-v1.5-1d-vae-stable-audio-format) ┊ [![][gh-Comfy-Org]](https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors) |
 | **1.5** | `Ace-Step-1.5-ScragVAE` | Custom VAE (audio-to-audio, alt decoder) | — | [![][gh-scragnog]](https://huggingface.co/scragnog/Ace-Step-1.5-ScragVAE) |
-| **1.5** | `ACEStep-XL-Regrind-V1` | XL regrind / refit variant | ![4B][badge-4B] | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1) |
+| **1.5** | `ACEStep-XL-Regrind-V1` | XL Turbo regrind: VAE decoder + DiT LoRA for Oobleck artifact suppression (CC BY-NC-SA 4.0) | ![4B][badge-4B] | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1) |
 | **1.5** | `ace-step-v1.5-1d-vae-stable-audio-format` (rAVEUK) | 1D VAE (community mirror) | — | [![][gh-rAVEUK]](https://huggingface.co/rAVEUK/ace-step-v1.5-1d-vae-stable-audio-format) |
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<details>
+<summary>mdmachine — ACEStep XL Regrind V1 (VAE + DiT + LoRA)</summary>
+
+#### [mdmachine ACEStep-XL-Regrind-V1](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1)
+
+Fine-tuned VAE decoder and DiT LoRA targeting the Oobleck hum artifact series at the weight level. Base: ACE-Step XL Turbo. License: CC BY-NC-SA 4.0.
+
+**VAE** (`vae/`)
+
+| File | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| `acestep_1.5_vae_Regrind_V10b` | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V10b.safetensors) |
+| `acestep_1.5_vae_Regrind_V10b` (GGUF) | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V10b-BF16.gguf) |
+| `acestep_1.5_vae_Regrind_V10b_blend50` | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V10b_blend50.safetensors) |
+| `acestep_1.5_vae_Regrind_V10b_blend50` (GGUF) | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V10b_blend50-BF16.gguf) |
+| `acestep_1.5_vae_Regrind_V9b` (GGUF) | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V9b-BF16.gguf) |
+| `acestep_1.5_vae_Regrind_V9b_blend50` (GGUF) | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V9b_blend50-BF16.gguf) |
+| `acestep_1.5_vae_Regrind_V9b_blend50` | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V9b_blend50.safetensors) |
+| `acestep_1.5_vae_Regrind_V7` | ![BF16][badge-BF16] | 337 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/vae/acestep_1.5_vae_Regrind_V7.safetensors) |
+
+**DiT base model** (`dit/`)
+
+| File | Quant | Size | Download |
+| :--- | :---: | :---: | :---: |
+| `acestep_xl_turbo_Regrind_V1` | ![BF16][badge-BF16] | 9.97 GB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/dit/acestep_xl_turbo_Regrind_V1.safetensors) |
+| `acestep_1.5_xl_turbo_regrind_v1` | ![Q4_K_M][badge-Q4_K_M] | 2.99 GB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/dit/acestep_1.5_xl_turbo_regrind_v1-Q4_K_M.gguf) |
+| `acestep_1.5_xl_turbo_regrind_v1` | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/dit/acestep_1.5_xl_turbo_regrind_v1-Q6_K.gguf) |
+| `acestep_1.5_xl_turbo_regrind_v1` | ![Q8_0][badge-Q8_0] | 5.18 GB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/dit/acestep_1.5_xl_turbo_regrind_v1-Q8_0.gguf) |
+
+**LoRA** (`lora/`)
+
+| File | Size | Download |
+| :--- | :---: | :---: |
+| `acestep_xl_turbo_lora_LayerRegrind_V7` (strength 0.25–0.50) | 393 MB | [![][gh-mdmachine]](https://huggingface.co/mdmachine/ACEStep-XL-Regrind-V1/resolve/main/lora/acestep_xl_turbo_lora_LayerRegrind_V7.safetensors) |
+
+</details>
+
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 <a id="finetunes"></a>
 
-## ▓ GGUF / Quants & Merges
+## ⣿ GGUF / Quants & Merges
 
 ### ▣ GGUF Quantized Models
 
@@ -292,7 +415,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 <details>
   <summary>Serveurperso — ACE-Step 1.5 GGUF (full set)</summary>
 
-#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 (3.5B DiT)
+#### ❖ [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 (3.5B DiT)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -329,7 +452,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | acestep-v15-sftturbo50 | ![BF16][badge-BF16] | 4.79 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sftturbo50-BF16.gguf) |
 | acestep-v15-sftturbo50 | ![Q8_0][badge-Q8_0] | 2.55 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-sftturbo50-Q8_0.gguf) |
 
-#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 XL (4B DiT)
+#### ❖ [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — v1.5 XL (4B DiT)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -354,7 +477,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | acestep-v15-xl-sftturbo50 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q6_K.gguf) |
 | acestep-v15-xl-sftturbo50 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-Serveurperso]](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF/resolve/main/acestep-v15-xl-sftturbo50-Q8_0.gguf) |
 
-#### [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — Language models / VAE
+#### ❖ [Serveurperso ACE-Step-1.5-GGUF](https://huggingface.co/Serveurperso/ACE-Step-1.5-GGUF) — Language models / VAE
 
 | Component | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -375,7 +498,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 <details>
   <summary>scragnog — ACE-Step 1.5 MXFP4 Quants</summary>
 
-#### [scragnog Ace-Step-1.5-MXFP4-Quants](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants)
+#### ❖ [scragnog Ace-Step-1.5-MXFP4-Quants](https://huggingface.co/scragnog/Ace-Step-1.5-MXFP4-Quants)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -399,7 +522,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 <details>
   <summary>hrktxz — ACE-Step 1.5 int8 convrot (ComfyUI)</summary>
 
-#### [hrktxz ACE_Step_1.5_ComfyUI_int8_convrot](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot)
+#### ❖ [hrktxz ACE_Step_1.5_ComfyUI_int8_convrot](https://huggingface.co/hrktxz/ACE_Step_1.5_ComfyUI_int8_convrot)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -415,7 +538,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 <details>
   <summary>mingyi456 — ACE-Step 1.5 XL DF11 (ComfyUI)</summary>
 
-#### [mingyi456 Ace-Step1.5-XL-DF11-ComfyUI](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI)
+#### ❖ [mingyi456 Ace-Step1.5-XL-DF11-ComfyUI](https://huggingface.co/mingyi456/Ace-Step1.5-XL-DF11-ComfyUI)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
@@ -425,33 +548,33 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 
 </details>
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 <a id="tools"></a>
 
-## ▓ Tools & Apps
+## ⣿ Tools & Apps
 
 * [acestep.vst3](https://github.com/ace-step/acestep.vst3) — ACE-Step VST3 plugin for DAWs.
 * [acestep.cpp](https://github.com/ServeurpersoCom/acestep.cpp) — C++ inference engine for ACE-Step.
 * [ACE-Step Transcriber](https://huggingface.co/ACE-Step/acestep-transcriber) — audio transcription model (audio-text-to-text).
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 <a id="lora-section"></a>
 
-## ▓ Finetunes & LoRA
+## ⣿ Finetunes & LoRA
 
 <a id="merges"></a>
 
 ### ▣ Merges
 
-#### [jeankassio acestep_v1.5_merge_sft_turbo_xl](https://huggingface.co/jeankassio/acestep_v1.5_merge_sft_turbo_xl)
+#### ❖ [jeankassio acestep_v1.5_merge_sft_turbo_xl](https://huggingface.co/jeankassio/acestep_v1.5_merge_sft_turbo_xl)
 
 | Model | Quant | Size | Download |
 | :--- | :---: | :---: | :---: |
 | merge sft+turbo+xl ta-0.5 | ![BF16][badge-BF16] | 19.95 GB | [![][gh-jeankassio]](https://huggingface.co/jeankassio/acestep_v1.5_merge_sft_turbo_xl/resolve/main/acestep_v1.5_merge_sft_turbo_xl_ta_0.5.safetensors) |
 
-#### [scragnog ace-step-1.5-gguf-merge-models](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models)
+#### ❖ [scragnog ace-step-1.5-gguf-merge-models](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models)
 
 | Merge | Variant | Quant | Size | Download |
 | :--- | :--- | :---: | :---: | :---: |
@@ -476,7 +599,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | SFT Turbo | XL ta 0.7 | ![Q6_K][badge-Q6_K] | 4.10 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q6_K.gguf) |
 | SFT Turbo | XL ta 0.7 | ![Q8_0][badge-Q8_0] | 5.31 GB | [![][gh-scragnog]](https://huggingface.co/scragnog/ace-step-1.5-gguf-merge-models/resolve/main/acestep-v15-merge-sft-turbo-xl-ta-0.7-Q8_0.gguf) |
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 <a id="lora"></a>
 
@@ -524,7 +647,7 @@ Optimized for lower memory; load as transformer-only in ComfyUI.
 | `snail-house` | Snail's House style (chiptune / 8-bit / electronic) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/snail-house/snail-house.safetensors) |
 | `synth-funk-new-jack-swing` | Synth-funk pop / New Jack Swing (Turbo) | [![][gh-Wildminder]](https://huggingface.co/Wildminder/ace-step-loras/resolve/main/synth-funk-new-jack-swing/synth-funk-new-jack-swing.pt) |
 
-<p align="center">· · · · · · · · · · · · · ·</p>
+<p align="center">╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍ ╍</p>
 
 #### ❖ Civitai
 
@@ -906,9 +1029,9 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 </details>
 <!-- /MODEL:soulx-singer-music.md -->
 
-<p align="center">· · · · ❖ · · · ·</p>
+<p align="center">≋≋≋≋≋≋≋≋≋≋≋≋≋≋</p>
 
-## Audio-Language Models (Audio Understanding)
+## ░ Audio-Language Models (Audio Understanding)
 
 Audio-language models (ALMs) — large audio-language and audio-reasoning specialists that do not generate audio. They caption audio, answer audio questions, transcribe speech, and reason over short or long audio inputs. Examples include NVIDIA's Audio Flamingo series, Qwen2-Audio, Xiaomi's MiDashengLM, Mellow, and music-specialised ALMs like TinyMU.
 
@@ -1275,7 +1398,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 </details>
 <!-- /MODEL:mu-llama.md -->
 
-<p align="center">· · · · ❖ · · · ·</p>
+<p align="center">≋≋≋≋≋≋≋≋≋≋≋≋≋≋</p>
 
 ## ░ Additional Resources
 
@@ -1283,7 +1406,7 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 - [Artificial Analysis — Music Leaderboard](https://artificialanalysis.ai/music/leaderboard) — Elo-based arena for music generation systems, ranking models on prompt fidelity, audio quality, and genre coverage.
 
-<p align="center">· · · · ❖ · · · ·</p>
+<p align="center">≋≋≋≋≋≋≋≋≋≋≋≋≋≋</p>
 
 ## ░ Contributing
 
@@ -1292,10 +1415,10 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: July 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
+[license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-cc-by-4.0]: https://img.shields.io/badge/CC_BY_4.0-green?style=flat-square&logo=creativecommons "CC BY 4.0"
-[license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
-[license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-nvidia-noncommercial]: https://img.shields.io/badge/NVIDIA_NC-yellow?style=flat-square&logo=nvidia "NVIDIA NC"
 
