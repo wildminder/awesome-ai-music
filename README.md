@@ -21,6 +21,8 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [SymphonyGen](#symphonygen) | ✅ | text | ❌ | - | ![MIT][license-mit] |
+| [VocalRender](#vocalrender) | ✅ | text | ❌ | Chinese | ![Apache 2.0][license-apache-2.0] |
 | [Allegretto Mini](#allegretto-mini) | ✅ | text | ❌ | English | ![Stability AI][license-stability-ai] |
 | [UniMuMo](#unimumo) | ✅ | text, audio, motion | ❌ | English | ![Unknown][license-unknown] |
 | [Magenta RealTime 2](#magenta-realtime-2) | ✅ | text | ✅ | English | ![Apache 2.0][license-apache-2.0]<br>![CC BY 4.0][license-cc-by-4.0] |
@@ -37,6 +39,85 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:symphonygen.md -->
+<details id="symphonygen">
+<summary>SymphonyGen</summary>
+
+### SymphonyGen
+
+**Description:** A 3D hierarchical framework for contemporary cinematic orchestration, accepted at ISMIR 2026. Decomposes symphonic scores along the Bar, Track, and Event axes with a cascading decoder architecture that keeps decoding memory far below flat token streams. Conditions generation on a beat-quantized multi-voice harmony skeleton ("short-score" conditioning) that may be user-written, analyzed, or model-generated — enabling outline control while producing full orchestral textures. Refined with GRPO (Group Relative Policy Optimization) using a cross-modal acoustic reward from CLaMP 3 audio embeddings, and suppresses tonal clashes at inference time with dissonance-averse sampling.
+
+**Release Date:** August 3, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Input Modalities** | text (harmony skeleton / short-score conditioning) |
+| **Streaming** | ❌ |
+| **Languages** | - |
+| **License** | ![MIT][license-mit] |
+| **Architecture** | 3D hierarchical cascading decoder (Bar × Track × Event) |
+| **Conditioning** | beat-quantized multi-voice harmony skeleton |
+| **Reinforcement Learning** | GRPO with CLaMP 3 audio reward |
+| **Dissonance Averse Sampling** | yes |
+| **Output Format** | symbolic (MIDI / orchestral scores) |
+| **Accepted** | ISMIR 2026 |
+| **Pipeline Tag** | reinforcement-learning |
+| **Library** | pytorch |
+
+**Features:** A 3D hierarchical cascading decoder that decomposes orchestral scores along the Bar, Track, and Event axes — keeping decoding memory far below flat token streams while enabling conditioning at every structural level. A beat-quantized harmony skeleton provides "short-score" conditioning (user-written, analyzed, or model-generated), and the model is refined with GRPO against a cross-modal acoustic reward from CLaMP 3 audio embeddings, plus a dissonance-averse sampling algorithm that suppresses unintended tonal clashes during inference.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/SymphonyGen/SymphonyGen)
+[![GitHub][link-github]](https://github.com/symphonygen/symphonygen)
+[![Website][link-website]](https://symphonygen.github.io/)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2604.25498)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:symphonygen.md -->
+<!-- MODEL:vocalrender.md -->
+<details id="vocalrender">
+<summary>VocalRender</summary>
+
+### VocalRender
+
+**Description:** A score-native singing voice synthesis model that directly transforms composer-oriented symbolic scores — lyrics, MIDI pitches, note values, and tempo — into expressive 48 kHz singing audio. Combines an interleaved lyric–note representation (preserving note-to-word alignment and melisma), continuous acoustic latents via AudioVAE, and autoregressive diffusion for global prosody modeling. Does not require phoneme-level durations, an explicit duration predictor, or a time-aligned acoustic reference. Fine-tuned from VoxCPM2 on the open-source CrawlSinger-OS dataset.
+
+**Release Date:** July 30, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Input Modalities** | text (lyrics + MIDI pitches + note values + tempo) |
+| **Streaming** | ❌ |
+| **Languages** | Chinese |
+| **License** | ![Apache 2.0][license-apache-2.0] |
+| **Duration** | score-dependent (variable length) |
+| **Sample Rate** | 48 kHz |
+| **Base Model** | openbmb/VoxCPM2 |
+| **Architecture** | interleaved lyric–note representation + AudioVAE + autoregressive diffusion |
+| **Pipeline Tag** | text-to-speech |
+| **Singing Voice Synthesis** | yes |
+| **Score Native** | yes (no phoneme-level durations needed) |
+| **Melisma Support** | yes |
+| **Training Dataset** | pymaster/CrawlSinger-OS (open-source) |
+| **Variants** | VocalRender (base), VocalRender-Pro |
+
+**Features:** Score-native singing voice synthesis: an interleaved representation serializes BPM followed by each lyric syllable and its associated (pitch, note-value) pairs, retaining lyric-to-note alignment and supporting melisma — eliminating the need for phoneme-level durations or time-aligned acoustic references. AudioVAE compresses singing into continuous acoustic latents that preserve fine pitch, timbre, and articulation, while an autoregressive diffusion model handles global prosody modeling and local reconstruction.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/pymaster/VocalRender)
+[![GitHub][link-github]](https://github.com/pymaster17/VocalRender)
+[![Website][link-website]](https://pymaster17.github.io/VocalRender/)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2607.27768)
+[![HuggingFace][link-huggingface]](https://huggingface.co/datasets/pymaster/CrawlSinger-OS)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:vocalrender.md -->
 <!-- MODEL:allegretto-mini.md -->
 <details id="allegretto-mini">
 <summary>Allegretto Mini</summary>
@@ -1412,14 +1493,14 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 This list is continuously evolving. If you have any models to add or updates to suggest, please feel free to contribute! See [CONTRIBUTING.md](./CONTRIBUTING.md) for the template-driven workflow.
 
-*Last Updated: July 2026*
+*Last Updated: August 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
+[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 [license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
-[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-cc-by-4.0]: https://img.shields.io/badge/CC_BY_4.0-green?style=flat-square&logo=creativecommons "CC BY 4.0"
-[license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-nvidia-noncommercial]: https://img.shields.io/badge/NVIDIA_NC-yellow?style=flat-square&logo=nvidia "NVIDIA NC"
 
 [link-blog]: https://img.shields.io/badge/Blog-post-blue?style=flat-square "Blog post"
