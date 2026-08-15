@@ -25,7 +25,7 @@ NVIDIA's Audio Flamingo 3 — a fully open audio-language model that extends Aud
 - input: audio + text (text-only and audio-only modes also supported)
 - audio_length: long (multi-turn, long-audio reasoning)
 - base_model: Audio Flamingo 2 continuation (audio encoder + LLM backbone)
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - reasoning: yes (AF-Think PEFT adapter)
 - chat: yes (multi-turn chat templating)

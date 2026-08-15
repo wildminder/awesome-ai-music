@@ -24,7 +24,7 @@ NVIDIA's PyTorch implementation of Audio Flamingo 2 (paper: arXiv 2503.03983). A
 - input: audio + text
 - audio_length: up to 5 minutes
 - base_model: Qwen-2.5 (audio encoder + cross-attention)
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - reasoning: yes
 - long_audio: yes (5 minutes)

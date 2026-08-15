@@ -23,7 +23,7 @@ MusiLingo (NAACL 2024): "Bridging Music and Text with Pre-trained Language Model
 - input: audio + text
 - audio_length: short to long (variable; model trained to handle both)
 - base_model: MERT-v1-330M + Vicuna 7B v0
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - music_understanding: yes
 - captioning: yes

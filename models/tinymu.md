@@ -24,7 +24,7 @@ TinyMU: A Compact Audio-Language Model for Music Understanding (paper: arXiv 260
 - input: audio + text
 - audio_length: short music clips (~10 s)
 - base_model: from-scratch 229M music-language model
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - music_understanding: yes
 - reasoning: yes

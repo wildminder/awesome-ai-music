@@ -25,7 +25,7 @@ A 167M-parameter audio-language model that takes **two audios plus a text prompt
 - input: two audios + text
 - audio_length: short clips (~10 s)
 - base_model: from-scratch 167M audio-language model
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - reasoning: yes
 - zero_shot: yes

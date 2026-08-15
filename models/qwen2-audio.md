@@ -24,9 +24,9 @@ Alibaba's Qwen2-Audio-7B-Instruct — a large audio-language model that supports
 - input: audio (+ optional text)
 - audio_length: short to medium (one-shot speech / audio analysis)
 - base_model: Qwen2-Audio-7B (pretrained)
-- music_generation: no
+- music_gen: no
 - audio_generation: no
-- reasoning: limited (instruct-tuned)
+- reasoning: no
 - voice_chat: yes (no text input required)
 - audio_analysis: yes
 - asr: yes

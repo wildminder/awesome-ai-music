@@ -24,7 +24,7 @@ MU-LLaMA (Music Understanding Large Language Model) — an audio-language model 
 - input: audio + text
 - audio_length: short clips (MusicCaps-style)
 - base_model: MERT (music encoder) + LLaMA-2 7B (text backbone) via adapter
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - music_understanding: yes
 - captioning: yes

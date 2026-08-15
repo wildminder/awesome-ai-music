@@ -23,7 +23,7 @@ Xiaomi Research's MiDashengLM-7B-0804 — a 7B audio-language generalist caption
 - input: audio + text
 - audio_length: short-to-medium (caption-based; full-clip captions)
 - base_model: dasheng-0.6B + Qwen2.5-Omni-7B (finetune)
-- music_generation: no
+- music_gen: no
 - audio_generation: no
 - reasoning: yes (caption-based alignment)
 - batching: up to 512

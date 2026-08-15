@@ -21,6 +21,7 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [MiniMax Music 3](#minimax-music3) | ✅ | lyrics, music description | ❌ | - | ![MiniMax Comm][license-minimax-community] |
 | [SymphonyGen](#symphonygen) | ✅ | text | ❌ | - | ![MIT][license-mit] |
 | [VocalRender](#vocalrender) | ✅ | text | ❌ | Chinese | ![Apache 2.0][license-apache-2.0] |
 | [Allegretto Mini](#allegretto-mini) | ✅ | text | ❌ | English | ![Stability AI][license-stability-ai] |
@@ -39,6 +40,44 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:minimax-music3.md -->
+<details id="minimax-music3">
+<summary>MiniMax Music 3</summary>
+
+### MiniMax Music 3
+
+**Description:** MiniMax Music 3 is a high-performance music generation model for creating complete songs up to five minutes long. Conditioned on lyrics and a detailed music description, it generates structurally coherent songs with expressive vocals, evolving arrangements, and stable long-form audio quality. It combines an 8B Global LLM for long-range musical structure, a 0.6B Local LLM for frame-level acoustic detail, and a continuous hidden-state synthesis system based on Flow Matching and Flow-VAE, producing 32 kHz, 16-bit stereo WAV audio.
+
+**Release Date:** August 13, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Singing Generation** | ✅ |
+| **Long Form** | ✅ |
+| **Streaming** | ❌ |
+| **Input Modalities** | lyrics, music description |
+| **License** | ![MiniMax Comm][license-minimax-community] |
+| **Base Model** | Qwen3-8B |
+| **Architecture** | 8B Global LLM + 0.6B Local LLM + Flow Matching/VAE |
+| **Sample Rate** | 32 kHz stereo WAV |
+| **Max Duration** | 5 minutes |
+
+**Features:** Hierarchical autoregressive Hybrid-LM: an 8B Global LLM (initialized from Qwen3-8B) models long-range song structure frame by frame while a 0.6B Local LLM restores fine-grained acoustic codebooks, and the two LLMs' final hidden states are fused and passed through Flow Matching (2.4B) + a Flow-VAE decoder to synthesize continuous 32 kHz stereo audio — enabling native five-minute, end-to-end coherent song generation.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/MiniMaxAI/MiniMax-Music3)
+[![HuggingFace][link-huggingface]](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main)
+[![HuggingFace][link-huggingface]](https://huggingface.co/molbal/Minimax-Music3-GGUF)
+[![HuggingFace][link-huggingface]](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main)
+[![GitHub][link-github]](https://github.com/MiniMax-AI/MiniMax-Music3)
+[![Demo][link-demo]](https://minimax-ai.github.io/music3-demo/)
+[![Website][link-website]](https://www.minimax.io)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:minimax-music3.md -->
 <!-- MODEL:symphonygen.md -->
 <details id="symphonygen">
 <summary>SymphonyGen</summary>
@@ -262,7 +301,7 @@
 | **Music Gen** | ✅ |
 | **Input Modalities** | text, audio prompt, audio stem, MIDI / sketch conditions |
 | **Streaming** | ✅ |
-| **License** | ![Unknown][license-unknown] |
+| **License** | ![MIT][license-mit] |
 | **Text To Music** | ✅ |
 | **Audio To Music** | ✅ |
 | **Real Time** | ✅ |
@@ -772,6 +811,10 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 | `ACE-STEP 80's Citypop` | 80s citypop | [![][civitai]](https://civitai.com/models/1646967/ace-step-80s-citypop-lora?modelVersionId=1864132) |
 | `Super Eurobeats (ACEStep 1.5 XL)` | 90s Eurobeat, Initial D style (XL Base) | [![][civitai]](https://civitai.com/models/2702491/super-eurobeats-acestep-15-xl?modelVersionId=3034855) |
 
+<!-- NOTE: badge reference defs below are hand-maintained and MUST stay in sync
+     with config/format.yaml (license_badges / link_badges). If those config
+     keys change, adjust the defs here, or run scripts/build_readme.py which
+     builds the README badge block from config. -->
 <!-- MARKDOWN LINKS & IMAGES -->
 [gh-ACE-Step]: https://img.shields.io/badge/ACE--Step-lightgrey?style=flat-square&logo=huggingface&logoColor=white
 [gh-scragnog]: https://img.shields.io/badge/scragnog-lightgrey?style=flat-square&logo=huggingface&logoColor=white
@@ -1155,7 +1198,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Code License** | MIT (GitHub repo) |
 | **Audio Language Task** | yes |
 | **Music Understanding** | ✅ |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Continuous Monitoring** | no |
 | **Streaming Input** | yes (uvx transcribe) |
 | **Benchmark** | Mirelo internal + Mirelo Studio tool |
@@ -1191,7 +1234,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text |
 | **Audio Length** | short music clips (~10 s) |
 | **Base Model** | from-scratch 229M music-language model |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Music Understanding** | ✅ |
 | **Reasoning** | ✅ |
@@ -1229,7 +1272,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text (text-only and audio-only modes also supported) |
 | **Audio Length** | long (multi-turn, long-audio reasoning) |
 | **Base Model** | Audio Flamingo 2 continuation (audio encoder + LLM backbone) |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Reasoning** | ✅ |
 | **Chat** | yes (multi-turn chat templating) |
@@ -1268,7 +1311,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text |
 | **Audio Length** | short-to-medium (caption-based; full-clip captions) |
 | **Base Model** | dasheng-0.6B + Qwen2.5-Omni-7B (finetune) |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Reasoning** | ✅ |
 | **Batching** | up to 512 |
@@ -1305,7 +1348,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | two audios + text |
 | **Audio Length** | short clips (~10 s) |
 | **Base Model** | from-scratch 167M audio-language model |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Reasoning** | ✅ |
 | **Zero Shot** | yes |
@@ -1343,13 +1386,13 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text |
 | **Audio Length** | up to 5 minutes |
 | **Base Model** | Qwen-2.5 (audio encoder + cross-attention) |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Reasoning** | ✅ |
 | **Long Audio** | yes (5 minutes) |
 | **Architecture** | cross-attention audio-language model |
 | **Training Data** | nvidia/AudioSkills + nvidia/LongAudio |
-| **License** | ![Unknown][license-unknown] |
+| **License** | ![NVIDIA NC][license-nvidia-noncommercial]<br>![MIT][license-mit] |
 
 **Features:** Cross-attention audio-language model that builds Flamingo-style few-shot learning on top of Qwen-2.5, taught on AudioSkills and LongAudio — SOTA-class audio reasoning despite being only 3B parameters and trained exclusively on public data.
 
@@ -1380,9 +1423,9 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio (+ optional text) |
 | **Audio Length** | short to medium (one-shot speech / audio analysis) |
 | **Base Model** | Qwen2-Audio-7B (pretrained) |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
-| **Reasoning** | limited (instruct-tuned) |
+| **Reasoning** | ❌ |
 | **Voice Chat** | yes (no text input required) |
 | **Audio Analysis** | yes |
 | **Asr** | yes |
@@ -1418,7 +1461,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text |
 | **Audio Length** | short to long (variable; model trained to handle both) |
 | **Base Model** | MERT-v1-330M + Vicuna 7B v0 |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Music Understanding** | ✅ |
 | **Captioning** | yes |
@@ -1456,7 +1499,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | **Input** | audio + text |
 | **Audio Length** | short clips (MusicCaps-style) |
 | **Base Model** | MERT (music encoder) + LLaMA-2 7B (text backbone) via adapter |
-| **Music Generation** | no |
+| **Music Gen** | ❌ |
 | **Audio Generation** | no |
 | **Music Understanding** | ✅ |
 | **Captioning** | yes |
@@ -1496,6 +1539,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: August 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"

@@ -34,7 +34,7 @@ MuScriptor is the first open-source multi-instrument music transcription model t
 - code_license: MIT (GitHub repo)
 - audio_language_task: yes
 - music_understanding: yes
-- music_generation: no
+- music_gen: no
 - continuous_monitoring: no
 - streaming_input: yes (uvx transcribe)
 - benchmark: Mirelo internal + Mirelo Studio tool
