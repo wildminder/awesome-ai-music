@@ -13,12 +13,19 @@ MiniMax Music 3 is a high-performance music generation model for creating comple
 ## Links
 
 - HuggingFace: https://huggingface.co/MiniMaxAI/MiniMax-Music3
-- HuggingFace: https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main
-- HuggingFace: https://huggingface.co/molbal/Minimax-Music3-GGUF
-- HuggingFace: https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main
 - GitHub: https://github.com/MiniMax-AI/MiniMax-Music3
 - Demo: https://minimax-ai.github.io/music3-demo/
 - Website: https://www.minimax.io
+
+## Tools
+
+- SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k
+- ntc-ai/minimax-music3-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/minimax-music3-concept-sliders
+- bghira/minimaxh3-suno-reggae-rank128 | LoRA | https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128
+- coolpoodle/music3lab | Lab | https://huggingface.co/coolpoodle/music3lab
+- dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main
+- molbal/Minimax-Music3-GGUF | GGUF | https://huggingface.co/molbal/Minimax-Music3-GGUF
+- realrebelai/MiniMax-Music-3_GGUFs | GGUF | https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main
 
 ## Features
 

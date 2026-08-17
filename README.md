@@ -67,12 +67,22 @@
 
 **Links:**
 [![HuggingFace][link-huggingface]](https://huggingface.co/MiniMaxAI/MiniMax-Music3)
-[![HuggingFace][link-huggingface]](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main)
-[![HuggingFace][link-huggingface]](https://huggingface.co/molbal/Minimax-Music3-GGUF)
-[![HuggingFace][link-huggingface]](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main)
 [![GitHub][link-github]](https://github.com/MiniMax-AI/MiniMax-Music3)
 [![Demo][link-demo]](https://minimax-ai.github.io/music3-demo/)
 [![Website][link-website]](https://www.minimax.io)
+
+
+**Additional Tools:**
+
+| Tool | Type | Link |
+|------|------|------|
+| SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | [SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k](https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k) |
+| ntc-ai/minimax-music3-concept-sliders | Concept Sliders | [ntc-ai/minimax-music3-concept-sliders](https://huggingface.co/ntc-ai/minimax-music3-concept-sliders) |
+| bghira/minimaxh3-suno-reggae-rank128 | LoRA | [bghira/minimaxh3-suno-reggae-rank128](https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128) |
+| coolpoodle/music3lab | Lab | [coolpoodle/music3lab](https://huggingface.co/coolpoodle/music3lab) |
+| dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | [dummy9996/MiniMax-Music3-w4a8-bf16-comfyui](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main) |
+| molbal/Minimax-Music3-GGUF | GGUF | [molbal/Minimax-Music3-GGUF](https://huggingface.co/molbal/Minimax-Music3-GGUF) |
+| realrebelai/MiniMax-Music-3_GGUFs | GGUF | [realrebelai/MiniMax-Music-3_GGUFs](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
