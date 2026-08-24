@@ -26,6 +26,13 @@ MiniMax Music 3 is a high-performance music generation model for creating comple
 - dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main
 - molbal/Minimax-Music3-GGUF | GGUF | https://huggingface.co/molbal/Minimax-Music3-GGUF
 - realrebelai/MiniMax-Music-3_GGUFs | GGUF | https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main
+- rzgar/minimax_music3_text_encoder_fp16_fp8 | Text Encoder Quant (FP16/FP8) | https://huggingface.co/rzgar/minimax_music3_text_encoder_fp16_fp8
+- terminusresearch/minimax-music3-latent-refiner-v0.10 | Latent Refiner | https://huggingface.co/terminusresearch/minimax-music3-latent-refiner-v0.10
+- terminusresearch/minimax-music3-replanner-experiment | Experiment Log + Checkpoints | https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment
+- echomom/echomom-minimax-music3-q8 | GGUF Q8 Pack | https://huggingface.co/echomom/echomom-minimax-music3-q8
+- SimpleTuner/open-rvq-encoder-minimax-music3 | Open RVQ Encoder | https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3
+- bghira/minimax-music3-latent-replanner | ComfyUI Nodes | https://github.com/bghira/minimax-music3-latent-replanner
+- SimpleTuner MINIMAX_MUSIC quickstart | Training Guide | https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md
 
 ## Features
 

@@ -21,6 +21,7 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [0MGE (Neural Granular Engine)](#omge-neural-granular-engine) | ✅ | audio | ❌ | - | ![MIT][license-mit] |
 | [MiniMax Music 3](#minimax-music3) | ✅ | lyrics, music description | ❌ | - | ![MiniMax Comm][license-minimax-community] |
 | [SymphonyGen](#symphonygen) | ✅ | text | ❌ | - | ![MIT][license-mit] |
 | [VocalRender](#vocalrender) | ✅ | text | ❌ | Chinese | ![Apache 2.0][license-apache-2.0] |
@@ -40,6 +41,40 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:omge-neural-granular-engine.md -->
+<details id="omge-neural-granular-engine">
+<summary>0MGE (Neural Granular Engine)</summary>
+
+### 0MGE (Neural Granular Engine)
+
+**Description:** 0MGE is a pre-trained neural granular engine for AI music generation from your own music — scan, train, and generate entirely locally. It scans audio files into millions of micro-grains and trains a navigator to reassemble those grains into new drone landscapes, textures, and atmospheres; the shipped checkpoint was trained on 2,389 tracks (~48 hours) with a 566K-grain pool across three hierarchy tiers (micro/meso/macro). The architecture is a MultiNavigator Transformer (4 heads, 3 layers, 192 hidden) whose six independent stream heads select grains over band-split roles (sub, drums, harmonic, texture, presence, air), steered by a z0-inspired attractor field for long-range coherence. Output is stereo WAV at 22,050 Hz. It is explicitly not text-to-music: generation is conditioned on the learned grain field rather than prompts.
+
+**Release Date:** August 21, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Text To Music** | ❌ |
+| **Input Modalities** | audio (reference music library) |
+| **Streaming** | ❌ |
+| **License** | ![MIT][license-mit] |
+| **Architecture** | MultiNavigator Transformer (4 heads / 3 layers / 192 hidden) + attractor field |
+| **Grain Pool** | 566K grains (micro ~55ms / meso ~300ms / macro ~3s) |
+| **Sample Rate** | 22.05 kHz stereo WAV |
+| **Quantization** | INT8 navigator available (weights-only) |
+| **Local Inference** | yes |
+
+**Features:** Grain-field navigation instead of token prediction: six band-specialized transformer stream heads pick from a 566K-grain hierarchical pool via softmax over pool similarities, while a learned per-stream attractor field pulls generation toward musically meaningful directions instead of a random walk — enabling long-range coherent drones/textures generated entirely offline.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/0penAGI/0MGE)
+[![GitHub][link-github]](https://github.com/0penAGI/0MGE)
+[![Demo][link-demo]](https://0penagi.github.io/0MGE/)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:omge-neural-granular-engine.md -->
 <!-- MODEL:minimax-music3.md -->
 <details id="minimax-music3">
 <summary>MiniMax Music 3</summary>
@@ -83,6 +118,13 @@
 | dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | [dummy9996/MiniMax-Music3-w4a8-bf16-comfyui](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main) |
 | molbal/Minimax-Music3-GGUF | GGUF | [molbal/Minimax-Music3-GGUF](https://huggingface.co/molbal/Minimax-Music3-GGUF) |
 | realrebelai/MiniMax-Music-3_GGUFs | GGUF | [realrebelai/MiniMax-Music-3_GGUFs](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main) |
+| rzgar/minimax_music3_text_encoder_fp16_fp8 | Text Encoder Quant (FP16/FP8) | [rzgar/minimax_music3_text_encoder_fp16_fp8](https://huggingface.co/rzgar/minimax_music3_text_encoder_fp16_fp8) |
+| terminusresearch/minimax-music3-latent-refiner-v0.10 | Latent Refiner | [terminusresearch/minimax-music3-latent-refiner-v0.10](https://huggingface.co/terminusresearch/minimax-music3-latent-refiner-v0.10) |
+| terminusresearch/minimax-music3-replanner-experiment | Experiment Log + Checkpoints | [terminusresearch/minimax-music3-replanner-experiment](https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment) |
+| echomom/echomom-minimax-music3-q8 | GGUF Q8 Pack | [echomom/echomom-minimax-music3-q8](https://huggingface.co/echomom/echomom-minimax-music3-q8) |
+| SimpleTuner/open-rvq-encoder-minimax-music3 | Open RVQ Encoder | [SimpleTuner/open-rvq-encoder-minimax-music3](https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3) |
+| bghira/minimax-music3-latent-replanner | ComfyUI Nodes | [bghira/minimax-music3-latent-replanner](https://github.com/bghira/minimax-music3-latent-replanner) |
+| SimpleTuner MINIMAX_MUSIC quickstart | Training Guide | [SimpleTuner MINIMAX_MUSIC quickstart](https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1549,8 +1591,8 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: August 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
+[license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 [license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
