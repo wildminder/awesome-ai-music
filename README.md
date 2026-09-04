@@ -21,6 +21,8 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [MIDI Gen AI](#midigenai) | ✅ | MIDI | ✅ | - | ![MIT][license-mit] |
+| [VIBE](#vibe) | ✅ | video, text | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [0MGE (Neural Granular Engine)](#omge-neural-granular-engine) | ✅ | audio | ❌ | - | ![MIT][license-mit] |
 | [MiniMax Music 3](#minimax-music3) | ✅ | lyrics, music description | ❌ | - | ![MiniMax Comm][license-minimax-community] |
 | [SymphonyGen](#symphonygen) | ✅ | text | ❌ | - | ![MIT][license-mit] |
@@ -41,6 +43,82 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:midigenai.md -->
+<details id="midigenai">
+<summary>MIDI Gen AI</summary>
+
+### MIDI Gen AI (midigenai)
+
+**Description:** midigenai is a GPT-style decoder-only transformer trained from scratch on ~408k symbolic MIDI files (Lakh, LAMD, MAESTRO, POP909, GiantMIDI) for real-time music continuation — play a phrase and the model answers with a coherent continuation, streaming note by note. The default v3 checkpoint (113M parameters) uses a 641-token MidiTok event vocabulary and a 2048-token context, and an MLX backend runs it at ~800 tokens/s on Apple silicon — fast enough for call-and-response jamming inside Ableton Live (~0.5 s latency via the ableton-mcp-pro control surface). The model is symbolic-only: it reads and writes MIDI, with no audio synthesis.
+
+**Release Date:** September 2, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Streaming** | ✅ |
+| **Real Time** | ✅ |
+| **Input Modalities** | MIDI |
+| **Output** | MIDI (symbolic only, no audio) |
+| **License** | ![MIT][license-mit] |
+| **Parameters** | 113M (v3 default); 25M pilot |
+| **Architecture** | GPT-style decoder-only transformer (RoPE, SwiGLU, RMSNorm, FlashAttention-2) |
+| **Vocabulary** | 641 event tokens (MidiTok MIDILike) |
+| **Context** | 2048 tokens |
+| **Training Data** | ~408k MIDI files (Lakh, LAMD, MAESTRO, POP909, GiantMIDI) |
+| **Checkpoints** | v2-pilot, v2-production, v2-100m, v3 (default) |
+| **Ableton Integration** | ✅ |
+| **Mlx Backend** | ✅ |
+| **Tempo Invariant** | ✅ |
+
+**Features:** Small-scale from-scratch design: a custom 641-token event vocabulary (MidiTok MIDILike) with RoPE/SwiGLU/RMSNorm beats GPT-2 fine-tunes on every axis (~2.5x fewer tokens per note, 60% less repetition, an order of magnitude faster inference); tempo is stripped at training and re-applied at decode for tempo-invariant learning, and a preallocated-KV-cache MLX backend with one-step-ahead pipelined decoding makes real-time DAW integration practical.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/nicholasbien/midigenai)
+[![GitHub][link-github]](https://github.com/nicholasbien/midigenai)
+[![Demo][link-demo]](https://nicholasbien.com/midi)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:midigenai.md -->
+<!-- MODEL:vibe.md -->
+<details id="vibe">
+<summary>VIBE</summary>
+
+### VIBE (Video Instruction-aligned Background Music gEneration)
+
+**Description:** VIBE generates background music for a video that follows an explicit text instruction — not just "music that fits this video," but music that fits *and* does what the user asked (tempo, key, mood, instrumentation). Rather than converting audio to discrete tokens, it models music in a continuous latent space: a MiniCPM4-0.5B-based multimodal semantic LM produces planning latents, a RITE (Residual Integration Transformer Encoder) stack refines them, and a local diffusion transformer (LocDiT) denoises under conditional flow matching before a music VAE decodes to 48 kHz stereo. Video conditioning enters through a frozen CLIP ViT-B/32 encoder and semantic routing merges the video and instruction signals into a single conditioning stream. The released checkpoint is the Stage-5 RL policy (GRPO against a Qwen2.5-Omni-7B judge plus deterministic tempo/key rewards), with the LoRA already folded into the base weights. Built on VoxCPM, adapted from speech to music; accepts both video-to-music (first 10 s of the clip) and instruction-only text-to-music, and outputs short-form instrumental music.
+
+**Release Date:** August 31, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Video To Music** | ✅ |
+| **Text To Music** | ✅ |
+| **Streaming** | ❌ |
+| **Input Modalities** | video (first 10s, 8 CLIP frames), text instruction |
+| **Output** | 48 kHz stereo, short-form instrumental |
+| **License** | ![Apache 2.0][license-apache-2.0] |
+| **Parameters** | 953.5M |
+| **Architecture** | MiniCPM4-0.5B semantic LM + RITE + LocDiT flow matching + music VAE |
+| **Base Model** | MiniCPM4-0.5B (Apache-2.0) |
+| **Rl Method** | GRPO vs Qwen2.5-Omni-7B judge + verifiable tempo/key rewards |
+| **Continuous Latents** | yes (no audio tokenizer) |
+
+**Features:** Instruction alignment through reinforcement learning: GRPO against a multimodal LLM judge (Qwen2.5-Omni-7B watches the video and listens to the generated music, scoring musicality, text-music alignment, and video-music alignment via constrained digit-logit decoding) combined with hard verifiable rewards — rule-based tempo/BPM and musical-key agreement measured on the generated audio, deterministic and immune to reward hacking — on top of a tokenizer-free continuous-latent stack that avoids the quality ceiling and codebook artifacts of discrete tokenization.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/aryanvibhosale/vibe)
+[![GitHub][link-github]](https://github.com/aryanvibhosale/vibe)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2608.30125)
+[![Demo][link-demo]](https://vibe-text-video-to-music-generation.github.io/vibe/)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:vibe.md -->
 <!-- MODEL:omge-neural-granular-engine.md -->
 <details id="omge-neural-granular-engine">
 <summary>0MGE (Neural Granular Engine)</summary>
@@ -123,6 +201,9 @@
 | terminusresearch/minimax-music3-replanner-experiment | Experiment Log + Checkpoints | [terminusresearch/minimax-music3-replanner-experiment](https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment) |
 | echomom/echomom-minimax-music3-q8 | GGUF Q8 Pack | [echomom/echomom-minimax-music3-q8](https://huggingface.co/echomom/echomom-minimax-music3-q8) |
 | SimpleTuner/open-rvq-encoder-minimax-music3 | Open RVQ Encoder | [SimpleTuner/open-rvq-encoder-minimax-music3](https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3) |
+| Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4 | RVQ Encoder Fine-tune | [Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4](https://huggingface.co/Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4) |
+| scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1 | RVQ Encoder (calibrated) | [scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1](https://huggingface.co/scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1) |
+| terminusresearch/minimax-music3-lm-lora-fiona-crapple | LM LoRA (trigger word) | [terminusresearch/minimax-music3-lm-lora-fiona-crapple](https://huggingface.co/terminusresearch/minimax-music3-lm-lora-fiona-crapple) |
 | bghira/minimax-music3-latent-replanner | ComfyUI Nodes | [bghira/minimax-music3-latent-replanner](https://github.com/bghira/minimax-music3-latent-replanner) |
 | SimpleTuner MINIMAX_MUSIC quickstart | Training Guide | [SimpleTuner MINIMAX_MUSIC quickstart](https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md) |
 
@@ -480,6 +561,13 @@
 [![HuggingFace][link-huggingface]](https://huggingface.co/ACE-Step/Ace-Step1.5)
 [![Website][link-website]](https://ace-step.github.io/ace-step-v1.5.github.io/)
 [![arXiv][link-arxiv]](https://arxiv.org/abs/2602.00744)
+
+
+**Additional Tools:**
+
+| Tool | Type | Link |
+|------|------|------|
+| pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | [pradipbasnet68/nepali-folk-acestep-1.5-lora](https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1588,12 +1676,12 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 This list is continuously evolving. If you have any models to add or updates to suggest, please feel free to contribute! See [CONTRIBUTING.md](./CONTRIBUTING.md) for the template-driven workflow.
 
-*Last Updated: August 2026*
+*Last Updated: September 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
-[license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
+[license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 [license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
 [license-cc-by-4.0]: https://img.shields.io/badge/CC_BY_4.0-green?style=flat-square&logo=creativecommons "CC BY 4.0"

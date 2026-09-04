@@ -31,6 +31,9 @@ MiniMax Music 3 is a high-performance music generation model for creating comple
 - terminusresearch/minimax-music3-replanner-experiment | Experiment Log + Checkpoints | https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment
 - echomom/echomom-minimax-music3-q8 | GGUF Q8 Pack | https://huggingface.co/echomom/echomom-minimax-music3-q8
 - SimpleTuner/open-rvq-encoder-minimax-music3 | Open RVQ Encoder | https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3
+- Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4 | RVQ Encoder Fine-tune | https://huggingface.co/Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4
+- scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1 | RVQ Encoder (calibrated) | https://huggingface.co/scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1
+- terminusresearch/minimax-music3-lm-lora-fiona-crapple | LM LoRA (trigger word) | https://huggingface.co/terminusresearch/minimax-music3-lm-lora-fiona-crapple
 - bghira/minimax-music3-latent-replanner | ComfyUI Nodes | https://github.com/bghira/minimax-music3-latent-replanner
 - SimpleTuner MINIMAX_MUSIC quickstart | Training Guide | https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md
 

@@ -17,6 +17,10 @@ The most powerful local music generation model outperforming most commercial alt
 - Website: https://ace-step.github.io/ace-step-v1.5.github.io/
 - arXiv: https://arxiv.org/abs/2602.00744
 
+## Tools
+
+- pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora
+
 ## Features
 
 - parameters: 0.6B-4B (LM), DiT variants
