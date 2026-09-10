@@ -21,6 +21,7 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [YuE2](#yue2-3b) | ✅ | lyrics, style prompt | ❌ | 2 | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [MIDI Gen AI](#midigenai) | ✅ | MIDI | ✅ | - | ![MIT][license-mit] |
 | [VIBE](#vibe) | ✅ | video, text | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [0MGE (Neural Granular Engine)](#omge-neural-granular-engine) | ✅ | audio | ❌ | - | ![MIT][license-mit] |
@@ -43,6 +44,57 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:yue2-3b.md -->
+<details id="yue2-3b">
+<summary>YuE2</summary>
+
+### YuE2 (3B)
+
+**Description:** YuE2 is the second-generation open music generation model from the m-a-p (Multimodal Art Projection) team, producing complete 48 kHz stereo songs — vocals plus accompaniment — from a style prompt and lyrics, with benchmark scores rivaling Suno v5 on WildSongBench (6.73 SongBench average, 6.96 best-of-8, vs Suno v5's 6.87). Its distinguishing feature is an editable symbolic score: an AR–NAR Mixture-of-Transformers backbone first writes an ABC-notation plan (melody-only or melody plus chords), then generates semantic tokens and acoustic latents through flow matching, which a VAE decodes to stereo audio. Users can edit the score by hand, supply their own ABC, or let an LLM agent iteratively reharmonize, restyle, and rewrite lyrics across multiple revision rounds; a zero-shot cover workflow conditions generation on a transcribed melody (via the companion SheetSage2 model) while preserving song identity. Runs locally on a single 24GB GPU — a 3.6-minute song in ~71 seconds on an RTX 4090 — and ships with companion models (YuE2-Vae, MERT-v2 encoders, SheetSage2 transcription) plus the WildSongBench benchmark. Model weights are non-commercial (CC BY-NC 4.0); the YuE2 technical report is forthcoming and the original YuE paper is cited in the meantime.
+
+**Release Date:** September 9, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Singing Generation** | ✅ |
+| **Lyrics Support** | ✅ |
+| **Long Form** | ✅ |
+| **Streaming** | ❌ |
+| **Input Modalities** | lyrics, style prompt, ABC score (optional) |
+| **License** | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
+| **Parameters** | 3.6B |
+| **Architecture** | AR–NAR Mixture-of-Transformers + flow matching + VAE |
+| **Sample Rate** | 48 kHz stereo |
+| **Vram** | 24GB GPU (~11 GiB peak, BF16) |
+| **Speed** | 3.6-min song in ~71s on RTX 4090 |
+| **Editable Score** | ✅ |
+| **Agentic Editing** | ✅ |
+| **Cover Songs** | ✅ |
+| **Languages** | English, Mandarin |
+
+**Features:** Symbolic planning as a first-class interface: the model writes an editable ABC-notation score (melody plus optional chords) before synthesis, so melody and harmony can be shaped directly, an LLM agent can translate musical feedback into iterative score/lyric revisions, and transcribed melodies (SheetSage2) drive zero-shot covers — cutting lyric phoneme error from YuE 1's 36% to 8.4% while running on a single 24GB GPU.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/m-a-p/YuE2-3B)
+[![GitHub][link-github]](https://github.com/multimodal-art-projection/YuE)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2503.08638)
+[![Demo][link-demo]](https://map-yue2.github.io/)
+[![HFSpaces][link-hfspaces]](https://huggingface.co/spaces/mrfakename/yue2-3b)
+
+
+**Additional Tools:**
+
+| Tool | Type | Link |
+|------|------|------|
+| piscesbody/ComfyUI-YuE2 | ComfyUI Nodes | [piscesbody/ComfyUI-YuE2](https://github.com/piscesbody/ComfyUI-YuE2) |
+| T8mars/Comfyui-YuE2-T8 | ComfyUI Nodes + WebUI | [T8mars/Comfyui-YuE2-T8](https://github.com/T8mars/Comfyui-YuE2-T8) |
+| audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | [audio-cpp/Yue2-3B-GGUF](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:yue2-3b.md -->
 <!-- MODEL:midigenai.md -->
 <details id="midigenai">
 <summary>MIDI Gen AI</summary>
@@ -1679,6 +1731,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: September 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-cc-by-nc-4.0]: https://img.shields.io/badge/CC_BY--NC_4.0-orange?style=flat-square&logo=creativecommons "CC BY-NC 4.0"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
@@ -1691,6 +1744,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 [link-demo]: https://img.shields.io/badge/Demo-live-blue?style=flat-square "Demo live"
 [link-github]: https://img.shields.io/badge/GitHub-code-black?style=flat-square&logo=github "GitHub code"
 [link-hfmodelpage]: https://img.shields.io/badge/HFModelPage-models-yellow?style=flat-square&logo=huggingface "HFModelPage models"
+[link-hfspaces]: https://img.shields.io/badge/HFSpaces-demo-yellow?style=flat-square&logo=huggingface "HFSpaces demo"
 [link-huggingface]: https://img.shields.io/badge/HuggingFace-models-yellow?style=flat-square&logo=huggingface "HuggingFace models"
 [link-paper]: https://img.shields.io/badge/Paper-paper-red?style=flat-square "Paper paper"
 [link-website]: https://img.shields.io/badge/Website-site-blue?style=flat-square "Website site"
