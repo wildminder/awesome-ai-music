@@ -22,6 +22,9 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 
 - piscesbody/ComfyUI-YuE2 | ComfyUI Nodes | https://github.com/piscesbody/ComfyUI-YuE2
 - T8mars/Comfyui-YuE2-T8 | ComfyUI Nodes + WebUI | https://github.com/T8mars/Comfyui-YuE2-T8
+- filliptm/ComfyUI-FL-YuE2 | ComfyUI Nodes + Piano Roll | https://github.com/filliptm/ComfyUI-FL-YuE2
+- Starnodes2024/ComfyUI-YuE2-Trainer | ComfyUI LoRA Trainer | https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer
+- Comfy-Org/YuE2 | ComfyUI Weights Pack | https://huggingface.co/Comfy-Org/YuE2
 - audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
 
 ## Features

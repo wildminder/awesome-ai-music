@@ -89,6 +89,9 @@
 |------|------|------|
 | piscesbody/ComfyUI-YuE2 | ComfyUI Nodes | [piscesbody/ComfyUI-YuE2](https://github.com/piscesbody/ComfyUI-YuE2) |
 | T8mars/Comfyui-YuE2-T8 | ComfyUI Nodes + WebUI | [T8mars/Comfyui-YuE2-T8](https://github.com/T8mars/Comfyui-YuE2-T8) |
+| filliptm/ComfyUI-FL-YuE2 | ComfyUI Nodes + Piano Roll | [filliptm/ComfyUI-FL-YuE2](https://github.com/filliptm/ComfyUI-FL-YuE2) |
+| Starnodes2024/ComfyUI-YuE2-Trainer | ComfyUI LoRA Trainer | [Starnodes2024/ComfyUI-YuE2-Trainer](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
+| Comfy-Org/YuE2 | ComfyUI Weights Pack | [Comfy-Org/YuE2](https://huggingface.co/Comfy-Org/YuE2) |
 | audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | [audio-cpp/Yue2-3B-GGUF](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
 
 
