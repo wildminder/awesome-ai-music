@@ -26,6 +26,17 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - Starnodes2024/ComfyUI-YuE2-Trainer | ComfyUI LoRA Trainer | https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer
 - Comfy-Org/YuE2 | ComfyUI Weights Pack | https://huggingface.co/Comfy-Org/YuE2
 - audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
+- drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui | Tokenizer + NAR LoRA Assets | https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui
+- dynamohum/yue2gen | Web UI + Stems (Docker) | https://github.com/dynamohum/yue2gen
+- monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | https://huggingface.co/monsterovich/yue2-industrial-rock-lora
+- guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | https://huggingface.co/guey-khala-mari/yue2_lora_sandbox
+- ntc-ai/yue2-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/yue2-concept-sliders
+- Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | https://huggingface.co/Mothersuperior/YuE2-hum-to-song
+- Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras
+- TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1
+- Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666
+- m-a-p/YuE2-Vae-legacy | Official Legacy VAE | https://huggingface.co/m-a-p/YuE2-Vae-legacy
+- m-a-p/YuE2-Vae | Official VAE | https://huggingface.co/m-a-p/YuE2-Vae
 
 ## Features
 

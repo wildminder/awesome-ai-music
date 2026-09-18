@@ -21,6 +21,11 @@ MiniMax Music 3 is a high-performance music generation model for creating comple
 
 - SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k
 - ntc-ai/minimax-music3-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/minimax-music3-concept-sliders
+- echomom/echomom-minimax-music3-native | Native GGUF Component Pack | https://huggingface.co/echomom/echomom-minimax-music3-native
+- Mothersuperior/minimax-music3-composer-5.7b-distilled | Composer LM Distill | https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled
+- BornSaint/minimax-music3-latent-refiner-v0.10 | Latent Refiner | https://huggingface.co/BornSaint/minimax-music3-latent-refiner-v0.10
+- bghira/minimax-music-suno-reggae-rank128-v1 | LoRA (rank 128) | https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v1
+- bghira/minimax-music-suno-reggae-rank128-v2 | LoRA (rank 128, experimental) | https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v2
 - bghira/minimaxh3-suno-reggae-rank128 | LoRA | https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128
 - coolpoodle/music3lab | Lab | https://huggingface.co/coolpoodle/music3lab
 - dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main

@@ -21,6 +21,8 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [DiffSynth-Music](#diffsynth-music) | ✅ | text, audio | ❌ | zh/en | ![Apache 2.0][license-apache-2.0] |
+| [MuLaCover](#mulacover) | ✅ | audio, MIDI, text | ❌ | zh/en/ja/ko/es | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [YuE2](#yue2-3b) | ✅ | lyrics, style prompt | ❌ | 2 | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [MIDI Gen AI](#midigenai) | ✅ | MIDI | ✅ | - | ![MIT][license-mit] |
 | [VIBE](#vibe) | ✅ | video, text | ❌ | - | ![Apache 2.0][license-apache-2.0] |
@@ -44,6 +46,86 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:diffsynth-music.md -->
+<details id="diffsynth-music">
+<summary>DiffSynth-Music</summary>
+
+### DiffSynth-Music
+
+**Description:** DiffSynth-Music is a suite of controllable music generation models from the DiffSynth-Studio team, built on the ACE-Step-1.5 backbone and trained with the DiffSynth-Studio framework, with controllable generation driven by Diffusion-Templates. It adds composable audio conditioning to a music synthesis backbone through layer-wise key-value (KV-cache) injection: three template models — Control, Prosody, and Reference — are initialized from the backbone diffusion transformer and trained with conditional flow matching, and because a shared variational autoencoder maps every conditioning waveform into one common latent space, their attention memories can be combined. Five control types are supported: beats (a generated click track at a fixed BPM plus the base model's `bpm` parameter tightly aligns the output's timing), vocals (keeps the input vocal track consistent while the model writes the accompaniment), accompaniment (keeps the instruments while the model writes the vocals), prosody (matches the timing and vocal style of every syllable to an extracted prosody signal), and reference (experimental — generates new music from the style, melody, singing style, and timbre of the loudest segment of an input clip). Fixing the template timestep at the clean-data endpoint means each control cache is computed once and reused throughout sampling. Training pairs are mined from real recordings via beat extraction, source separation (Demucs), vocal resynthesis, and reference-excerpt selection. Single-control evaluation on Mandarin and English songs shows improved adherence across all five control types and better lyric fidelity under vocal conditioning relative to the backbone, with automatic music-quality and instruction-following scores broadly comparable to the base models. Apache-2.0, and the inference stack supports disk/CPU offload for low-VRAM GPUs.
+
+**Release Date:** September 14, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | not stated (ACE-Step-1.5 XL diffusion transformer backbone) |
+| **Music Gen** | ✅ |
+| **Input Modalities** | text (prompt + lyrics), audio (beats, vocals, accompaniment, prosody, reference) |
+| **Streaming** | ❌ |
+| **Languages** | zh/en (evaluated); backbone ACE-Step-1.5 supports 50+ |
+| **License** | ![Apache 2.0][license-apache-2.0] |
+| **Control Modes** | beats, vocals, accompaniment, prosody, reference (experimental) |
+| **Template Models** | Control, Prosody, Reference (initialized from the backbone DiT) |
+| **Architecture** | layer-wise KV-cache audio adapters + conditional flow matching |
+| **Shared Vae** | conditioning waveforms mapped into one common latent space so attention memories compose |
+| **Track Separation** | ✅ |
+| **Sample Rate** | 48 kHz |
+| **Duration** | up to 240 s in the released examples |
+| **Vram** | disk/CPU offload supported for low-VRAM GPUs |
+| **Framework** | DiffSynth-Studio + Diffusion-Templates |
+| **Inference** | `pip install -e .[audio]`, `DiffSynthMusicPipeline` + `TemplatePipeline` |
+
+**Features:** Control as a composable KV-cache adapter rather than a retrained model: three small template models are trained on top of an unmodified music synthesis backbone, share one variational autoencoder so their conditioning latents can be mixed, and reuse a single precomputed cache per control during sampling — turning beats, vocals, accompaniment, prosody, and reference audio into stackable knobs on an existing text-to-music model.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/DiffSynth-Studio/DiffSynth-Music)
+[![GitHub][link-github]](https://github.com/modelscope/DiffSynth-Studio)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2609.12774)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:diffsynth-music.md -->
+<!-- MODEL:mulacover.md -->
+<details id="mulacover">
+<summary>MuLaCover</summary>
+
+### MuLaCover
+
+**Description:** MuLaCover is a controllable cover-song and music-remix model from the HeartMuLa team (MuLa Labs / Vera Praxis Lab). Rather than copying reference audio frame by frame, it transcribes a reference track into symbolic conditions — melody, harmony, and optional drum parts — and injects that symbolic lead sheet into a pretrained text-to-song backbone through gated adaptive cross-attention, so the source's melodic and harmonic identity is preserved while vocals, lyrics, arrangement, and style are regenerated. A second control path skips audio entirely: supply `--melody_midi` and `--chord_midi` (with optional `--drum_midi`) and MuLaCover composes the cover from a symbolic score. Lyrics are UTF-8 text with section markers (`[Intro]`, `[Verse]`, `[Chorus]`, `[Interlude]`, `[Bridge]`, `[Outro]`) and can be kept or rewritten; style is a single line of named fields such as `topic:[Longing]; genre:[country]; instrument:[Strings,acoustic guitar]; mood:[hopeful]`. The pipeline pairs the backbone with HeartCodec (audio codec), Qwen3-Embedding-0.6B (style encoder), and a SymbolicTranscriptor built on YourMT3 plus a chord recognizer, with lazy loading so only the active stage occupies GPU memory. Training uses cross-cover training with partial conditioning; full-song cover generation was evaluated objectively across six systems and in a 22-participant human study across four systems. Source code is Apache-2.0, but the official weights and their generated outputs are CC BY-NC 4.0 with additional `MODEL_LICENSE` terms — commercial use requires written authorization from MuLa Labs. Built on the HeartMuLa backbone (paper: arXiv 2601.10547).
+
+**Release Date:** September 14, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Parameters** | not stated (five safetensors shards) |
+| **Music Gen** | ✅ |
+| **Cover Songs** | ✅ |
+| **Input Modalities** | reference audio, melody/chord MIDI, lyrics + style tags |
+| **Streaming** | ❌ |
+| **Languages** | zh/en/ja/ko/es (inherited from the multilingual HeartMuLa backbone) |
+| **License** | ![CC BY-NC 4.0][license-cc-by-nc-4.0]<br>![Apache 2.0][license-apache-2.0] |
+| **Architecture** | symbolic lead sheet injected into a text-to-song backbone via gated adaptive cross-attention |
+| **Style Prompt** | named fields — topic, genre, instrument, mood |
+| **Reference Audio** | ✅ |
+| **Melody Control** | ✅ |
+| **Symbolic Control** | reference audio is converted to melody, harmony and optional drum conditions |
+| **Companion Models** | HeartCodec, Qwen3-Embedding-0.6B, SymbolicTranscriptor (YourMT3 + chord recognition) |
+| **Lyrics Support** | ✅ |
+| **Training** | cross-cover training with partial conditioning |
+| **Vram** | lazy loading keeps only the active stage resident; tested with PyTorch 2.10 / CUDA 13 on an NVIDIA B300 |
+| **Evaluation** | six-system objective study plus a 22-participant human study |
+
+**Features:** Symbolic rather than acoustic reference conditioning: the reference song is reduced to a lead sheet (melody, chords, optional drums) and injected through gated adaptive cross-attention, which separates "what the song is" from "how it is performed" — enabling remixes that keep identity while changing genre, instrumentation, topic, mood, and lyrics, and enabling pure MIDI-to-cover generation with no audio reference at all.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/HeartMuLa/MuLaCover)
+[![GitHub][link-github]](https://github.com/HeartMuLa/MuLaCover)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:mulacover.md -->
 <!-- MODEL:yue2-3b.md -->
 <details id="yue2-3b">
 <summary>YuE2</summary>
@@ -93,6 +175,17 @@
 | Starnodes2024/ComfyUI-YuE2-Trainer | ComfyUI LoRA Trainer | [Starnodes2024/ComfyUI-YuE2-Trainer](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
 | Comfy-Org/YuE2 | ComfyUI Weights Pack | [Comfy-Org/YuE2](https://huggingface.co/Comfy-Org/YuE2) |
 | audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | [audio-cpp/Yue2-3B-GGUF](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
+| drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui | Tokenizer + NAR LoRA Assets | [drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
+| dynamohum/yue2gen | Web UI + Stems (Docker) | [dynamohum/yue2gen](https://github.com/dynamohum/yue2gen) |
+| monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | [monsterovich/yue2-industrial-rock-lora](https://huggingface.co/monsterovich/yue2-industrial-rock-lora) |
+| guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | [guey-khala-mari/yue2_lora_sandbox](https://huggingface.co/guey-khala-mari/yue2_lora_sandbox) |
+| ntc-ai/yue2-concept-sliders | Concept Sliders | [ntc-ai/yue2-concept-sliders](https://huggingface.co/ntc-ai/yue2-concept-sliders) |
+| Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | [Mothersuperior/YuE2-hum-to-song](https://huggingface.co/Mothersuperior/YuE2-hum-to-song) |
+| Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | [Mothersuperior/YuE2-instrumental-cot-full-loras](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
+| TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | [TheMindExpansionNetwork/earthdrone_yue2_v1](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
+| Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | [Mothersuperior/YuE2-Vae-merge-0.666](https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666) |
+| m-a-p/YuE2-Vae-legacy | Official Legacy VAE | [m-a-p/YuE2-Vae-legacy](https://huggingface.co/m-a-p/YuE2-Vae-legacy) |
+| m-a-p/YuE2-Vae | Official VAE | [m-a-p/YuE2-Vae](https://huggingface.co/m-a-p/YuE2-Vae) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -246,6 +339,11 @@
 |------|------|------|
 | SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | [SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k](https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k) |
 | ntc-ai/minimax-music3-concept-sliders | Concept Sliders | [ntc-ai/minimax-music3-concept-sliders](https://huggingface.co/ntc-ai/minimax-music3-concept-sliders) |
+| echomom/echomom-minimax-music3-native | Native GGUF Component Pack | [echomom/echomom-minimax-music3-native](https://huggingface.co/echomom/echomom-minimax-music3-native) |
+| Mothersuperior/minimax-music3-composer-5.7b-distilled | Composer LM Distill | [Mothersuperior/minimax-music3-composer-5.7b-distilled](https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled) |
+| BornSaint/minimax-music3-latent-refiner-v0.10 | Latent Refiner | [BornSaint/minimax-music3-latent-refiner-v0.10](https://huggingface.co/BornSaint/minimax-music3-latent-refiner-v0.10) |
+| bghira/minimax-music-suno-reggae-rank128-v1 | LoRA (rank 128) | [bghira/minimax-music-suno-reggae-rank128-v1](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v1) |
+| bghira/minimax-music-suno-reggae-rank128-v2 | LoRA (rank 128, experimental) | [bghira/minimax-music-suno-reggae-rank128-v2](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v2) |
 | bghira/minimaxh3-suno-reggae-rank128 | LoRA | [bghira/minimaxh3-suno-reggae-rank128](https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128) |
 | coolpoodle/music3lab | Lab | [coolpoodle/music3lab](https://huggingface.co/coolpoodle/music3lab) |
 | dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | [dummy9996/MiniMax-Music3-w4a8-bf16-comfyui](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main) |
@@ -1734,9 +1832,9 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: September 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-cc-by-nc-4.0]: https://img.shields.io/badge/CC_BY--NC_4.0-orange?style=flat-square&logo=creativecommons "CC BY-NC 4.0"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
-[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
 [license-unknown]: https://img.shields.io/badge/Unknown-lightgrey?style=flat-square "Unknown"
