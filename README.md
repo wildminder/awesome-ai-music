@@ -176,13 +176,24 @@
 | Comfy-Org/YuE2 | ComfyUI Weights Pack | [Comfy-Org/YuE2](https://huggingface.co/Comfy-Org/YuE2) |
 | audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | [audio-cpp/Yue2-3B-GGUF](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
 | drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui | Tokenizer + NAR LoRA Assets | [drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
-| dynamohum/yue2gen | Web UI + Stems (Docker) | [dynamohum/yue2gen](https://github.com/dynamohum/yue2gen) |
+| dynamohum/YuE2gen-studio | Web UI + Stems + LoRA Training (Docker) | [dynamohum/YuE2gen-studio](https://github.com/dynamohum/YuE2gen-studio) |
 | monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | [monsterovich/yue2-industrial-rock-lora](https://huggingface.co/monsterovich/yue2-industrial-rock-lora) |
 | guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | [guey-khala-mari/yue2_lora_sandbox](https://huggingface.co/guey-khala-mari/yue2_lora_sandbox) |
 | ntc-ai/yue2-concept-sliders | Concept Sliders | [ntc-ai/yue2-concept-sliders](https://huggingface.co/ntc-ai/yue2-concept-sliders) |
 | Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | [Mothersuperior/YuE2-hum-to-song](https://huggingface.co/Mothersuperior/YuE2-hum-to-song) |
 | Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | [Mothersuperior/YuE2-instrumental-cot-full-loras](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
 | TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | [TheMindExpansionNetwork/earthdrone_yue2_v1](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
+| monsterovich/yue2-steps-from-hell | AR+NAR LoRA Pair (epic orchestral) | [monsterovich/yue2-steps-from-hell](https://huggingface.co/monsterovich/yue2-steps-from-hell) |
+| smereces/YuE2_Deathmetalv1_lora | LoRA (death metal) | [smereces/YuE2_Deathmetalv1_lora](https://huggingface.co/smereces/YuE2_Deathmetalv1_lora) |
+| storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | [storagejuju/yue2-jpop-t4-lora](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
+| HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | [HaileyStorm/sv-billie-yue2-lora](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
+| becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | [becausereasons/yue2-blgr-bulgarian-voices](https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices) |
+| becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | [becausereasons/yue2-chnsn-chanson-francaise](https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise) |
+| becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | [becausereasons/yue2-cnzn-canzone-italiana](https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana) |
+| becausereasons/yue2-qwwl-qawwali-sufi-tabla | Artist LoRA Pack (qawwali / sufi / tabla) | [becausereasons/yue2-qwwl-qawwali-sufi-tabla](https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla) |
+| becausereasons/yue2-mltnt-militant-reggae | Artist LoRA Pack (militant roots reggae) | [becausereasons/yue2-mltnt-militant-reggae](https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae) |
+| ntc-ai/yue2-particle-sliders | Particle Sliders v2 (16 controls) | [ntc-ai/yue2-particle-sliders](https://huggingface.co/ntc-ai/yue2-particle-sliders) |
+| mikkel/yue2-concept-sliders | Code + ComfyUI Node (sliders) | [mikkel/yue2-concept-sliders](https://github.com/mikkel/yue2-concept-sliders) |
 | Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | [Mothersuperior/YuE2-Vae-merge-0.666](https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666) |
 | m-a-p/YuE2-Vae-legacy | Official Legacy VAE | [m-a-p/YuE2-Vae-legacy](https://huggingface.co/m-a-p/YuE2-Vae-legacy) |
 | m-a-p/YuE2-Vae | Official VAE | [m-a-p/YuE2-Vae](https://huggingface.co/m-a-p/YuE2-Vae) |
@@ -339,6 +350,7 @@
 |------|------|------|
 | SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | [SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k](https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k) |
 | ntc-ai/minimax-music3-concept-sliders | Concept Sliders | [ntc-ai/minimax-music3-concept-sliders](https://huggingface.co/ntc-ai/minimax-music3-concept-sliders) |
+| ntc-ai/minimax-music3-particle-sliders | Particle Sliders (16 controls) | [ntc-ai/minimax-music3-particle-sliders](https://huggingface.co/ntc-ai/minimax-music3-particle-sliders) |
 | echomom/echomom-minimax-music3-native | Native GGUF Component Pack | [echomom/echomom-minimax-music3-native](https://huggingface.co/echomom/echomom-minimax-music3-native) |
 | Mothersuperior/minimax-music3-composer-5.7b-distilled | Composer LM Distill | [Mothersuperior/minimax-music3-composer-5.7b-distilled](https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled) |
 | BornSaint/minimax-music3-latent-refiner-v0.10 | Latent Refiner | [BornSaint/minimax-music3-latent-refiner-v0.10](https://huggingface.co/BornSaint/minimax-music3-latent-refiner-v0.10) |
@@ -721,6 +733,7 @@
 | Tool | Type | Link |
 |------|------|------|
 | pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | [pradipbasnet68/nepali-folk-acestep-1.5-lora](https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora) |
+| boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA | LoRA (Parai / Tamil folk percussion) | [boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA](https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>

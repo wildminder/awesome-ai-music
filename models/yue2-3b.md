@@ -27,13 +27,24 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - Comfy-Org/YuE2 | ComfyUI Weights Pack | https://huggingface.co/Comfy-Org/YuE2
 - audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
 - drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui | Tokenizer + NAR LoRA Assets | https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui
-- dynamohum/yue2gen | Web UI + Stems (Docker) | https://github.com/dynamohum/yue2gen
+- dynamohum/YuE2gen-studio | Web UI + Stems + LoRA Training (Docker) | https://github.com/dynamohum/YuE2gen-studio
 - monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | https://huggingface.co/monsterovich/yue2-industrial-rock-lora
 - guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | https://huggingface.co/guey-khala-mari/yue2_lora_sandbox
 - ntc-ai/yue2-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/yue2-concept-sliders
 - Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | https://huggingface.co/Mothersuperior/YuE2-hum-to-song
 - Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras
 - TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1
+- monsterovich/yue2-steps-from-hell | AR+NAR LoRA Pair (epic orchestral) | https://huggingface.co/monsterovich/yue2-steps-from-hell
+- smereces/YuE2_Deathmetalv1_lora | LoRA (death metal) | https://huggingface.co/smereces/YuE2_Deathmetalv1_lora
+- storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
+- HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
+- becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices
+- becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise
+- becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana
+- becausereasons/yue2-qwwl-qawwali-sufi-tabla | Artist LoRA Pack (qawwali / sufi / tabla) | https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla
+- becausereasons/yue2-mltnt-militant-reggae | Artist LoRA Pack (militant roots reggae) | https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae
+- ntc-ai/yue2-particle-sliders | Particle Sliders v2 (16 controls) | https://huggingface.co/ntc-ai/yue2-particle-sliders
+- mikkel/yue2-concept-sliders | Code + ComfyUI Node (sliders) | https://github.com/mikkel/yue2-concept-sliders
 - Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666
 - m-a-p/YuE2-Vae-legacy | Official Legacy VAE | https://huggingface.co/m-a-p/YuE2-Vae-legacy
 - m-a-p/YuE2-Vae | Official VAE | https://huggingface.co/m-a-p/YuE2-Vae
