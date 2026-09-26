@@ -30,12 +30,11 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - dynamohum/YuE2gen-studio | Web UI + Stems + LoRA Training (Docker) | https://github.com/dynamohum/YuE2gen-studio
 - monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | https://huggingface.co/monsterovich/yue2-industrial-rock-lora
 - guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | https://huggingface.co/guey-khala-mari/yue2_lora_sandbox
-- ntc-ai/yue2-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/yue2-concept-sliders
 - Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | https://huggingface.co/Mothersuperior/YuE2-hum-to-song
 - Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras
 - TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1
 - monsterovich/yue2-steps-from-hell | AR+NAR LoRA Pair (epic orchestral) | https://huggingface.co/monsterovich/yue2-steps-from-hell
-- smereces/YuE2_Deathmetalv1_lora | LoRA (death metal) | https://huggingface.co/smereces/YuE2_Deathmetalv1_lora
+- pduncan/YuE2_Deathmetalv1_lora | LoRA (death metal) | https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora
 - storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
 - HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
 - becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices

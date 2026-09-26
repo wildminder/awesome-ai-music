@@ -20,7 +20,6 @@ MiniMax Music 3 is a high-performance music generation model for creating comple
 ## Tools
 
 - SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k
-- ntc-ai/minimax-music3-concept-sliders | Concept Sliders | https://huggingface.co/ntc-ai/minimax-music3-concept-sliders
 - ntc-ai/minimax-music3-particle-sliders | Particle Sliders (16 controls) | https://huggingface.co/ntc-ai/minimax-music3-particle-sliders
 - echomom/echomom-minimax-music3-native | Native GGUF Component Pack | https://huggingface.co/echomom/echomom-minimax-music3-native
 - Mothersuperior/minimax-music3-composer-5.7b-distilled | Composer LM Distill | https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled

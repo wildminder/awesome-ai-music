@@ -21,6 +21,7 @@ The most powerful local music generation model outperforming most commercial alt
 
 - pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora
 - boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA | LoRA (Parai / Tamil folk percussion) | https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA
+- FluidInference/ace-step-webgpu-models | WebGPU Weights Mirror (browser) | https://huggingface.co/FluidInference/ace-step-webgpu-models
 
 ## Features
 
