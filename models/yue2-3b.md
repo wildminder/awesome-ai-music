@@ -37,11 +37,15 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - pduncan/YuE2_Deathmetalv1_lora | LoRA (death metal) | https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora
 - storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
 - HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
+- polinom100/yue2-lorn-lora | LoRA (undocumented, 5 checkpoints) | https://huggingface.co/polinom100/yue2-lorn-lora
 - becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices
 - becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise
 - becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana
 - becausereasons/yue2-qwwl-qawwali-sufi-tabla | Artist LoRA Pack (qawwali / sufi / tabla) | https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla
 - becausereasons/yue2-mltnt-militant-reggae | Artist LoRA Pack (militant roots reggae) | https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae
+- becausereasons/yue2-trbdr-folk-troubadour | Artist LoRA Pack (folk troubadour) | https://huggingface.co/becausereasons/yue2-trbdr-folk-troubadour
+- becausereasons/yue2-qtstrm-quiet-storm | Artist LoRA Pack (quiet storm R&B) | https://huggingface.co/becausereasons/yue2-qtstrm-quiet-storm
+- becausereasons/yue2-grvl-raspy-rock-soul | Artist LoRA Pack (raspy rock-soul) | https://huggingface.co/becausereasons/yue2-grvl-raspy-rock-soul
 - ntc-ai/yue2-particle-sliders | Particle Sliders v2 (16 controls) | https://huggingface.co/ntc-ai/yue2-particle-sliders
 - mikkel/yue2-concept-sliders | Code + ComfyUI Node (sliders) | https://github.com/mikkel/yue2-concept-sliders
 - Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666

@@ -186,11 +186,15 @@
 | pduncan/YuE2_Deathmetalv1_lora | LoRA (death metal) | [pduncan/YuE2_Deathmetalv1_lora](https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora) |
 | storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | [storagejuju/yue2-jpop-t4-lora](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
 | HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | [HaileyStorm/sv-billie-yue2-lora](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
+| polinom100/yue2-lorn-lora | LoRA (undocumented, 5 checkpoints) | [polinom100/yue2-lorn-lora](https://huggingface.co/polinom100/yue2-lorn-lora) |
 | becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | [becausereasons/yue2-blgr-bulgarian-voices](https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices) |
 | becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | [becausereasons/yue2-chnsn-chanson-francaise](https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise) |
 | becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | [becausereasons/yue2-cnzn-canzone-italiana](https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana) |
 | becausereasons/yue2-qwwl-qawwali-sufi-tabla | Artist LoRA Pack (qawwali / sufi / tabla) | [becausereasons/yue2-qwwl-qawwali-sufi-tabla](https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla) |
 | becausereasons/yue2-mltnt-militant-reggae | Artist LoRA Pack (militant roots reggae) | [becausereasons/yue2-mltnt-militant-reggae](https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae) |
+| becausereasons/yue2-trbdr-folk-troubadour | Artist LoRA Pack (folk troubadour) | [becausereasons/yue2-trbdr-folk-troubadour](https://huggingface.co/becausereasons/yue2-trbdr-folk-troubadour) |
+| becausereasons/yue2-qtstrm-quiet-storm | Artist LoRA Pack (quiet storm R&B) | [becausereasons/yue2-qtstrm-quiet-storm](https://huggingface.co/becausereasons/yue2-qtstrm-quiet-storm) |
+| becausereasons/yue2-grvl-raspy-rock-soul | Artist LoRA Pack (raspy rock-soul) | [becausereasons/yue2-grvl-raspy-rock-soul](https://huggingface.co/becausereasons/yue2-grvl-raspy-rock-soul) |
 | ntc-ai/yue2-particle-sliders | Particle Sliders v2 (16 controls) | [ntc-ai/yue2-particle-sliders](https://huggingface.co/ntc-ai/yue2-particle-sliders) |
 | mikkel/yue2-concept-sliders | Code + ComfyUI Node (sliders) | [mikkel/yue2-concept-sliders](https://github.com/mikkel/yue2-concept-sliders) |
 | Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | [Mothersuperior/YuE2-Vae-merge-0.666](https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666) |
