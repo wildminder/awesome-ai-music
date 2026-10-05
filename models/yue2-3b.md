@@ -38,6 +38,9 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
 - HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
 - polinom100/yue2-lorn-lora | LoRA (undocumented, 5 checkpoints) | https://huggingface.co/polinom100/yue2-lorn-lora
+- atomtanstudio/lora-library (dreampop) | Style LoRA (dream pop, trigger sv_dreampop) | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop
+- atomtanstudio/lora-library (industrial) | Style LoRA (industrial, trigger sv_industrial) | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial
+- atomtanstudio/lora-library (oldschoolhiphop) | Style LoRA (boom-bap, trigger sv_oldschoolhiphop) | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop
 - becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices
 - becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise
 - becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana
