@@ -21,6 +21,7 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [WorldSonus](#worldsonus) | ❌ | video, text | ✅ | - | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [Fermata 0.2B v1](#fermata-0-2b-v1) | ✅ | symbolic MIDI/MusicXML | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [DiffSynth-Music](#diffsynth-music) | ✅ | text, audio | ❌ | zh/en | ![Apache 2.0][license-apache-2.0] |
 | [MuLaCover](#mulacover) | ✅ | audio, MIDI, text | ❌ | zh/en/ja/ko/es | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
@@ -47,6 +48,50 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:worldsonus.md -->
+<details id="worldsonus">
+<summary>WorldSonus</summary>
+
+### WorldSonus (Video-to-Audio)
+
+**Description:** WorldSonus gives visual worlds a soundtrack. Built for world models — where interactivity, real-time pacing, and camera geometry all matter at once — it takes a video plus a text instruction and emits stereo audio in 100 ms chunks, generating each chunk as soon as its three video frames are available. The core is a streaming causal autoregressive diffusion model at RTF 0.41; visual temporal differences, an autoregressive Ring-KV history, and causal decoder convolution states persist across chunks, so output is one continuous signal rather than independently decoded clips stitched together. It is also steerable mid-stream: an audio-centric captioning pipeline with chunk-indexed prompt scheduling lets sound instructions change while a sequence is being generated. For spatial alignment it leans on stereo supervision curated from diverse stereo and ambisonic data, and it generalizes beyond its world-model target to open-domain video-to-audio benchmarks, matching or outperforming bidirectional state of the art on acoustic quality and spatial alignment. Video conditioning comes from DINOv3, text from T5Gemma 2, and a causal decoder (64 latent channels at 30 Hz) renders 48 kHz float stereo WAV.
+
+**Release Date:** September 29, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Audio Generation** | yes |
+| **Video To Audio** | yes |
+| **Text To Audio** | yes |
+| **Streaming** | ✅ |
+| **Input Modalities** | video, text instruction |
+| **Output** | 48 kHz stereo, float WAV |
+| **Architecture** | streaming causal autoregressive diffusion |
+| **Video Encoder** | DINOv3 |
+| **Text Encoder** | T5Gemma 2 |
+| **Decoder** | causal stereo 48 kHz, 64 latent channels at 30 Hz |
+| **Chunk Size** | 100 ms, 3 video frames per chunk |
+| **Context** | 5-second autoregressive Ring-KV history |
+| **Spatial** | yes, stereo supervision from stereo and ambisonic data |
+| **Interactive Control** | yes, chunk-indexed prompt scheduling |
+| **Real Time Factor** | 0.41 |
+| **Weights** | worldsonus_150k_padtrim.pt, 638 inference tensors, 4.12 GB |
+| **Checkpoint** | C3 no-H0, 150k EMA, HQ fine-tuned |
+| **Requirements** | Python 3.10+, CUDA GPU, FFmpeg and ffprobe |
+| **License** | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
+
+**Features:** Three problems solved together, where most video-to-audio systems only address one. Real time is achieved with a streaming causal architecture that emits 100 ms chunks at RTF 0.41 and keeps Ring-KV history and decoder convolution state alive across chunks instead of re-encoding or stitching per clip. Interactivity comes from an audio-centric captioning pipeline with chunk-indexed prompt scheduling, so a sound instruction delivered mid-generation takes effect from that chunk onward. Spatial alignment is trained directly from curated stereo and ambisonic supervision rather than inferred from mono data, which is what makes camera motion and scene geometry audible in the stereo field.
+
+**Links:**
+[![GitHub][link-github]](https://github.com/NoizAI/WorldSonus)
+[![HuggingFace][link-huggingface]](https://huggingface.co/FF2416/WorldSonus)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2610.08760)
+[![Demo][link-demo]](https://noizai.github.io/WorldSonus/)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:worldsonus.md -->
 <!-- MODEL:fermata-0-2b-v1.md -->
 <details id="fermata-0-2b-v1">
 <summary>Fermata 0.2B v1</summary>
@@ -232,6 +277,9 @@
 | storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | [storagejuju/yue2-jpop-t4-lora](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
 | HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | [HaileyStorm/sv-billie-yue2-lora](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
 | polinom100/yue2-lorn-lora | LoRA (undocumented, 5 checkpoints) | [polinom100/yue2-lorn-lora](https://huggingface.co/polinom100/yue2-lorn-lora) |
+| supermind/YuE2-phonk-lora | LoRA (phonk, 15 checkpoints) | [supermind/YuE2-phonk-lora](https://huggingface.co/supermind/YuE2-phonk-lora) |
+| Behailut/Ethio-Music-YuE2 | AR LoRA (Ethiopian kiñit, r64) | [Behailut/Ethio-Music-YuE2](https://huggingface.co/Behailut/Ethio-Music-YuE2) |
+| akbargherbal/arabmaqamrock-yue2-lora | AR+NAR LoRA Pair (arab maqam rock) | [akbargherbal/arabmaqamrock-yue2-lora](https://huggingface.co/akbargherbal/arabmaqamrock-yue2-lora) |
 | atomtanstudio/lora-library (dreampop) | Style LoRA (dream pop, trigger sv_dreampop) | [atomtanstudio/lora-library (dreampop)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop) |
 | atomtanstudio/lora-library (industrial) | Style LoRA (industrial, trigger sv_industrial) | [atomtanstudio/lora-library (industrial)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial) |
 | atomtanstudio/lora-library (oldschoolhiphop) | Style LoRA (boom-bap, trigger sv_oldschoolhiphop) | [atomtanstudio/lora-library (oldschoolhiphop)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop) |
@@ -785,6 +833,7 @@
 | pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | [pradipbasnet68/nepali-folk-acestep-1.5-lora](https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora) |
 | boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA | LoRA (Parai / Tamil folk percussion) | [boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA](https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA) |
 | FluidInference/ace-step-webgpu-models | WebGPU Weights Mirror (browser) | [FluidInference/ace-step-webgpu-models](https://huggingface.co/FluidInference/ace-step-webgpu-models) |
+| ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ | Model EQ LoRA (rank 128) | [ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ](https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1896,8 +1945,8 @@ This list is continuously evolving. If you have any models to add or updates to 
 *Last Updated: October 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-cc-by-nc-4.0]: https://img.shields.io/badge/CC_BY--NC_4.0-orange?style=flat-square&logo=creativecommons "CC BY-NC 4.0"
+[license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
 [license-minimax-community]: https://img.shields.io/badge/MiniMax_Comm-orange?style=flat-square "MiniMax Comm"
 [license-stability-ai]: https://img.shields.io/badge/Stability_AI-informational?style=flat-square&logo=stability "Stability AI"
