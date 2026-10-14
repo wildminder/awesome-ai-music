@@ -257,45 +257,45 @@
 
 **Additional Tools:**
 
-| Tool | Type | Link |
-|------|------|------|
-| piscesbody/ComfyUI-YuE2 | ComfyUI Nodes | [piscesbody/ComfyUI-YuE2](https://github.com/piscesbody/ComfyUI-YuE2) |
-| T8mars/Comfyui-YuE2-T8 | ComfyUI Nodes + WebUI | [T8mars/Comfyui-YuE2-T8](https://github.com/T8mars/Comfyui-YuE2-T8) |
-| filliptm/ComfyUI-FL-YuE2 | ComfyUI Nodes + Piano Roll | [filliptm/ComfyUI-FL-YuE2](https://github.com/filliptm/ComfyUI-FL-YuE2) |
-| Starnodes2024/ComfyUI-YuE2-Trainer | ComfyUI LoRA Trainer | [Starnodes2024/ComfyUI-YuE2-Trainer](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
-| Comfy-Org/YuE2 | ComfyUI Weights Pack | [Comfy-Org/YuE2](https://huggingface.co/Comfy-Org/YuE2) |
-| audio-cpp/Yue2-3B-GGUF | GGUF (audio.cpp) | [audio-cpp/Yue2-3B-GGUF](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
-| drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui | Tokenizer + NAR LoRA Assets | [drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
-| dynamohum/YuE2gen-studio | Web UI + Stems + LoRA Training (Docker) | [dynamohum/YuE2gen-studio](https://github.com/dynamohum/YuE2gen-studio) |
-| monsterovich/yue2-industrial-rock-lora | AR+NAR LoRA Pair | [monsterovich/yue2-industrial-rock-lora](https://huggingface.co/monsterovich/yue2-industrial-rock-lora) |
-| guey-khala-mari/yue2_lora_sandbox | LoRA Sandbox | [guey-khala-mari/yue2_lora_sandbox](https://huggingface.co/guey-khala-mari/yue2_lora_sandbox) |
-| Mothersuperior/YuE2-hum-to-song | Hum-to-Song Adapter | [Mothersuperior/YuE2-hum-to-song](https://huggingface.co/Mothersuperior/YuE2-hum-to-song) |
-| Mothersuperior/YuE2-instrumental-cot-full-loras | AR Planner LoRA (instrumental) | [Mothersuperior/YuE2-instrumental-cot-full-loras](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
-| TheMindExpansionNetwork/earthdrone_yue2_v1 | LoKr LoRA (earthdrone) | [TheMindExpansionNetwork/earthdrone_yue2_v1](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
-| monsterovich/yue2-steps-from-hell | AR+NAR LoRA Pair (epic orchestral) | [monsterovich/yue2-steps-from-hell](https://huggingface.co/monsterovich/yue2-steps-from-hell) |
-| pduncan/YuE2_Deathmetalv1_lora | LoRA (death metal) | [pduncan/YuE2_Deathmetalv1_lora](https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora) |
-| storagejuju/yue2-jpop-t4-lora | NAR LoRA (J-pop, trigger jpstyle26) | [storagejuju/yue2-jpop-t4-lora](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
-| HaileyStorm/sv-billie-yue2-lora | Artist Voice LoRA (rank 32) | [HaileyStorm/sv-billie-yue2-lora](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
-| polinom100/yue2-lorn-lora | LoRA (undocumented, 5 checkpoints) | [polinom100/yue2-lorn-lora](https://huggingface.co/polinom100/yue2-lorn-lora) |
-| supermind/YuE2-phonk-lora | LoRA (phonk, 15 checkpoints) | [supermind/YuE2-phonk-lora](https://huggingface.co/supermind/YuE2-phonk-lora) |
-| Behailut/Ethio-Music-YuE2 | AR LoRA (Ethiopian kiñit, r64) | [Behailut/Ethio-Music-YuE2](https://huggingface.co/Behailut/Ethio-Music-YuE2) |
-| akbargherbal/arabmaqamrock-yue2-lora | AR+NAR LoRA Pair (arab maqam rock) | [akbargherbal/arabmaqamrock-yue2-lora](https://huggingface.co/akbargherbal/arabmaqamrock-yue2-lora) |
-| atomtanstudio/lora-library (dreampop) | Style LoRA (dream pop, trigger sv_dreampop) | [atomtanstudio/lora-library (dreampop)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop) |
-| atomtanstudio/lora-library (industrial) | Style LoRA (industrial, trigger sv_industrial) | [atomtanstudio/lora-library (industrial)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial) |
-| atomtanstudio/lora-library (oldschoolhiphop) | Style LoRA (boom-bap, trigger sv_oldschoolhiphop) | [atomtanstudio/lora-library (oldschoolhiphop)](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop) |
-| becausereasons/yue2-blgr-bulgarian-voices | Artist LoRA Pack (Bulgarian choir + Tuvan throat) | [becausereasons/yue2-blgr-bulgarian-voices](https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices) |
-| becausereasons/yue2-chnsn-chanson-francaise | Artist LoRA Pack (chanson française) | [becausereasons/yue2-chnsn-chanson-francaise](https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise) |
-| becausereasons/yue2-cnzn-canzone-italiana | Artist LoRA Pack (canzone italiana) | [becausereasons/yue2-cnzn-canzone-italiana](https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana) |
-| becausereasons/yue2-qwwl-qawwali-sufi-tabla | Artist LoRA Pack (qawwali / sufi / tabla) | [becausereasons/yue2-qwwl-qawwali-sufi-tabla](https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla) |
-| becausereasons/yue2-mltnt-militant-reggae | Artist LoRA Pack (militant roots reggae) | [becausereasons/yue2-mltnt-militant-reggae](https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae) |
-| becausereasons/yue2-trbdr-folk-troubadour | Artist LoRA Pack (folk troubadour) | [becausereasons/yue2-trbdr-folk-troubadour](https://huggingface.co/becausereasons/yue2-trbdr-folk-troubadour) |
-| becausereasons/yue2-qtstrm-quiet-storm | Artist LoRA Pack (quiet storm R&B) | [becausereasons/yue2-qtstrm-quiet-storm](https://huggingface.co/becausereasons/yue2-qtstrm-quiet-storm) |
-| becausereasons/yue2-grvl-raspy-rock-soul | Artist LoRA Pack (raspy rock-soul) | [becausereasons/yue2-grvl-raspy-rock-soul](https://huggingface.co/becausereasons/yue2-grvl-raspy-rock-soul) |
-| ntc-ai/yue2-particle-sliders | Particle Sliders v2 (16 controls) | [ntc-ai/yue2-particle-sliders](https://huggingface.co/ntc-ai/yue2-particle-sliders) |
-| mikkel/yue2-concept-sliders | Code + ComfyUI Node (sliders) | [mikkel/yue2-concept-sliders](https://github.com/mikkel/yue2-concept-sliders) |
-| Mothersuperior/YuE2-Vae-merge-0.666 | Merged VAE Decoder | [Mothersuperior/YuE2-Vae-merge-0.666](https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666) |
-| m-a-p/YuE2-Vae-legacy | Official Legacy VAE | [m-a-p/YuE2-Vae-legacy](https://huggingface.co/m-a-p/YuE2-Vae-legacy) |
-| m-a-p/YuE2-Vae | Official VAE | [m-a-p/YuE2-Vae](https://huggingface.co/m-a-p/YuE2-Vae) |
+| Tool | Type | Author |
+|------|------|--------|
+| YuE2 Nodes | ![ComfyUI node][tool-type-comfyui-node] | [![piscesbody][tool-author-piscesbody]](https://github.com/piscesbody/ComfyUI-YuE2) |
+| YuE2 T8 | ![ComfyUI node][tool-type-comfyui-node] | [![T8mars][tool-author-t8mars]](https://github.com/T8mars/Comfyui-YuE2-T8) |
+| FL YuE2 | ![ComfyUI node][tool-type-comfyui-node] | [![filliptm][tool-author-filliptm]](https://github.com/filliptm/ComfyUI-FL-YuE2) |
+| YuE2 Trainer | ![Trainer][tool-type-trainer] | [![Starnodes2024][tool-author-starnodes2024]](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
+| ComfyUI Weights | ![Weights][tool-type-weights] | [![Comfy-Org][tool-author-comfy-org]](https://huggingface.co/Comfy-Org/YuE2) |
+| audio.cpp GGUF | ![GGUF][tool-type-gguf] | [![audio-cpp][tool-author-audio-cpp]](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
+| Realaudio Tokenizer | ![Tokenizer][tool-type-tokenizer] | [![drbaph][tool-author-drbaph]](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
+| YuE2gen Studio | ![Web UI][tool-type-web-ui] | [![dynamohum][tool-author-dynamohum]](https://github.com/dynamohum/YuE2gen-studio) |
+| Industrial Rock | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-industrial-rock-lora) |
+| LoRA Sandbox | ![LoRA][tool-type-lora] | [![guey-khala-mari][tool-author-guey-khala-mari]](https://huggingface.co/guey-khala-mari/yue2_lora_sandbox) |
+| Hum-to-Song | ![LoRA][tool-type-lora] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-hum-to-song) |
+| Instrumental CoT | ![LoRA][tool-type-lora] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
+| Earthdrone | ![LoRA][tool-type-lora] | [![TheMindExpansionNetwork][tool-author-themindexpansionnetwork]](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
+| Steps From Hell | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-steps-from-hell) |
+| Death Metal V1 | ![LoRA][tool-type-lora] | [![pduncan][tool-author-pduncan]](https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora) |
+| J-Pop T4 | ![LoRA][tool-type-lora] | [![storagejuju][tool-author-storagejuju]](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
+| Billie (Voice) | ![LoRA][tool-type-lora] | [![HaileyStorm][tool-author-haileystorm]](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
+| Lorn | ![LoRA][tool-type-lora] | [![polinom100][tool-author-polinom100]](https://huggingface.co/polinom100/yue2-lorn-lora) |
+| Phonk | ![LoRA][tool-type-lora] | [![supermind][tool-author-supermind]](https://huggingface.co/supermind/YuE2-phonk-lora) |
+| Ethio-Music | ![LoRA][tool-type-lora] | [![Behailut][tool-author-behailut]](https://huggingface.co/Behailut/Ethio-Music-YuE2) |
+| ArabMaqamRock v3 | ![LoRA][tool-type-lora] | [![akbargherbal][tool-author-akbargherbal]](https://huggingface.co/akbargherbal/arabmaqamrock-yue2-lora) |
+| DreamPop v2 | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop) |
+| Industrial v1 | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial) |
+| Old School Hip-Hop | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop) |
+| Bulgarian Voices | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-blgr-bulgarian-voices) |
+| Chanson Française | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-chnsn-chanson-francaise) |
+| Canzone Italiana | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-cnzn-canzone-italiana) |
+| Qawwali / Sufi / Tabla | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-qwwl-qawwali-sufi-tabla) |
+| Militant Reggae | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-mltnt-militant-reggae) |
+| Folk Troubadour | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-trbdr-folk-troubadour) |
+| Quiet Storm | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-qtstrm-quiet-storm) |
+| Raspy Rock-Soul | ![LoRA][tool-type-lora] | [![becausereasons][tool-author-becausereasons]](https://huggingface.co/becausereasons/yue2-grvl-raspy-rock-soul) |
+| Particle Sliders | ![Concept slider][tool-type-concept-slider] | [![ntc-ai][tool-author-ntc-ai]](https://huggingface.co/ntc-ai/yue2-particle-sliders) |
+| Concept Sliders | ![ComfyUI node][tool-type-comfyui-node] | [![mikkel][tool-author-mikkel]](https://github.com/mikkel/yue2-concept-sliders) |
+| VAE Merge 0.666 | ![VAE][tool-type-vae] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-Vae-merge-0.666) |
+| Legacy VAE | ![VAE][tool-type-vae] | [![m-a-p][tool-author-m-a-p]](https://huggingface.co/m-a-p/YuE2-Vae-legacy) |
+| YuE2 VAE | ![VAE][tool-type-vae] | [![m-a-p][tool-author-m-a-p]](https://huggingface.co/m-a-p/YuE2-Vae) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -445,30 +445,30 @@
 
 **Additional Tools:**
 
-| Tool | Type | Link |
-|------|------|------|
-| SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k | ComfyUI LoRA | [SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k](https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k) |
-| ntc-ai/minimax-music3-particle-sliders | Particle Sliders (16 controls) | [ntc-ai/minimax-music3-particle-sliders](https://huggingface.co/ntc-ai/minimax-music3-particle-sliders) |
-| echomom/echomom-minimax-music3-native | Native GGUF Component Pack | [echomom/echomom-minimax-music3-native](https://huggingface.co/echomom/echomom-minimax-music3-native) |
-| Mothersuperior/minimax-music3-composer-5.7b-distilled | Composer LM Distill | [Mothersuperior/minimax-music3-composer-5.7b-distilled](https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled) |
-| BornSaint/minimax-music3-latent-refiner-v0.10 | Latent Refiner | [BornSaint/minimax-music3-latent-refiner-v0.10](https://huggingface.co/BornSaint/minimax-music3-latent-refiner-v0.10) |
-| bghira/minimax-music-suno-reggae-rank128-v1 | LoRA (rank 128) | [bghira/minimax-music-suno-reggae-rank128-v1](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v1) |
-| bghira/minimax-music-suno-reggae-rank128-v2 | LoRA (rank 128, experimental) | [bghira/minimax-music-suno-reggae-rank128-v2](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v2) |
-| bghira/minimaxh3-suno-reggae-rank128 | LoRA | [bghira/minimaxh3-suno-reggae-rank128](https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128) |
-| coolpoodle/music3lab | Lab | [coolpoodle/music3lab](https://huggingface.co/coolpoodle/music3lab) |
-| dummy9996/MiniMax-Music3-w4a8-bf16-comfyui | ComfyUI Quant | [dummy9996/MiniMax-Music3-w4a8-bf16-comfyui](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main) |
-| molbal/Minimax-Music3-GGUF | GGUF | [molbal/Minimax-Music3-GGUF](https://huggingface.co/molbal/Minimax-Music3-GGUF) |
-| realrebelai/MiniMax-Music-3_GGUFs | GGUF | [realrebelai/MiniMax-Music-3_GGUFs](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main) |
-| rzgar/minimax_music3_text_encoder_fp16_fp8 | Text Encoder Quant (FP16/FP8) | [rzgar/minimax_music3_text_encoder_fp16_fp8](https://huggingface.co/rzgar/minimax_music3_text_encoder_fp16_fp8) |
-| terminusresearch/minimax-music3-latent-refiner-v0.10 | Latent Refiner | [terminusresearch/minimax-music3-latent-refiner-v0.10](https://huggingface.co/terminusresearch/minimax-music3-latent-refiner-v0.10) |
-| terminusresearch/minimax-music3-replanner-experiment | Experiment Log + Checkpoints | [terminusresearch/minimax-music3-replanner-experiment](https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment) |
-| echomom/echomom-minimax-music3-q8 | GGUF Q8 Pack | [echomom/echomom-minimax-music3-q8](https://huggingface.co/echomom/echomom-minimax-music3-q8) |
-| SimpleTuner/open-rvq-encoder-minimax-music3 | Open RVQ Encoder | [SimpleTuner/open-rvq-encoder-minimax-music3](https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3) |
-| Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4 | RVQ Encoder Fine-tune | [Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4](https://huggingface.co/Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4) |
-| scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1 | RVQ Encoder (calibrated) | [scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1](https://huggingface.co/scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1) |
-| terminusresearch/minimax-music3-lm-lora-fiona-crapple | LM LoRA (trigger word) | [terminusresearch/minimax-music3-lm-lora-fiona-crapple](https://huggingface.co/terminusresearch/minimax-music3-lm-lora-fiona-crapple) |
-| bghira/minimax-music3-latent-replanner | ComfyUI Nodes | [bghira/minimax-music3-latent-replanner](https://github.com/bghira/minimax-music3-latent-replanner) |
-| SimpleTuner MINIMAX_MUSIC quickstart | Training Guide | [SimpleTuner MINIMAX_MUSIC quickstart](https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md) |
+| Tool | Type | Author |
+|------|------|--------|
+| Reggae Test V1 4k | ![LoRA][tool-type-lora] | [![SimpleTuner][tool-author-simpletuner]](https://huggingface.co/SimpleTuner/minimaxmusic-reggae-test-lora-comfyui-v1-4k) |
+| Particle Sliders | ![Concept slider][tool-type-concept-slider] | [![ntc-ai][tool-author-ntc-ai]](https://huggingface.co/ntc-ai/minimax-music3-particle-sliders) |
+| Native Pack | ![GGUF][tool-type-gguf] | [![echomom][tool-author-echomom]](https://huggingface.co/echomom/echomom-minimax-music3-native) |
+| Composer 5.7B Distilled | ![Weights][tool-type-weights] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/minimax-music3-composer-5.7b-distilled) |
+| Latent Refiner v0.10 | ![Refiner][tool-type-refiner] | [![BornSaint][tool-author-bornsaint]](https://huggingface.co/BornSaint/minimax-music3-latent-refiner-v0.10) |
+| Suno Reggae V1 | ![LoRA][tool-type-lora] | [![bghira][tool-author-bghira]](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v1) |
+| Suno Reggae V2 | ![LoRA][tool-type-lora] | [![bghira][tool-author-bghira]](https://huggingface.co/bghira/minimax-music-suno-reggae-rank128-v2) |
+| Suno Reggae H3 | ![LoRA][tool-type-lora] | [![bghira][tool-author-bghira]](https://huggingface.co/bghira/minimaxh3-suno-reggae-rank128) |
+| Music3Lab | ![Toolkit][tool-type-toolkit] | [![coolpoodle][tool-author-coolpoodle]](https://huggingface.co/coolpoodle/music3lab) |
+| W4A8 BF16 (ComfyUI) | ![Quant][tool-type-quant] | [![dummy9996][tool-author-dummy9996]](https://huggingface.co/dummy9996/MiniMax-Music3-w4a8-bf16-comfyui/tree/main) |
+| DiT + Text Encoder Quants | ![GGUF][tool-type-gguf] | [![molbal][tool-author-molbal]](https://huggingface.co/molbal/Minimax-Music3-GGUF) |
+| Single-File Quants (Q2_K-Q6_K) | ![GGUF][tool-type-gguf] | [![realrebelai][tool-author-realrebelai]](https://huggingface.co/realrebelai/MiniMax-Music-3_GGUFs/tree/main) |
+| Text Encoder (FP16/FP8) | ![Encoder][tool-type-encoder] | [![rzgar][tool-author-rzgar]](https://huggingface.co/rzgar/minimax_music3_text_encoder_fp16_fp8) |
+| Latent Refiner v0.10 | ![Refiner][tool-type-refiner] | [![terminusresearch][tool-author-terminusresearch]](https://huggingface.co/terminusresearch/minimax-music3-latent-refiner-v0.10) |
+| Replanner Experiment | ![Refiner][tool-type-refiner] | [![terminusresearch][tool-author-terminusresearch]](https://huggingface.co/terminusresearch/minimax-music3-replanner-experiment) |
+| Q8 Pack | ![GGUF][tool-type-gguf] | [![echomom][tool-author-echomom]](https://huggingface.co/echomom/echomom-minimax-music3-q8) |
+| Open RVQ Encoder | ![Encoder][tool-type-encoder] | [![SimpleTuner][tool-author-simpletuner]](https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3) |
+| Open RVQ Encoder Pooled V4 | ![Encoder][tool-type-encoder] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/open-rvq-encoder-minimax-music3-169m-pooled-v4) |
+| Open RVQ Encoder Hotstep V1 | ![Encoder][tool-type-encoder] | [![scragnog][tool-author-scragnog]](https://huggingface.co/scragnog/open-rvq-encoder-minimax-music3-169m-hotstep-v1) |
+| Fiona Crapple | ![LoRA][tool-type-lora] | [![terminusresearch][tool-author-terminusresearch]](https://huggingface.co/terminusresearch/minimax-music3-lm-lora-fiona-crapple) |
+| Music3 Latent Replanner | ![ComfyUI node][tool-type-comfyui-node] | [![bghira][tool-author-bghira]](https://github.com/bghira/minimax-music3-latent-replanner) |
+| MiniMax Music Training Guide | ![Guide][tool-type-guide] | [![bghira][tool-author-bghira]](https://github.com/bghira/SimpleTuner/blob/main/documentation/quickstart/MINIMAX_MUSIC.md) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -828,12 +828,12 @@
 
 **Additional Tools:**
 
-| Tool | Type | Link |
-|------|------|------|
-| pradipbasnet68/nepali-folk-acestep-1.5-lora | LoRA | [pradipbasnet68/nepali-folk-acestep-1.5-lora](https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora) |
-| boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA | LoRA (Parai / Tamil folk percussion) | [boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA](https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA) |
-| FluidInference/ace-step-webgpu-models | WebGPU Weights Mirror (browser) | [FluidInference/ace-step-webgpu-models](https://huggingface.co/FluidInference/ace-step-webgpu-models) |
-| ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ | Model EQ LoRA (rank 128) | [ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ](https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ) |
+| Tool | Type | Author |
+|------|------|--------|
+| Nepali Folk | ![LoRA][tool-type-lora] | [![pradipbasnet68][tool-author-pradipbasnet68]](https://huggingface.co/pradipbasnet68/nepali-folk-acestep-1.5-lora) |
+| South India Parai | ![LoRA][tool-type-lora] | [![boobalanit][tool-author-boobalanit]](https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA) |
+| WebGPU Weights | ![Weights][tool-type-weights] | [![FluidInference][tool-author-fluidinference]](https://huggingface.co/FluidInference/ace-step-webgpu-models) |
+| Fizgig Model EQ | ![LoRA][tool-type-lora] | [![ShootTheSound][tool-author-shootthesound]](https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1963,3 +1963,57 @@ This list is continuously evolving. If you have any models to add or updates to 
 [link-paper]: https://img.shields.io/badge/Paper-paper-red?style=flat-square "Paper paper"
 [link-website]: https://img.shields.io/badge/Website-site-blue?style=flat-square "Website site"
 [link-arxiv]: https://img.shields.io/badge/arXiv-paper-red?style=flat-square "arXiv paper"
+
+[tool-type-lora]: https://img.shields.io/badge/LoRA-brightgreen?style=flat-square "LoRA"
+[tool-type-comfyui-node]: https://img.shields.io/badge/ComfyUI_node-teal?style=flat-square "ComfyUI node"
+[tool-type-gguf]: https://img.shields.io/badge/GGUF-orange?style=flat-square "GGUF"
+[tool-type-refiner]: https://img.shields.io/badge/Refiner-purple?style=flat-square "Refiner"
+[tool-type-quant]: https://img.shields.io/badge/Quant-yellow?style=flat-square "Quant"
+[tool-type-vae]: https://img.shields.io/badge/VAE-green?style=flat-square "VAE"
+[tool-type-encoder]: https://img.shields.io/badge/Encoder-blueviolet?style=flat-square "Encoder"
+[tool-type-tokenizer]: https://img.shields.io/badge/Tokenizer-cyan?style=flat-square "Tokenizer"
+[tool-type-concept-slider]: https://img.shields.io/badge/Concept_slider-magenta?style=flat-square "Concept slider"
+[tool-type-web-ui]: https://img.shields.io/badge/Web_UI-success?style=flat-square "Web UI"
+[tool-type-trainer]: https://img.shields.io/badge/Trainer-yellowgreen?style=flat-square "Trainer"
+[tool-type-guide]: https://img.shields.io/badge/Guide-lightgrey?style=flat-square "Guide"
+[tool-type-weights]: https://img.shields.io/badge/Weights-informational?style=flat-square "Weights"
+[tool-type-toolkit]: https://img.shields.io/badge/Toolkit-inactive?style=flat-square "Toolkit"
+[tool-author-behailut]: https://img.shields.io/badge/Behailut-blue?style=flat-square "Behailut"
+[tool-author-bornsaint]: https://img.shields.io/badge/BornSaint-blue?style=flat-square "BornSaint"
+[tool-author-comfy-org]: https://img.shields.io/badge/Comfy--Org-blue?style=flat-square "Comfy-Org"
+[tool-author-fluidinference]: https://img.shields.io/badge/FluidInference-blue?style=flat-square "FluidInference"
+[tool-author-haileystorm]: https://img.shields.io/badge/HaileyStorm-blue?style=flat-square "HaileyStorm"
+[tool-author-mothersuperior]: https://img.shields.io/badge/Mothersuperior-blue?style=flat-square "Mothersuperior"
+[tool-author-shootthesound]: https://img.shields.io/badge/ShootTheSound-blue?style=flat-square "ShootTheSound"
+[tool-author-simpletuner]: https://img.shields.io/badge/SimpleTuner-blue?style=flat-square "SimpleTuner"
+[tool-author-starnodes2024]: https://img.shields.io/badge/Starnodes2024-blue?style=flat-square "Starnodes2024"
+[tool-author-t8mars]: https://img.shields.io/badge/T8mars-blue?style=flat-square "T8mars"
+[tool-author-themindexpansionnetwork]: https://img.shields.io/badge/TheMindExpansionNetwork-blue?style=flat-square "TheMindExpansionNetwork"
+[tool-author-akbargherbal]: https://img.shields.io/badge/akbargherbal-blue?style=flat-square "akbargherbal"
+[tool-author-atomtanstudio]: https://img.shields.io/badge/atomtanstudio-blue?style=flat-square "atomtanstudio"
+[tool-author-audio-cpp]: https://img.shields.io/badge/audio--cpp-blue?style=flat-square "audio-cpp"
+[tool-author-becausereasons]: https://img.shields.io/badge/becausereasons-blue?style=flat-square "becausereasons"
+[tool-author-bghira]: https://img.shields.io/badge/bghira-blue?style=flat-square "bghira"
+[tool-author-boobalanit]: https://img.shields.io/badge/boobalanit-blue?style=flat-square "boobalanit"
+[tool-author-coolpoodle]: https://img.shields.io/badge/coolpoodle-blue?style=flat-square "coolpoodle"
+[tool-author-drbaph]: https://img.shields.io/badge/drbaph-blue?style=flat-square "drbaph"
+[tool-author-dummy9996]: https://img.shields.io/badge/dummy9996-blue?style=flat-square "dummy9996"
+[tool-author-dynamohum]: https://img.shields.io/badge/dynamohum-blue?style=flat-square "dynamohum"
+[tool-author-echomom]: https://img.shields.io/badge/echomom-blue?style=flat-square "echomom"
+[tool-author-filliptm]: https://img.shields.io/badge/filliptm-blue?style=flat-square "filliptm"
+[tool-author-guey-khala-mari]: https://img.shields.io/badge/guey--khala--mari-blue?style=flat-square "guey-khala-mari"
+[tool-author-m-a-p]: https://img.shields.io/badge/m--a--p-blue?style=flat-square "m-a-p"
+[tool-author-mikkel]: https://img.shields.io/badge/mikkel-blue?style=flat-square "mikkel"
+[tool-author-molbal]: https://img.shields.io/badge/molbal-blue?style=flat-square "molbal"
+[tool-author-monsterovich]: https://img.shields.io/badge/monsterovich-blue?style=flat-square "monsterovich"
+[tool-author-ntc-ai]: https://img.shields.io/badge/ntc--ai-blue?style=flat-square "ntc-ai"
+[tool-author-pduncan]: https://img.shields.io/badge/pduncan-blue?style=flat-square "pduncan"
+[tool-author-piscesbody]: https://img.shields.io/badge/piscesbody-blue?style=flat-square "piscesbody"
+[tool-author-polinom100]: https://img.shields.io/badge/polinom100-blue?style=flat-square "polinom100"
+[tool-author-pradipbasnet68]: https://img.shields.io/badge/pradipbasnet68-blue?style=flat-square "pradipbasnet68"
+[tool-author-realrebelai]: https://img.shields.io/badge/realrebelai-blue?style=flat-square "realrebelai"
+[tool-author-rzgar]: https://img.shields.io/badge/rzgar-blue?style=flat-square "rzgar"
+[tool-author-scragnog]: https://img.shields.io/badge/scragnog-blue?style=flat-square "scragnog"
+[tool-author-storagejuju]: https://img.shields.io/badge/storagejuju-blue?style=flat-square "storagejuju"
+[tool-author-supermind]: https://img.shields.io/badge/supermind-blue?style=flat-square "supermind"
+[tool-author-terminusresearch]: https://img.shields.io/badge/terminusresearch-blue?style=flat-square "terminusresearch"
