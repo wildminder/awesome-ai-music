@@ -264,6 +264,7 @@
 | FL YuE2 | ![ComfyUI node][tool-type-comfyui-node] | [![filliptm][tool-author-filliptm]](https://github.com/filliptm/ComfyUI-FL-YuE2) |
 | YuE2 Trainer | ![Trainer][tool-type-trainer] | [![Starnodes2024][tool-author-starnodes2024]](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
 | ComfyUI Weights | ![Weights][tool-type-weights] | [![Comfy-Org][tool-author-comfy-org]](https://huggingface.co/Comfy-Org/YuE2) |
+| IRA Merge | ![Weights][tool-type-weights] | [![goldhub][tool-author-goldhub]](https://huggingface.co/goldhub/YuE2-3B-Ruach_Studio-IRA-Merge) |
 | audio.cpp GGUF | ![GGUF][tool-type-gguf] | [![audio-cpp][tool-author-audio-cpp]](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
 | Realaudio Tokenizer | ![Tokenizer][tool-type-tokenizer] | [![drbaph][tool-author-drbaph]](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
 | YuE2gen Studio | ![Web UI][tool-type-web-ui] | [![dynamohum][tool-author-dynamohum]](https://github.com/dynamohum/YuE2gen-studio) |
@@ -834,6 +835,7 @@
 | South India Parai | ![LoRA][tool-type-lora] | [![boobalanit][tool-author-boobalanit]](https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA) |
 | WebGPU Weights | ![Weights][tool-type-weights] | [![FluidInference][tool-author-fluidinference]](https://huggingface.co/FluidInference/ace-step-webgpu-models) |
 | Fizgig Model EQ | ![LoRA][tool-type-lora] | [![ShootTheSound][tool-author-shootthesound]](https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ) |
+| Kannaka | ![LoRA][tool-type-lora] | [![flaukowski][tool-author-flaukowski]](https://huggingface.co/flaukowski/kannaka-ace-step-lora) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -2001,6 +2003,8 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-dynamohum]: https://img.shields.io/badge/dynamohum-blue?style=flat-square "dynamohum"
 [tool-author-echomom]: https://img.shields.io/badge/echomom-blue?style=flat-square "echomom"
 [tool-author-filliptm]: https://img.shields.io/badge/filliptm-blue?style=flat-square "filliptm"
+[tool-author-flaukowski]: https://img.shields.io/badge/flaukowski-blue?style=flat-square "flaukowski"
+[tool-author-goldhub]: https://img.shields.io/badge/goldhub-blue?style=flat-square "goldhub"
 [tool-author-guey-khala-mari]: https://img.shields.io/badge/guey--khala--mari-blue?style=flat-square "guey-khala-mari"
 [tool-author-m-a-p]: https://img.shields.io/badge/m--a--p-blue?style=flat-square "m-a-p"
 [tool-author-mikkel]: https://img.shields.io/badge/mikkel-blue?style=flat-square "mikkel"

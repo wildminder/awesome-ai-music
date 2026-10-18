@@ -23,6 +23,7 @@ The most powerful local music generation model outperforming most commercial alt
 - South India Parai | LoRA | https://huggingface.co/boobalanit/ACE-Step-1.5-SouthIndiaParaiLoRA
 - WebGPU Weights | Weights | https://huggingface.co/FluidInference/ace-step-webgpu-models
 - Fizgig Model EQ | LoRA | https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ
+- Kannaka | LoRA | https://huggingface.co/flaukowski/kannaka-ace-step-lora
 
 ## Features
 

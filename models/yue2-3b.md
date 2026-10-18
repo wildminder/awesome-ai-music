@@ -25,6 +25,7 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - FL YuE2 | ComfyUI node | https://github.com/filliptm/ComfyUI-FL-YuE2
 - YuE2 Trainer | Trainer | https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer
 - ComfyUI Weights | Weights | https://huggingface.co/Comfy-Org/YuE2
+- IRA Merge | Weights | https://huggingface.co/goldhub/YuE2-3B-Ruach_Studio-IRA-Merge
 - audio.cpp GGUF | GGUF | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
 - Realaudio Tokenizer | Tokenizer | https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui
 - YuE2gen Studio | Web UI | https://github.com/dynamohum/YuE2gen-studio
