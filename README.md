@@ -17,6 +17,8 @@
 
 ## ░ Music Generation Models
 
+- **[Cadence Music](https://music.rynn.me)** — Free AI song generator in the browser: describe a gift or paste lyrics → full song with vocals. 4 free/day, no watermark; Keep $1.99.
+
 ### Quick Comparison
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
