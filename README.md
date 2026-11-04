@@ -21,6 +21,7 @@
 
 | Model | Music Gen | Input Modalities | Streaming | Languages | License |
 | :--- | :---: | :---: | :---: | :--- | :--- |
+| [musicar-L](#musicar-l) | ✅ | MIDI prompt | ❌ | - | ![CC BY-NC-SA 4.0][license-cc-by-nc-sa-4.0] |
 | [WorldSonus](#worldsonus) | ❌ | video, text | ✅ | - | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [Fermata 0.2B v1](#fermata-0-2b-v1) | ✅ | symbolic MIDI/MusicXML | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [DiffSynth-Music](#diffsynth-music) | ✅ | text, audio | ❌ | zh/en | ![Apache 2.0][license-apache-2.0] |
@@ -48,6 +49,50 @@
 | [Music Flamingo](#music-flamingo) | ❌ | audio | ❌ | - | ![Apache 2.0][license-apache-2.0] |
 | [SoulX-Singer](#soulx-singer-music) | ✅ | text | ❌ | Zh/En/Yue | ![Apache 2.0][license-apache-2.0] |
 
+<!-- MODEL:musicar-l.md -->
+<details id="musicar-l">
+<summary>musicar-L</summary>
+
+### musicar-L
+
+**Description:** musicar-L is a 464.24M-parameter decoder-only transformer for **symbolic** multi-instrument music generation: it emits MIDI notes, not audio, and renders through a General MIDI SoundFont. One sequence position is one whole note on a 20 ms grid, and five cascade output heads choose its delta-time, instrument, pitch, duration and velocity one after another, each head reading a running state updated by the previous head's sampled choice — a factorised compound token that avoids a flat joint vocabulary. The trunk is 28 pre-norm blocks at width 1152 with RMSNorm, causal full attention (18 heads), RoPE, QK-norm and SwiGLU feed-forward layers. Context is 2,048 notes (roughly 1–4 minutes), covering 129 instruments (128 General MIDI programs plus drums); there are no bar, beat or tempo tokens. This is the uncaptioned pretrained base: besides a MIDI prompt its only controls are two optional window conditions (the set of instruments and the notes per second), so text-conditioned generation lives in the separate `musicar-L-caption`, and `musicar-S` / `musicar-S-piano` are smaller siblings. Training ran from scratch for 126,582 steps over 8.3B notes (GigaMIDI 0.4, Aria-MIDI 0.3, Discover MIDI 0.3) with Muon + AdamW and fp8 torchao matmuls on a single rented RTX 5090 in about 41 hours; teacher-forced validation cross-entropy reached 1.679 nats per note on clean GigaMIDI. BF16 weights are released under CC BY-NC-SA 4.0, with `model.safetensors` and a `generate.py` CLI in the companion code repository.
+
+**Release Date:** October 25, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Music Gen** | ✅ |
+| **Musical Notation** | ✅ |
+| **Instrument Control** | ✅ |
+| **Text To Music** | ❌ |
+| **Streaming** | ❌ |
+| **Input Modalities** | MIDI prompt, optional instrument-set and notes-per-second window conditions |
+| **Output** | MIDI (symbolic only, no audio; rendered with a General MIDI SoundFont) |
+| **License** | ![CC BY-NC-SA 4.0][license-cc-by-nc-sa-4.0] |
+| **Parameters** | 464.24M (trunk 445.98M, cascade heads 16.28M, embeddings 1.99M) |
+| **Architecture** | 28 pre-norm decoder blocks, d_model 1152, 18 attention heads, RMSNorm, RoPE, QK-norm, SwiGLU |
+| **Tokenization** | one compound token per note on a 20 ms grid (delta-time 512, instrument 129, pitch 130, duration 512, velocity 32), no bar/beat/tempo tokens |
+| **Cascade Heads** | five sequential heads (delta-time → instrument → pitch → duration → velocity), each reading a running state h_t + sum of embeddings of prior choices |
+| **Context** | 2,048 notes (~1–4 min), sliding KV-cache rebuild every 512 notes |
+| **Instruments** | 129 (128 General MIDI programs + drums) |
+| **Conditions** | window instrument set and notes per second, both optional with an explicit "none" value |
+| **Sampling** | temperature, top-k, top-p, separate instrument temperature, min-notes, MIDI-prompt continuation |
+| **Precision** | BF16 release weights; bf16 autocast with fp8 (torchao float8) training matmuls |
+| **Training Data** | GigaMIDI 0.4, Aria-MIDI 0.3, Discover MIDI 0.3 — 8.3B notes, ~1.8 epochs, random ±5 semitone transposition |
+| **Training** | 126,582 steps, 65,536 notes/step, Muon (block matrices) + AdamW, WSD schedule, 1× RTX 5090 ~41 h |
+| **Evaluation** | 1.679 nats/note on clean GigaMIDI validation (instrument head 0.117) |
+| **Variants** | musicar-L-caption (text-conditioned), musicar-S, musicar-S-piano |
+
+**Features:** Factorising a compound note token into five cascade heads: instead of a single joint vocabulary over delta-time, instrument, pitch, duration and velocity, each head sees a running state that accumulates an embedding of every attribute already chosen, so the attributes are modelled jointly at a fraction of the vocabulary cost. Combined with a pure 20 ms-grid note stream that carries no bar, beat or tempo tokens, the model learns timing and multi-instrument texture directly from data, and the two optional window conditions (instrument set, notes per second) give coarse global control without any text encoder — the base checkpoint stays deliberately caption-free while `musicar-L-caption` adds text conditioning on top.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/Dimitri-206265/musicar-L)
+[![GitHub][link-github]](https://github.com/DmytroHilei/Music_generative_model)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:musicar-l.md -->
 <!-- MODEL:worldsonus.md -->
 <details id="worldsonus">
 <summary>WorldSonus</summary>
@@ -265,6 +310,7 @@
 | YuE2 Trainer | ![Trainer][tool-type-trainer] | [![Starnodes2024][tool-author-starnodes2024]](https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer) |
 | ComfyUI Weights | ![Weights][tool-type-weights] | [![Comfy-Org][tool-author-comfy-org]](https://huggingface.co/Comfy-Org/YuE2) |
 | IRA Merge | ![Weights][tool-type-weights] | [![goldhub][tool-author-goldhub]](https://huggingface.co/goldhub/YuE2-3B-Ruach_Studio-IRA-Merge) |
+| RS First Wave | ![Weights][tool-type-weights] | [![goldhub][tool-author-goldhub]](https://huggingface.co/goldhub/YuE2-RS-Finetunes) |
 | audio.cpp GGUF | ![GGUF][tool-type-gguf] | [![audio-cpp][tool-author-audio-cpp]](https://huggingface.co/audio-cpp/Yue2-3B-GGUF) |
 | Realaudio Tokenizer | ![Tokenizer][tool-type-tokenizer] | [![drbaph][tool-author-drbaph]](https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui) |
 | YuE2gen Studio | ![Web UI][tool-type-web-ui] | [![dynamohum][tool-author-dynamohum]](https://github.com/dynamohum/YuE2gen-studio) |
@@ -274,6 +320,8 @@
 | Instrumental CoT | ![LoRA][tool-type-lora] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
 | Earthdrone | ![LoRA][tool-type-lora] | [![TheMindExpansionNetwork][tool-author-themindexpansionnetwork]](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
 | Steps From Hell | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-steps-from-hell) |
+| Keygen Music | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-keygen-music-lora) |
+| 1980s Eurodisco | ![LoRA][tool-type-lora] | [![jamespetts][tool-author-jamespetts]](https://huggingface.co/jamespetts/yue2-1980s-eurodisco-lora) |
 | Death Metal V1 | ![LoRA][tool-type-lora] | [![pduncan][tool-author-pduncan]](https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora) |
 | J-Pop T4 | ![LoRA][tool-type-lora] | [![storagejuju][tool-author-storagejuju]](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
 | Billie (Voice) | ![LoRA][tool-type-lora] | [![HaileyStorm][tool-author-haileystorm]](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
@@ -836,6 +884,12 @@
 | WebGPU Weights | ![Weights][tool-type-weights] | [![FluidInference][tool-author-fluidinference]](https://huggingface.co/FluidInference/ace-step-webgpu-models) |
 | Fizgig Model EQ | ![LoRA][tool-type-lora] | [![ShootTheSound][tool-author-shootthesound]](https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ) |
 | Kannaka | ![LoRA][tool-type-lora] | [![flaukowski][tool-author-flaukowski]](https://huggingface.co/flaukowski/kannaka-ace-step-lora) |
+| GTSinger Alto2 Clean Pop (Base) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-clean-pop-ace15-base-200e-20260806) |
+| GTSinger Alto2 Natural 100e (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-100e-20260805) |
+| VocalSet F3 Clean Single (Base) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-vocalset-f3-clean-single-singer-ace15-base-200e-20260806) |
+| VocalSet Lyrical Female (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-vocalset-clean-lyrical-female-ace15-100e-adafactor-20260806) |
+| VocalSet F3 Clear (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-vocalset-f3-clear-ace15-50e-20260805-r4) |
+| GTSinger Alto2 Natural 800e (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-800e-20260805) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1320,6 +1374,15 @@ Part of [ACEStep LoRAs](https://civitai.com/models/2416425/acestep-loras) — ge
 [![Demo][link-demo]](https://huggingface.co/spaces/HeartMuLa/heartmula)
 [![Website][link-website]](https://heartmula.github.io/)
 [![arXiv][link-arxiv]](https://arxiv.org/abs/2601.10547)
+
+
+**Additional Tools:**
+
+| Tool | Type | Author |
+|------|------|--------|
+| heartlib | ![Toolkit][tool-type-toolkit] | [![HeartMuLa][tool-author-heartmula]](https://github.com/HeartMuLa/heartlib) |
+| HeartMuLa ComfyUI | ![ComfyUI node][tool-type-comfyui-node] | [![benjiyaya][tool-author-benjiyaya]](https://github.com/benjiyaya/HeartMuLa_ComfyUI) |
+| HeartCodec Encoder | ![Encoder][tool-type-encoder] | [![HeartMuLa][tool-author-heartmula]](https://huggingface.co/HeartMuLa/HeartCodec-oss-encoder) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -1944,9 +2007,10 @@ Community-maintained leaderboards for tracking and comparing music generation mo
 
 This list is continuously evolving. If you have any models to add or updates to suggest, please feel free to contribute! See [CONTRIBUTING.md](./CONTRIBUTING.md) for the template-driven workflow.
 
-*Last Updated: October 2026*
+*Last Updated: November 2026*
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[license-cc-by-nc-sa-4.0]: https://img.shields.io/badge/CC_BY--NC--SA_4.0-orange?style=flat-square&logo=creativecommons "CC BY-NC-SA 4.0"
 [license-cc-by-nc-4.0]: https://img.shields.io/badge/CC_BY--NC_4.0-orange?style=flat-square&logo=creativecommons "CC BY-NC 4.0"
 [license-apache-2.0]: https://img.shields.io/badge/Apache_2.0-green?style=flat-square&logo=apache "Apache 2.0"
 [license-mit]: https://img.shields.io/badge/MIT-green?style=flat-square&logo=openldap "MIT"
@@ -1983,8 +2047,10 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-behailut]: https://img.shields.io/badge/Behailut-blue?style=flat-square "Behailut"
 [tool-author-bornsaint]: https://img.shields.io/badge/BornSaint-blue?style=flat-square "BornSaint"
 [tool-author-comfy-org]: https://img.shields.io/badge/Comfy--Org-blue?style=flat-square "Comfy-Org"
+[tool-author-danielmarius]: https://img.shields.io/badge/DanielMarius-blue?style=flat-square "DanielMarius"
 [tool-author-fluidinference]: https://img.shields.io/badge/FluidInference-blue?style=flat-square "FluidInference"
 [tool-author-haileystorm]: https://img.shields.io/badge/HaileyStorm-blue?style=flat-square "HaileyStorm"
+[tool-author-heartmula]: https://img.shields.io/badge/HeartMuLa-blue?style=flat-square "HeartMuLa"
 [tool-author-mothersuperior]: https://img.shields.io/badge/Mothersuperior-blue?style=flat-square "Mothersuperior"
 [tool-author-shootthesound]: https://img.shields.io/badge/ShootTheSound-blue?style=flat-square "ShootTheSound"
 [tool-author-simpletuner]: https://img.shields.io/badge/SimpleTuner-blue?style=flat-square "SimpleTuner"
@@ -1995,6 +2061,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-atomtanstudio]: https://img.shields.io/badge/atomtanstudio-blue?style=flat-square "atomtanstudio"
 [tool-author-audio-cpp]: https://img.shields.io/badge/audio--cpp-blue?style=flat-square "audio-cpp"
 [tool-author-becausereasons]: https://img.shields.io/badge/becausereasons-blue?style=flat-square "becausereasons"
+[tool-author-benjiyaya]: https://img.shields.io/badge/benjiyaya-blue?style=flat-square "benjiyaya"
 [tool-author-bghira]: https://img.shields.io/badge/bghira-blue?style=flat-square "bghira"
 [tool-author-boobalanit]: https://img.shields.io/badge/boobalanit-blue?style=flat-square "boobalanit"
 [tool-author-coolpoodle]: https://img.shields.io/badge/coolpoodle-blue?style=flat-square "coolpoodle"
@@ -2006,6 +2073,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-flaukowski]: https://img.shields.io/badge/flaukowski-blue?style=flat-square "flaukowski"
 [tool-author-goldhub]: https://img.shields.io/badge/goldhub-blue?style=flat-square "goldhub"
 [tool-author-guey-khala-mari]: https://img.shields.io/badge/guey--khala--mari-blue?style=flat-square "guey-khala-mari"
+[tool-author-jamespetts]: https://img.shields.io/badge/jamespetts-blue?style=flat-square "jamespetts"
 [tool-author-m-a-p]: https://img.shields.io/badge/m--a--p-blue?style=flat-square "m-a-p"
 [tool-author-mikkel]: https://img.shields.io/badge/mikkel-blue?style=flat-square "mikkel"
 [tool-author-molbal]: https://img.shields.io/badge/molbal-blue?style=flat-square "molbal"

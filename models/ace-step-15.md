@@ -24,6 +24,12 @@ The most powerful local music generation model outperforming most commercial alt
 - WebGPU Weights | Weights | https://huggingface.co/FluidInference/ace-step-webgpu-models
 - Fizgig Model EQ | LoRA | https://huggingface.co/ShootTheSound/Fizgig-ACE-Step-1.5-XL-Model-EQ
 - Kannaka | LoRA | https://huggingface.co/flaukowski/kannaka-ace-step-lora
+- GTSinger Alto2 Clean Pop (Base) | LoRA | https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-clean-pop-ace15-base-200e-20260806
+- GTSinger Alto2 Natural 100e (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-100e-20260805
+- VocalSet F3 Clean Single (Base) | LoRA | https://huggingface.co/DanielMarius/dms-vocalset-f3-clean-single-singer-ace15-base-200e-20260806
+- VocalSet Lyrical Female (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-vocalset-clean-lyrical-female-ace15-100e-adafactor-20260806
+- VocalSet F3 Clear (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-vocalset-f3-clear-ace15-50e-20260805-r4
+- GTSinger Alto2 Natural 800e (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-800e-20260805
 
 ## Features
 

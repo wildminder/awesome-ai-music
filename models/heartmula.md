@@ -23,6 +23,12 @@ A family of open-source music foundation models from HeartMuLa, comprising Heart
 - Website: https://heartmula.github.io/
 - arXiv: https://arxiv.org/abs/2601.10547
 
+## Tools
+
+- heartlib | Toolkit | https://github.com/HeartMuLa/heartlib
+- HeartMuLa ComfyUI | ComfyUI node | https://github.com/benjiyaya/HeartMuLa_ComfyUI
+- HeartCodec Encoder | Encoder | https://huggingface.co/HeartMuLa/HeartCodec-oss-encoder
+
 ## Features
 
 - parameters: 3B (HeartMuLa LM) + HeartCodec decoder

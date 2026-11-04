@@ -26,6 +26,7 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - YuE2 Trainer | Trainer | https://github.com/Starnodes2024/ComfyUI-YuE2-Trainer
 - ComfyUI Weights | Weights | https://huggingface.co/Comfy-Org/YuE2
 - IRA Merge | Weights | https://huggingface.co/goldhub/YuE2-3B-Ruach_Studio-IRA-Merge
+- RS First Wave | Weights | https://huggingface.co/goldhub/YuE2-RS-Finetunes
 - audio.cpp GGUF | GGUF | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
 - Realaudio Tokenizer | Tokenizer | https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui
 - YuE2gen Studio | Web UI | https://github.com/dynamohum/YuE2gen-studio
@@ -35,6 +36,8 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - Instrumental CoT | LoRA | https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras
 - Earthdrone | LoRA | https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1
 - Steps From Hell | LoRA | https://huggingface.co/monsterovich/yue2-steps-from-hell
+- Keygen Music | LoRA | https://huggingface.co/monsterovich/yue2-keygen-music-lora
+- 1980s Eurodisco | LoRA | https://huggingface.co/jamespetts/yue2-1980s-eurodisco-lora
 - Death Metal V1 | LoRA | https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora
 - J-Pop T4 | LoRA | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
 - Billie (Voice) | LoRA | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
