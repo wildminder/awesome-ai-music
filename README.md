@@ -1636,6 +1636,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | [MuScriptor](#muscriptor) | multi-instrument music transcription | full-mix audio | long | custom Mirelo + Kyutai + IRCAM | ![CC BY-NC 4.0][license-cc-by-nc-4.0] |
 | [TinyMU](#tinymu) | music caption + QA | audio + text | short | from-scratch 229M | ![Unknown][license-unknown] |
+| [MuQ-Eval (A3a LoRA)](#muq-eval) | quality scoring | audio waveform | 10 s | MuQ-310M | ![MIT][license-mit] |
 | [Audio Flamingo 3](#audio-flamingo-3) | chat + reasoning | audio + text | long | Audio Flamingo 2 | ![NVIDIA NC][license-nvidia-noncommercial] |
 | [MiDashengLM-7B-0804](#midashenglm) | caption + AQA | audio + text | short-medium | Qwen2.5-Omni-7B | ![Apache 2.0][license-apache-2.0] |
 | [Mellow](#mellow) | AQA + captioning | audio + text | short | from-scratch 167M | ![MIT][license-mit] |
@@ -1726,6 +1727,46 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 <p align="center">· · · · · · · · · · · · · ·</p>
 </details>
 <!-- /MODEL:tinymu.md -->
+<!-- MODEL:muq-eval.md -->
+<details id="muq-eval">
+<summary>MuQ-Eval (A3a LoRA)</summary>
+
+### MuQ-Eval (A3a LoRA)
+
+**Description:** MuQ-Eval is an open-source, per-sample quality metric for AI-generated music. Distributional measures such as Fréchet Audio Distance can only compare sets of clips and correlate poorly with human judgments; MuQ-Eval scores a single clip directly, predicting Musical Impression (MI) and Technical Artifacts (TA) on a 1–5 scale. It attaches lightweight prediction heads to MuQ-310M representations (`OpenMuQ/MuQ-large-msd-iter`) with attention-weighted mean pooling and trains them on MusicEval — 2,748 generated clips from 31 text-to-music systems with 13,740 expert ratings. The checkpoint published here is the **A3a** ablation variant: LoRA r=16 adapts the encoder and an ordinal cross-entropy loss with 5 bins replaces plain MSE; the project's recommended checkpoint remains the simpler frozen-encoder A1 model at `zhudi2825/MuQ-Eval-A1`. Under 5-fold cross-validation stratified by TTM system, A3a reaches system-level SRCC 0.960 and utterance-level SRCC 0.835 — statistically indistinguishable from A1's 0.957 / 0.838, which the paper reads as evidence that frozen MuQ features already carry quality-relevant information and that encoder choice dominates over head design or adaptation. The authors also report LoRA-adapted models trained on as few as 150 clips remain usable, enabling personalized quality evaluators from individual listener annotations, and a controlled degradation analysis showing sensitivity to signal-level artifacts but not musical-structural distortions. The A1 baseline scores a 10-second clip in ~35 ms on a single consumer GPU; A3a needs ~4 GB VRAM. MIT-licensed, with code, weights and evaluation scripts public.
+
+**Release Date:** March 23, 2026
+
+| Feature | Value |
+|---------|-------|
+| **Use Case** | per-sample music quality assessment, MOS prediction |
+| **Input** | mono audio waveform at 24 kHz |
+| **Audio Length** | 10 s max, 240,000 samples |
+| **Base Model** | OpenMuQ/MuQ-large-msd-iter, MuQ-310M |
+| **Parameters** | ~2M trainable on a 310M encoder |
+| **Architecture** | MuQ-310M encoder + attention-weighted mean pooling + two MLP heads |
+| **Loss** | ordinal cross-entropy, 5 bins |
+| **Output** | MI and TA quality scores |
+| **Training Data** | MusicEval, 2,748 clips, 31 TTM systems, 13,740 expert ratings |
+| **Evaluation** | 5-fold CV, system SRCC 0.960, utterance SRCC 0.835 |
+| **Music Gen** | ❌ |
+| **Music Understanding** | ✅ |
+| **Vram** | ~4 GB |
+| **Speed** | real time on a single consumer GPU |
+| **Publication** | arXiv 2603.22677, 2026 |
+| **License** | ![MIT][license-mit] |
+
+**Features:** Replaces distributional FAD-style evaluation with an open, per-sample learned metric: frozen MuQ-310M music representations plus ~1–2M-parameter heads predict human MOS for individual clips at SRCC 0.957 system-level / 0.838 utterance-level, while an ablation sweep shows no architectural or objective addition meaningfully beats the frozen baseline — making encoder selection, not model engineering, the decisive design factor. Runs in real time on one consumer GPU and is fully open, unlike the previous high-correlation closed-source metric.
+
+**Links:**
+[![HuggingFace][link-huggingface]](https://huggingface.co/zhudi2825/MuQ-Eval)
+[![GitHub][link-github]](https://github.com/dgtql/MuQ-Eval)
+[![arXiv][link-arxiv]](https://arxiv.org/abs/2603.22677)
+
+
+<p align="center">· · · · · · · · · · · · · ·</p>
+</details>
+<!-- /MODEL:muq-eval.md -->
 <!-- MODEL:audio-flamingo-3.md -->
 <details id="audio-flamingo-3">
 <summary>Audio Flamingo 3</summary>
