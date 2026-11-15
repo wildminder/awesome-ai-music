@@ -2041,6 +2041,7 @@ Audio-language models (ALMs) — large audio-language and audio-reasoning specia
 Community-maintained leaderboards for tracking and comparing music generation models.
 
 - [Artificial Analysis — Music Leaderboard](https://artificialanalysis.ai/music/leaderboard) — Elo-based arena for music generation systems, ranking models on prompt fidelity, audio quality, and genre coverage.
+- [No Stairs Please](https://nostairsplease.com/) — Directory and [MCP server](https://nostairsplease.com/mcp) covering small live-music stages across all 50 US states and booking contacts ([venues](https://nostairsplease.com/venues)).
 
 <p align="center">≋≋≋≋≋≋≋≋≋≋≋≋≋≋</p>
 
