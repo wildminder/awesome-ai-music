@@ -318,10 +318,13 @@
 | LoRA Sandbox | ![LoRA][tool-type-lora] | [![guey-khala-mari][tool-author-guey-khala-mari]](https://huggingface.co/guey-khala-mari/yue2_lora_sandbox) |
 | Hum-to-Song | ![LoRA][tool-type-lora] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-hum-to-song) |
 | Instrumental CoT | ![LoRA][tool-type-lora] | [![Mothersuperior][tool-author-mothersuperior]](https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras) |
+| Instrumental KTO | ![LoRA][tool-type-lora] | [![stevensu][tool-author-stevensu]](https://huggingface.co/stevensu/YuE2-3B-instrumental-kto-lora) |
 | Earthdrone | ![LoRA][tool-type-lora] | [![TheMindExpansionNetwork][tool-author-themindexpansionnetwork]](https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1) |
 | Steps From Hell | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-steps-from-hell) |
 | Keygen Music | ![LoRA][tool-type-lora] | [![monsterovich][tool-author-monsterovich]](https://huggingface.co/monsterovich/yue2-keygen-music-lora) |
 | 1980s Eurodisco | ![LoRA][tool-type-lora] | [![jamespetts][tool-author-jamespetts]](https://huggingface.co/jamespetts/yue2-1980s-eurodisco-lora) |
+| 1980s Italo Disco | ![LoRA][tool-type-lora] | [![jamespetts][tool-author-jamespetts]](https://huggingface.co/jamespetts/yue2-1980s-italo-disco-lora) |
+| 1980s Two-Tone Ska | ![LoRA][tool-type-lora] | [![jamespetts][tool-author-jamespetts]](https://huggingface.co/jamespetts/yue2-1980s-two-tone-ska-lora) |
 | Death Metal V1 | ![LoRA][tool-type-lora] | [![pduncan][tool-author-pduncan]](https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora) |
 | J-Pop T4 | ![LoRA][tool-type-lora] | [![storagejuju][tool-author-storagejuju]](https://huggingface.co/storagejuju/yue2-jpop-t4-lora) |
 | Billie (Voice) | ![LoRA][tool-type-lora] | [![HaileyStorm][tool-author-haileystorm]](https://huggingface.co/HaileyStorm/sv-billie-yue2-lora) |
@@ -329,6 +332,8 @@
 | Phonk | ![LoRA][tool-type-lora] | [![supermind][tool-author-supermind]](https://huggingface.co/supermind/YuE2-phonk-lora) |
 | Ethio-Music | ![LoRA][tool-type-lora] | [![Behailut][tool-author-behailut]](https://huggingface.co/Behailut/Ethio-Music-YuE2) |
 | ArabMaqamRock v3 | ![LoRA][tool-type-lora] | [![akbargherbal][tool-author-akbargherbal]](https://huggingface.co/akbargherbal/arabmaqamrock-yue2-lora) |
+| Arabic Instrumental | ![LoRA][tool-type-lora] | [![akbargherbal][tool-author-akbargherbal]](https://huggingface.co/akbargherbal/arabic-instrumental-yue2-lora) |
+| ArabMaqamRock Blends | ![LoRA][tool-type-lora] | [![akbargherbal][tool-author-akbargherbal]](https://huggingface.co/akbargherbal/arabmaqamrock-blend-yue2-lora) |
 | DreamPop v2 | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop) |
 | Industrial v1 | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial) |
 | Old School Hip-Hop | ![LoRA][tool-type-lora] | [![atomtanstudio][tool-author-atomtanstudio]](https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop) |
@@ -890,6 +895,9 @@
 | VocalSet Lyrical Female (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-vocalset-clean-lyrical-female-ace15-100e-adafactor-20260806) |
 | VocalSet F3 Clear (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-vocalset-f3-clear-ace15-50e-20260805-r4) |
 | GTSinger Alto2 Natural 800e (Turbo) | ![LoRA][tool-type-lora] | [![DanielMarius][tool-author-danielmarius]](https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-800e-20260805) |
+| Trance / Eurodance | ![LoRA][tool-type-lora] | [![SpaceGhost][tool-author-spaceghost]](https://huggingface.co/SpaceGhost/ace-step-1.5-trance-eurodance-lora) |
+| Ambient / Downtempo (XL SFT) | ![LoRA][tool-type-lora] | [![LouisAmas][tool-author-louisamas]](https://huggingface.co/LouisAmas/acestep-1.5-xl-sft-lora-ambient-downtempo) |
+| 90s Trance (XL SFT) | ![LoRA][tool-type-lora] | [![LouisAmas][tool-author-louisamas]](https://huggingface.co/LouisAmas/acestep-1.5-xl-sft-lora-90s-trance) |
 
 
 <p align="center">· · · · · · · · · · · · · ·</p>
@@ -2092,9 +2100,11 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-fluidinference]: https://img.shields.io/badge/FluidInference-blue?style=flat-square "FluidInference"
 [tool-author-haileystorm]: https://img.shields.io/badge/HaileyStorm-blue?style=flat-square "HaileyStorm"
 [tool-author-heartmula]: https://img.shields.io/badge/HeartMuLa-blue?style=flat-square "HeartMuLa"
+[tool-author-louisamas]: https://img.shields.io/badge/LouisAmas-blue?style=flat-square "LouisAmas"
 [tool-author-mothersuperior]: https://img.shields.io/badge/Mothersuperior-blue?style=flat-square "Mothersuperior"
 [tool-author-shootthesound]: https://img.shields.io/badge/ShootTheSound-blue?style=flat-square "ShootTheSound"
 [tool-author-simpletuner]: https://img.shields.io/badge/SimpleTuner-blue?style=flat-square "SimpleTuner"
+[tool-author-spaceghost]: https://img.shields.io/badge/SpaceGhost-blue?style=flat-square "SpaceGhost"
 [tool-author-starnodes2024]: https://img.shields.io/badge/Starnodes2024-blue?style=flat-square "Starnodes2024"
 [tool-author-t8mars]: https://img.shields.io/badge/T8mars-blue?style=flat-square "T8mars"
 [tool-author-themindexpansionnetwork]: https://img.shields.io/badge/TheMindExpansionNetwork-blue?style=flat-square "TheMindExpansionNetwork"
@@ -2127,6 +2137,7 @@ This list is continuously evolving. If you have any models to add or updates to 
 [tool-author-realrebelai]: https://img.shields.io/badge/realrebelai-blue?style=flat-square "realrebelai"
 [tool-author-rzgar]: https://img.shields.io/badge/rzgar-blue?style=flat-square "rzgar"
 [tool-author-scragnog]: https://img.shields.io/badge/scragnog-blue?style=flat-square "scragnog"
+[tool-author-stevensu]: https://img.shields.io/badge/stevensu-blue?style=flat-square "stevensu"
 [tool-author-storagejuju]: https://img.shields.io/badge/storagejuju-blue?style=flat-square "storagejuju"
 [tool-author-supermind]: https://img.shields.io/badge/supermind-blue?style=flat-square "supermind"
 [tool-author-terminusresearch]: https://img.shields.io/badge/terminusresearch-blue?style=flat-square "terminusresearch"

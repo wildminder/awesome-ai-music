@@ -34,10 +34,13 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - LoRA Sandbox | LoRA | https://huggingface.co/guey-khala-mari/yue2_lora_sandbox
 - Hum-to-Song | LoRA | https://huggingface.co/Mothersuperior/YuE2-hum-to-song
 - Instrumental CoT | LoRA | https://huggingface.co/Mothersuperior/YuE2-instrumental-cot-full-loras
+- Instrumental KTO | LoRA | https://huggingface.co/stevensu/YuE2-3B-instrumental-kto-lora
 - Earthdrone | LoRA | https://huggingface.co/TheMindExpansionNetwork/earthdrone_yue2_v1
 - Steps From Hell | LoRA | https://huggingface.co/monsterovich/yue2-steps-from-hell
 - Keygen Music | LoRA | https://huggingface.co/monsterovich/yue2-keygen-music-lora
 - 1980s Eurodisco | LoRA | https://huggingface.co/jamespetts/yue2-1980s-eurodisco-lora
+- 1980s Italo Disco | LoRA | https://huggingface.co/jamespetts/yue2-1980s-italo-disco-lora
+- 1980s Two-Tone Ska | LoRA | https://huggingface.co/jamespetts/yue2-1980s-two-tone-ska-lora
 - Death Metal V1 | LoRA | https://huggingface.co/pduncan/YuE2_Deathmetalv1_lora
 - J-Pop T4 | LoRA | https://huggingface.co/storagejuju/yue2-jpop-t4-lora
 - Billie (Voice) | LoRA | https://huggingface.co/HaileyStorm/sv-billie-yue2-lora
@@ -45,6 +48,8 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - Phonk | LoRA | https://huggingface.co/supermind/YuE2-phonk-lora
 - Ethio-Music | LoRA | https://huggingface.co/Behailut/Ethio-Music-YuE2
 - ArabMaqamRock v3 | LoRA | https://huggingface.co/akbargherbal/arabmaqamrock-yue2-lora
+- Arabic Instrumental | LoRA | https://huggingface.co/akbargherbal/arabic-instrumental-yue2-lora
+- ArabMaqamRock Blends | LoRA | https://huggingface.co/akbargherbal/arabmaqamrock-blend-yue2-lora
 - DreamPop v2 | LoRA | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/dreampop
 - Industrial v1 | LoRA | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/industrial
 - Old School Hip-Hop | LoRA | https://huggingface.co/atomtanstudio/lora-library/tree/main/yue2/oldschoolhiphop

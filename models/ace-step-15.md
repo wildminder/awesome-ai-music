@@ -30,6 +30,9 @@ The most powerful local music generation model outperforming most commercial alt
 - VocalSet Lyrical Female (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-vocalset-clean-lyrical-female-ace15-100e-adafactor-20260806
 - VocalSet F3 Clear (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-vocalset-f3-clear-ace15-50e-20260805-r4
 - GTSinger Alto2 Natural 800e (Turbo) | LoRA | https://huggingface.co/DanielMarius/dms-gtsinger-en-alto2-natural-ace15-800e-20260805
+- Trance / Eurodance | LoRA | https://huggingface.co/SpaceGhost/ace-step-1.5-trance-eurodance-lora
+- Ambient / Downtempo (XL SFT) | LoRA | https://huggingface.co/LouisAmas/acestep-1.5-xl-sft-lora-ambient-downtempo
+- 90s Trance (XL SFT) | LoRA | https://huggingface.co/LouisAmas/acestep-1.5-xl-sft-lora-90s-trance
 
 ## Features
 
