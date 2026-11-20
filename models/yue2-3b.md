@@ -30,6 +30,7 @@ YuE2 is the second-generation open music generation model from the m-a-p (Multim
 - audio.cpp GGUF | GGUF | https://huggingface.co/audio-cpp/Yue2-3B-GGUF
 - Realaudio Tokenizer | Tokenizer | https://huggingface.co/drbaph/yue2-mothersuperior-realaudio-tokenizer-comfyui
 - YuE2gen Studio | Web UI | https://github.com/dynamohum/YuE2gen-studio
+- yue2-cover | Toolkit | https://github.com/Ornn8/yue2-cover
 - Industrial Rock | LoRA | https://huggingface.co/monsterovich/yue2-industrial-rock-lora
 - LoRA Sandbox | LoRA | https://huggingface.co/guey-khala-mari/yue2_lora_sandbox
 - Hum-to-Song | LoRA | https://huggingface.co/Mothersuperior/YuE2-hum-to-song
